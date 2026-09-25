@@ -1,24 +1,25 @@
-<!DOCTYPE html>
+<!<!DOCTYPE html>
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMM Panel Client</title>
+    <title>AR SMM Panel</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #0f172a; color: #fff; padding: 20px; }
-        .container { max-width: 500px; margin: 0 auto; background: #1e293b; padding: 25px; border-radius: 12px; }
-        h2 { text-align: center; color: #38bdf8; }
-        label { display: block; margin-top: 15px; font-weight: bold; }
-        select, input, button { width: 100%; padding: 10px; margin-top: 5px; border-radius: 6px; border: 1px solid #334155; background: #0f172a; color: #fff; box-sizing: border-box; }
-        button { background: #0284c7; color: white; border: none; font-weight: bold; margin-top: 20px; cursor: pointer; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0f172a; color: #fff; padding: 20px; margin: 0; }
+        .container { max-width: 500px; margin: 40px auto; background: #1e293b; padding: 30px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+        h2 { text-align: center; color: #38bdf8; margin-bottom: 20px; }
+        label { display: block; margin-top: 15px; font-weight: 600; font-size: 14px; color: #cbd5e1; }
+        select, input, button { width: 100%; padding: 12px; margin-top: 6px; border-radius: 8px; border: 1px solid #334155; background: #0f172a; color: #fff; box-sizing: border-box; font-size: 14px; }
+        select:focus, input:focus { outline: none; border-color: #38bdf8; }
+        button { background: #0284c7; color: white; border: none; font-weight: bold; margin-top: 25px; cursor: pointer; transition: 0.3s; }
         button:hover { background: #0369a1; }
-        #response { margin-top: 15px; padding: 10px; border-radius: 6px; display: none; }
+        #response { margin-top: 20px; padding: 12px; border-radius: 8px; display: none; font-size: 14px; word-break: break-word; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h2>SMM Order Panel</h2>
+    <h2>AR SMM Panel</h2>
     
     <label for="service">Select Service:</label>
     <select id="service">
@@ -31,72 +32,100 @@
     <label for="quantity">Quantity:</label>
     <input type="number" id="quantity" placeholder="1000">
 
-    <button onclick="submitOrder()">Submit Order</button>
+    <button id="submitBtn">Submit Order</button>
 
     <div id="response"></div>
 </div>
 
-<script>
-    // Firebase Cloud Function Endpoint URL (Deploy korar por je URL paben)
-    const GET_SERVICES_URL = "https://us-central1-YOUR_PROJECT_ID.cloudfunctions.net/getServices";
-    const CREATE_ORDER_URL = "https://us-central1-YOUR_PROJECT_ID.cloudfunctions.net/createOrder";
+<!-- Firebase SDK Module -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
 
-    // Service list load kora
-    async function loadServices() {
-        try {
-            const res = await fetch(GET_SERVICES_URL);
-            const services = await res.json();
-            const select = document.getElementById("service");
-            select.innerHTML = "";
-            services.forEach(item => {
-                let opt = document.createElement("option");
-                opt.value = item.service;
-                opt.innerText = `${item.name} - $${item.rate}`;
-                select.appendChild(opt);
-            });
-        } catch (e) {
-            console.error("Error loading services", e);
-        }
-    }
+  const firebaseConfig = {
+    apiKey: "AIzaSyA-iv8qzspBDm8U_4hYEnhjiT2rDF78OuY",
+    authDomain: "ar-smm-panel-9592d.firebaseapp.com",
+    projectId: "ar-smm-panel-9592d",
+    storageBucket: "ar-smm-panel-9592d.firebasestorage.app",
+    messagingSenderId: "719966794371",
+    appId: "1:719966794371:web:af743a19812dd73d45e1b6",
+    measurementId: "G-V0PHNT9Q8N"
+  };
 
-    // Order Submit kora
-    async function submitOrder() {
-        const service = document.getElementById("service").value;
-        const link = document.getElementById("link").value;
-        const quantity = document.getElementById("quantity").value;
-        const respDiv = document.getElementById("response");
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
 
-        if(!service || !link || !quantity) {
-            alert("Sokol information puron korun!");
-            return;
-        }
+  // Cloud Functions Endpoints
+  const GET_SERVICES_URL = "https://us-central1-ar-smm-panel-9592d.cloudfunctions.net/getServices";
+  const CREATE_ORDER_URL = "https://us-central1-ar-smm-panel-9592d.cloudfunctions.net/createOrder";
 
-        respDiv.style.display = "block";
-        respDiv.style.background = "#334155";
-        respDiv.innerText = "Processing order...";
+  // Service List Load Function
+  async function loadServices() {
+      try {
+          const res = await fetch(GET_SERVICES_URL);
+          const services = await res.json();
+          const select = document.getElementById("service");
+          select.innerHTML = "";
+          
+          if(Array.isArray(services)) {
+              services.forEach(item => {
+                  let opt = document.createElement("option");
+                  opt.value = item.service;
+                  opt.innerText = `${item.name} - $${item.rate}`;
+                  select.appendChild(opt);
+              });
+          } else {
+              select.innerHTML = "<option>Failed to load services</option>";
+          }
+      } catch (e) {
+          console.error("Error loading services", e);
+          document.getElementById("service").innerHTML = "<option>Error loading services</option>";
+      }
+  }
 
-        try {
-            const res = await fetch(CREATE_ORDER_URL, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ service, link, quantity })
-            });
-            const data = await res.json();
-            
-            if(data.order) {
-                respDiv.style.background = "#15803d";
-                respDiv.innerText = "Order Successful! Order ID: " + data.order;
-            } else {
-                respDiv.style.background = "#b91c1c";
-                respDiv.innerText = "Failed: " + JSON.stringify(data);
-            }
-        } catch (e) {
-            respDiv.style.background = "#b91c1c";
-            respDiv.innerText = "Error submitting order.";
-        }
-    }
+  // Order Submit Function
+  async function submitOrder() {
+      const service = document.getElementById("service").value;
+      const link = document.getElementById("link").value;
+      const quantity = document.getElementById("quantity").value;
+      const respDiv = document.getElementById("response");
 
-    loadServices();
+      if(!service || !link || !quantity) {
+          alert("সকল তথ্য সঠিকভাবে পূরণ করুন!");
+          return;
+      }
+
+      respDiv.style.display = "block";
+      respDiv.style.background = "#334155";
+      respDiv.innerText = "Processing order...";
+
+      try {
+          const res = await fetch(CREATE_ORDER_URL, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ service, link, quantity })
+          });
+          const data = await res.json();
+          
+          if(data.order) {
+              respDiv.style.background = "#15803d";
+              respDiv.innerText = "Order Successful! Order ID: " + data.order;
+          } else {
+              respDiv.style.background = "#b91c1c";
+              respDiv.innerText = "Failed: " + (data.error || JSON.stringify(data));
+          }
+      } catch (e) {
+          respDiv.style.background = "#b91c1c";
+          respDiv.innerText = "Error submitting order.";
+      }
+  }
+
+  // Event Listener for Submit Button
+  document.getElementById("submitBtn").addEventListener("click", submitOrder);
+
+  // Load Services on Page Load
+  loadServices();
 </script>
 
 </body>
