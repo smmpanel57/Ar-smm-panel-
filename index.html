@@ -1630,11 +1630,13 @@ footer { background:var(--brand-dark); color:#fff; padding:50px 25px 20px; margi
 
 <!-- ============ CUSTOMER PANEL ============ -->
 <div class="customer-panel" id="customerPanel"></div>
-    
-<script>
+
+    <script>
 /* =====================================================
-   FLYMUNA TOURS & TRAVELS — COMPLETE JAVASCRIPT
+   FLYMUNA — COMPLETE WORKING JAVASCRIPT
    ===================================================== */
+
+console.log('✅ FlyMuna JS Loading...');
 
 /* ============ ADMIN CREDENTIALS ============ */
 const ADMIN_CREDENTIALS = { username: 'admin', password: 'admin123' };
@@ -1661,13 +1663,11 @@ const DEFAULT_HAJJ = [
   { id:'h2', icon:'🕋', name:'প্রিমিয়াম হজ প্যাকেজ', desc:'৫ স্টার সেবা', price:850000, features:['৫ স্টার হোটেল','মক্কায় কাছে হোটেল','অভিজ্ঞ গাইড','VIP ট্রান্সপোর্ট'], badge:'প্রিমিয়াম', image:'' },
   { id:'h3', icon:'🕋', name:'ইকোনমি হজ প্যাকেজ', desc:'সাশ্রয়ী', price:650000, features:['সাশ্রয়ী মূল্য','সব মৌলিক সেবা','জিয়ারত'], badge:'', image:'' }
 ];
-
 const DEFAULT_UMRAH = [
   { id:'u1', icon:'🕌', name:'ওমরাহ প্যাকেজ (১৫ দিন)', desc:'সারা বছর', price:145000, features:['ইকোনমি ক্লাস','৩ বেলা খাবার','হোটেল + ট্রান্সপোর্ট','জিয়ারত'], badge:'জনপ্রিয়', image:'' },
   { id:'u2', icon:'🕌', name:'রমজান ওমরাহ প্যাকেজ', desc:'রমজানে বিশেষ', price:175000, features:['রমজানে বিশেষ সেবা','ইফতার ও সেহরি','হোটেল + ফ্লাইট'], badge:'', image:'' },
   { id:'u3', icon:'🕌', name:'শর্ট ওমরাহ (৭ দিন)', desc:'কম সময়ে', price:105000, features:['কম সময়ে ওমরাহ','দ্রুত ভিসা','হোটেল'], badge:'', image:'' }
 ];
-
 const DEFAULT_TOUR = [
   { id:'t1', icon:'🇹🇭', name:'থাইল্যান্ড ট্যুর', desc:'ব্যাংকক - পাটায়া | ৫ দিন ৪ রাত', price:65000, features:['৪ স্টার হোটেল','সিটি ট্যুর','ভিসা প্রসেসিং'], badge:'নতুন', image:'' },
   { id:'t2', icon:'🇲🇾', name:'মালয়েশিয়া ট্যুর', desc:'কুয়ালালামপুর | ৪ দিন ৩ রাত', price:58000, features:['৪ স্টার হোটেল','জেন্টিং ট্যুর','ভিসা প্রসেসিং'], badge:'', image:'' },
@@ -1676,7 +1676,6 @@ const DEFAULT_TOUR = [
   { id:'t5', icon:'🇹🇷', name:'তুরস্ক ট্যুর', desc:'ইস্তাম্বুল | ৭ দিন', price:135000, features:['হোটেল + ব্রেকফাস্ট','সিটি ট্যুর','ভিসা'], badge:'', image:'' },
   { id:'t6', icon:'🇨🇳', name:'চীন ট্যুর', desc:'বেইজিং - সাংহাই | ৬ দিন', price:95000, features:['গ্রেট ওয়াল','হোটেল + খাবার','ভিসা'], badge:'', image:'' }
 ];
-
 const DEFAULT_BD_TOUR = [
   { id:'bd1', icon:'🏖️', name:'কক্সবাজার ট্যুর', desc:'বিশ্বের দীর্ঘতম সমুদ্র সৈকত | ৩ দিন ২ রাত', price:12000, features:['সমুদ্র সৈকত','হিমছড়ি','ইনানী বিচ','হোটেল + খাবার'], badge:'জনপ্রিয়', image:'' },
   { id:'bd2', icon:'🌿', name:'সিলেট ট্যুর', desc:'চা বাগান ও ঝর্ণার শহর | ৩ দিন ২ রাত', price:10500, features:['সাদা পাথর','জাফলং','বিছনাকান্দি','চা বাগান'], badge:'', image:'' },
@@ -1687,7 +1686,6 @@ const DEFAULT_BD_TOUR = [
   { id:'bd7', icon:'🕌', name:'সোনারগাঁও ও পানাম নগর', desc:'ঐতিহাসিক স্থান | ১ দিন', price:3500, features:['পানাম নগর','লোকশিল্প জাদুঘর','গোয়ালদী মসজিদ'], badge:'', image:'' },
   { id:'bd8', icon:'🦁', name:'সুন্দরবন ট্যুর', desc:'বিশ্বের বৃহত্তম ম্যানগ্রোভ | ৩ দিন ২ রাত', price:15000, features:['হিরণ পয়েন্ট','দুবলার চর','জীববৈচিত্র্য','নৌকা ভ্রমণ'], badge:'ইকো ট্যুর', image:'' }
 ];
-
 const DEFAULT_VISA = [
   { id:'v1', flag:'🇹🇭', country:'থাইল্যান্ড', type:'ট্যুরিস্ট', time:'৫-৭ দিন', fee:3500, image:'', documents:['পাসপোর্ট (৬ মাস মেয়াদ)','NID কপি','২ ইঞ্চি ছবি (২ কপি)','ব্যাংক স্টেটমেন্ট (৩ মাস)','টিকেট কপি','হোটেল বুকিং'] },
   { id:'v2', flag:'🇲🇾', country:'মালয়েশিয়া', type:'ট্যুরিস্ট', time:'৭-১০ দিন', fee:4000, image:'', documents:['পাসপোর্ট (৬ মাস মেয়াদ)','NID কপি','২ ইঞ্চি ছবি (২ কপি)','ব্যাংক স্টেটমেন্ট (৩ মাস)','টিকেট কপি','হোটেল বুকিং'] },
@@ -1698,12 +1696,10 @@ const DEFAULT_VISA = [
   { id:'v7', flag:'🇨🇳', country:'চীন', type:'ট্যুরিস্ট', time:'৭-১০ দিন', fee:5000, image:'', documents:['পাসপোর্ট (৬ মাস মেয়াদ)','NID কপি','২ ইঞ্চি ছবি','ব্যাংক স্টেটমেন্ট','টিকেট কপি','হোটেল বুকিং'] },
   { id:'v8', flag:'🇹🇷', country:'তুরস্ক', type:'ট্যুরিস্ট', time:'১০-১৫ দিন', fee:6000, image:'', documents:['পাসপোর্ট (৬ মাস মেয়াদ)','NID কপি','২ ইঞ্চি ছবি','ব্যাংক স্টেটমেন্ট','টিকেট কপি','হোটেল বুকিং'] }
 ];
-
 const DEFAULT_AIR = [
   { id:'a1', icon:'🇧🇩', name:'অভ্যন্তরীণ ফ্লাইট', desc:'ঢাকা-কক্সবাজার', price:4500, features:['ঢাকা-কক্সবাজার','ঢাকা-সিলেট','ঢাকা-চট্টগ্রাম'], badge:'', image:'' },
   { id:'a2', icon:'🌏', name:'আন্তর্জাতিক ফ্লাইট', desc:'বিশ্বজুড়ে', price:40000, features:['বাংলাদেশ-থাইল্যান্ড','বাংলাদেশ-দুবাই','বাংলাদেশ-মালয়েশিয়া'], badge:'', image:'' }
 ];
-
 const DEFAULT_HOTEL = [
   { id:'hi1', icon:'🇹🇭', name:'থাইল্যান্ড হোটেল', desc:'ব্যাংকক / পাটায়া', price:6500, features:['৪ স্টার হোটেল','ব্রেকফাস্ট','এয়ারপোর্ট পিকআপ','সুইমিং পুল'], badge:'', image:'' },
   { id:'hi2', icon:'🇲🇾', name:'মালয়েশিয়া হোটেল', desc:'কুয়ালালামপুর', price:5500, features:['৪ স্টার','ব্রেকফাস্ট','সিটি ভিউ','জিম'], badge:'', image:'' },
@@ -1712,9 +1708,8 @@ const DEFAULT_HOTEL = [
   { id:'hi5', icon:'🕋', name:'মক্কা হোটেল', desc:'হারামের কাছে', price:12000, features:['৫ স্টার','হারাম ভিউ','৩ বেলা খাবার','শাটল সার্ভিস'], badge:'হজ/ওমরাহ', image:'' },
   { id:'hi6', icon:'🕌', name:'মদিনা হোটেল', desc:'মসজিদে নববীর কাছে', price:10000, features:['৫ স্টার','মসজিদ ভিউ','৩ বেলা খাবার','গাইড'], badge:'', image:'' }
 ];
-
 const DEFAULT_HOTEL_BD = [
-  { id:'hb1', icon:'🏖️', name:'কক্সবাজার হোটেল', desc:'সমুদ্রের পাশে', price:3500, features:['সি ভিউ রুম','ব্রেকফাস্ট','এয়ার কন্ডিশন','ফ্রি WiFi'], badge:'জনপ্রিয়', image:'' },
+  { id:'hb1', icon:'🏖️', name:'কক্সবাজার হোটেল', desc:'সমুদ্রের পাশে', price:3500, features:['সি ভিউ রুম','ব্রেকফাস্ট','AC','ফ্রি WiFi'], badge:'জনপ্রিয়', image:'' },
   { id:'hb2', icon:'🌿', name:'সিলেট হোটেল', desc:'সিলেট সিটি', price:2800, features:['কমফোর্ট রুম','ব্রেকফাস্ট','পার্কিং','রুম সার্ভিস'], badge:'', image:'' },
   { id:'hb3', icon:'⛰️', name:'বান্দরবান রিসোর্ট', desc:'পাহাড়ের উপর', price:4200, features:['পাহাড় ভিউ','৩ বেলা খাবার','ক্যাম্প ফায়ার','প্রকৃতি'], badge:'রিসোর্ট', image:'' },
   { id:'hb4', icon:'🏞️', name:'রাঙ্গামাটি রিসোর্ট', desc:'কাপ্তাই লেকের পাশে', price:3800, features:['লেক ভিউ','ব্রেকফাস্ট','বোট সার্ভিস','নিরিবিলি'], badge:'', image:'' },
@@ -1723,19 +1718,16 @@ const DEFAULT_HOTEL_BD = [
   { id:'hb7', icon:'🏛️', name:'ঢাকা বাজেট হোটেল', desc:'মতিঝিল / ফার্মগেট', price:1800, features:['কমফোর্ট রুম','AC','WiFi','সেন্ট্রাল'], badge:'', image:'' },
   { id:'hb8', icon:'🦁', name:'সুন্দরবন ইকো রিসোর্ট', desc:'সুন্দরবনের ভেতরে', price:5200, features:['ইকো স্টে','৩ বেলা খাবার','নৌকা ভ্রমণ','প্রকৃতি ট্যুর'], badge:'ইকো', image:'' }
 ];
-
 const DEFAULT_REVIEWS = [
   { name:'মোহাম্মদ রফিকুল ইসলাম', location:'ঢাকা', stars:5, text:'আলহামদুলিল্লাহ! FlyMuna-র মাধ্যমে হজ পালন করেছি। সার্ভিস অসাধারণ।' },
   { name:'ফারহানা আক্তার', location:'চট্টগ্রাম', stars:5, text:'থাইল্যান্ড ট্যুর দারুণ ছিল। সব নিখুঁত।' },
   { name:'আব্দুল করিম', location:'সিলেট', stars:5, text:'দুবাই ভিসা ৪ দিনে পেয়েছি। ধন্যবাদ FlyMuna।' }
 ];
-
 const DEFAULT_BLOG = [
   { icon:'🛂', title:'দুবাই ভিসা পেতে কী কী লাগে?', excerpt:'২০২৬ সালে দুবাই ভিসার সম্পূর্ণ গাইড...', date:'১৫ জানু, ২০২৬' },
   { icon:'🕋', title:'হজের প্রস্তুতি কেমন হওয়া উচিত', excerpt:'হজে যাওয়ার আগে যা যা জানা দরকার...', date:'১০ জানু, ২০২৬' },
   { icon:'✈️', title:'সস্তায় বিদেশ ভ্রমণের ১০ টিপস', excerpt:'কম খরচে বিদেশ ভ্রমণের কার্যকরী পরামর্শ...', date:'৫ জানু, ২০২৬' }
 ];
-
 const DEFAULT_FAQ = [
   { q:'হজের জন্য কী কী ডকুমেন্ট লাগে?', a:'পাসপোর্ট, NID, ছবি, ভ্যাকসিন কার্ড এবং সরকারি ফরম পূরণ করতে হবে।' },
   { q:'ভিসা কত দিনে পাওয়া যায়?', a:'দেশভেদে ৩-১৫ কার্যদিবস সময় লাগে।' },
@@ -1743,7 +1735,7 @@ const DEFAULT_FAQ = [
   { q:'রিফান্ড পলিসি কী?', a:'ট্রিপের ৩০+ দিন আগে বাতিলে ৯০% রিফান্ড।' }
 ];
 
-/* ============ LOAD DATA FROM STORAGE ============ */
+/* ============ LOAD DATA ============ */
 let settings = JSON.parse(localStorage.getItem('flySettings') || 'null') || DEFAULT_SETTINGS;
 let orders = JSON.parse(localStorage.getItem('flyOrders') || '{}');
 let customers = JSON.parse(localStorage.getItem('flyCustomers') || '[]');
@@ -1759,7 +1751,6 @@ let uploadedFiles = JSON.parse(localStorage.getItem('flyUploadedFiles') || '{}')
 let currentUser = JSON.parse(sessionStorage.getItem('flyCurrentUser') || 'null');
 let currentVisaCountry = null;
 
-/* ============ SAVE ALL ============ */
 function saveAll() {
   localStorage.setItem('flySettings', JSON.stringify(settings));
   localStorage.setItem('flyOrders', JSON.stringify(orders));
@@ -1777,50 +1768,34 @@ function saveAll() {
 /* ============ CURRENCY ============ */
 const CURRENCY_RATES = { BDT: 1, USD: 0.0091, EUR: 0.0084, SAR: 0.034 };
 const CURRENCY_SYMBOLS = { BDT: '৳', USD: '$', EUR: '€', SAR: '﷼' };
-
 function convertPrice(bdtPrice) {
   const rate = CURRENCY_RATES[settings.currency] || 1;
   const sym = CURRENCY_SYMBOLS[settings.currency] || '৳';
-  const converted = bdtPrice * rate;
-  return sym + ' ' + converted.toLocaleString('en-US', { maximumFractionDigits: 0 });
+  return sym + ' ' + (bdtPrice * rate).toLocaleString('en-US', { maximumFractionDigits: 0 });
 }
 
 /* ============ APPLY SETTINGS ============ */
 function applySettings() {
-  document.title = settings.siteName + ' | হজ, ওমরাহ, ট্যুর ও ভিসা';
-  const topPhone = document.getElementById('topPhone');
-  if (topPhone) topPhone.textContent = '+' + settings.phone;
-  const topEmail = document.getElementById('topEmail');
-  if (topEmail) topEmail.textContent = settings.email;
-  const contactPhone = document.getElementById('contactPhone');
-  if (contactPhone) contactPhone.textContent = '+' + settings.phone;
-  const contactEmail = document.getElementById('contactEmail');
-  if (contactEmail) contactEmail.textContent = settings.email;
-  const contactAddress = document.getElementById('contactAddress');
-  if (contactAddress) contactAddress.textContent = settings.address;
-  const footerPhone = document.getElementById('footerPhone');
-  if (footerPhone) footerPhone.textContent = '+' + settings.phone;
-  const footerEmail = document.getElementById('footerEmail');
-  if (footerEmail) footerEmail.textContent = settings.email;
-  const waFloat = document.getElementById('waFloat');
-  if (waFloat) waFloat.href = 'https://wa.me/' + settings.whatsapp;
-  const bkashNum = document.getElementById('bkashNum');
-  if (bkashNum) bkashNum.textContent = settings.bkash;
-  const nagadNum = document.getElementById('nagadNum');
-  if (nagadNum) nagadNum.textContent = settings.nagad;
-  const rocketNum = document.getElementById('rocketNum');
-  if (rocketNum) rocketNum.textContent = settings.rocket;
-  const vBkash = document.getElementById('vBkashNum');
-  if (vBkash) vBkash.textContent = settings.bkash;
-  const vNagad = document.getElementById('vNagadNum');
-  if (vNagad) vNagad.textContent = settings.nagad;
+  const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+  set('topPhone', '+' + settings.phone);
+  set('topEmail', settings.email);
+  set('contactPhone', '+' + settings.phone);
+  set('contactEmail', settings.email);
+  set('contactAddress', settings.address);
+  set('footerPhone', '+' + settings.phone);
+  set('footerEmail', settings.email);
+  const wa = document.getElementById('waFloat');
+  if (wa) wa.href = 'https://wa.me/' + settings.whatsapp;
+  set('bkashNum', settings.bkash);
+  set('nagadNum', settings.nagad);
+  set('rocketNum', settings.rocket);
+  set('vBkashNum', settings.bkash);
+  set('vNagadNum', settings.nagad);
 }
 
-/* ============ RENDER PACKAGE CARD ============ */
+/* ============ RENDER CARD ============ */
 function renderPublicCard(p) {
   const featuresHtml = (p.features || []).map(f => `<li>✅ ${f}</li>`).join('');
-
-  // Country tag
   let countryTag = '🌍 Travel';
   const name = (p.name || '').toLowerCase();
   if (name.includes('কক্সবাজার') || name.includes('সিলেট') || name.includes('বান্দরবান') || name.includes('খাগড়াছড়ি') || name.includes('রাঙ্গামাটি') || name.includes('সুন্দরবন') || name.includes('ঢাকা') || name.includes('সোনারগাঁও')) countryTag = '🇧🇩 বাংলাদেশ';
@@ -1834,7 +1809,6 @@ function renderPublicCard(p) {
 
   const badgeHtml = p.badge ? `<span class="badge-overlay">${p.badge}</span>` : '';
 
-  // With image
   if (p.image) {
     return `<div class="card" style="padding:0; overflow:hidden;">
       <div class="pkg-img-wrap">
@@ -1844,41 +1818,31 @@ function renderPublicCard(p) {
       </div>
       <div style="padding:18px;">
         <h4 style="font-size:17px; margin-bottom:6px;">${p.icon || '🌍'} ${p.name}</h4>
-        <p style="font-size:13px; color:#666; min-height:36px;">${p.desc || ''}</p>
+        <p style="font-size:13px; color:#666;">${p.desc || ''}</p>
         <ul style="margin:10px 0 12px 18px; font-size:13px;">${featuresHtml}</ul>
         <div class="price-tag-pro">
-          <div>
-            <div class="price-label">মূল্য / জন</div>
-            <div class="price-value">${convertPrice(p.price)}</div>
-          </div>
+          <div><div class="price-label">মূল্য / জন</div><div class="price-value">${convertPrice(p.price)}</div></div>
           <div style="font-size:24px;">💎</div>
         </div>
-        <button class="btn" style="width:100%;" onclick='openBookingModal(${JSON.stringify(p.name)}, ${p.price})'>📝 বুক করুন</button>
+        <button class="btn" style="width:100%;" onclick="openBookingModal('${p.name.replace(/'/g, "\\'")}', ${p.price})">📝 বুক করুন</button>
       </div>
     </div>`;
   }
-
-  // Without image
   return `<div class="card" style="padding:18px;">
     ${p.badge ? `<span class="badge">${p.badge}</span>` : ''}
     <h4 style="font-size:16px;">${p.icon || '🌍'} ${p.name}</h4>
     <p style="font-size:13px; color:#666;">${p.desc || ''}</p>
     <ul style="margin:10px 0 12px 18px; font-size:13px;">${featuresHtml}</ul>
     <div class="price-tag-pro">
-      <div>
-        <div class="price-label">মূল্য / জন</div>
-        <div class="price-value">${convertPrice(p.price)}</div>
-      </div>
+      <div><div class="price-label">মূল্য / জন</div><div class="price-value">${convertPrice(p.price)}</div></div>
       <div style="font-size:24px;">💎</div>
     </div>
-    <button class="btn" style="width:100%;" onclick='openBookingModal(${JSON.stringify(p.name)}, ${p.price})'>📝 বুক করুন</button>
+    <button class="btn" style="width:100%;" onclick="openBookingModal('${p.name.replace(/'/g, "\\'")}', ${p.price})">📝 বুক করুন</button>
   </div>`;
 }
 
-/* ============ RENDER ALL PUBLIC ============ */
 function renderPublicPackages() {
   const set = (id, html) => { const el = document.getElementById(id); if (el) el.innerHTML = html; };
-
   set('hajjGrid', hajjPkgs.map(renderPublicCard).join(''));
   set('umrahGrid', umrahPkgs.map(renderPublicCard).join(''));
   set('tourGrid', tourPkgs.map(renderPublicCard).join(''));
@@ -1887,7 +1851,6 @@ function renderPublicPackages() {
   set('hotelIntlGrid', hotelPkgs.map(renderPublicCard).join(''));
   set('hotelBdGrid', hotelBdPkgs.map(renderPublicCard).join(''));
 
-  // Reviews
   set('reviewsGrid', DEFAULT_REVIEWS.map(r => `
     <div class="review-card">
       <div class="stars">${'★'.repeat(r.stars)}${'☆'.repeat(5 - r.stars)}</div>
@@ -1896,7 +1859,6 @@ function renderPublicPackages() {
     </div>
   `).join(''));
 
-  // Blog
   set('blogGrid', DEFAULT_BLOG.map(b => `
     <div class="blog-card">
       <div class="blog-img">${b.icon}</div>
@@ -1909,36 +1871,24 @@ function renderPublicPackages() {
     </div>
   `).join(''));
 
-  // FAQ
   set('faqContainer', DEFAULT_FAQ.map(f => `
     <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">
-        <span>${f.q}</span>
-        <span class="arrow">▼</span>
-      </div>
+      <div class="faq-q"><span>${f.q}</span><span class="arrow">▼</span></div>
       <div class="faq-a">${f.a}</div>
     </div>
   `).join(''));
 
-  // Visa Cards
   set('visaCardGrid', visaList.map(v => `
     <div class="visa-card" onclick="showVisaDetails('${v.id}')">
       ${v.image ? `<img src="${v.image}" class="pkg-img-round">` : `<span class="visa-flag">${v.flag}</span>`}
       <div class="visa-country">${v.country}</div>
       <div class="visa-type">${v.type} ভিসা</div>
-      <div class="visa-meta">
-        <span class="label">⏱️ সময়:</span>
-        <span class="value">${v.time}</span>
-      </div>
-      <div class="visa-fee-box">
-        <div class="fee-label">ভিসা ফি</div>
-        <div class="fee">${convertPrice(v.fee)}</div>
-      </div>
+      <div class="visa-meta"><span class="label">⏱️ সময়:</span><span class="value">${v.time}</span></div>
+      <div class="visa-fee-box"><div class="fee-label">ভিসা ফি</div><div class="fee">${convertPrice(v.fee)}</div></div>
       <button class="apply-btn" onclick="event.stopPropagation(); showVisaDetails('${v.id}')">📋 বিস্তারিত দেখুন</button>
     </div>
   `).join(''));
 
-  // Populate visa country dropdown
   const sel = document.getElementById('visaCheckCountry');
   if (sel) {
     sel.innerHTML = '<option value="">-- দেশ সিলেক্ট করুন --</option>' +
@@ -1947,14 +1897,15 @@ function renderPublicPackages() {
 }
 
 /* ============ FAQ TOGGLE ============ */
-function toggleFaq(el) {
-  el.classList.toggle('open');
-}
+function toggleFaq(el) { el.classList.toggle('open'); }
 
-/* ============ SERVICE TOGGLE ============ */
+/* ============ SERVICE TOGGLE (MAIN FUNCTION) ============ */
 function toggleService(card) {
+  console.log('Service clicked:', card);
   const targetId = card.getAttribute('data-target');
   const targetPanel = document.getElementById(targetId);
+  if (!targetPanel) { console.error('Panel not found:', targetId); return; }
+
   const allCards = document.querySelectorAll('.service-card');
   const allPanels = document.querySelectorAll('.expand-panel');
 
@@ -1970,13 +1921,12 @@ function toggleService(card) {
   setTimeout(() => targetPanel.scrollIntoView({ behavior: 'smooth', block: 'start' }), 200);
 }
 
-/* ============ HOTEL TAB SWITCH ============ */
+/* ============ HOTEL TAB ============ */
 function switchHotelTab(tab) {
   const intlList = document.getElementById('hotelIntlList');
   const bdList = document.getElementById('hotelBdList');
   const intlBtn = document.getElementById('hotelTabIntl');
   const bdBtn = document.getElementById('hotelTabBd');
-
   if (tab === 'international') {
     intlList.style.display = 'block';
     bdList.style.display = 'none';
@@ -1996,43 +1946,33 @@ function showVisaDetails(visaId) {
   if (!v) return;
   currentVisaCountry = v;
 
-  const reqDiv = document.getElementById('visaRequirements');
-  document.getElementById('reqFlag').textContent = v.image ? '' : v.flag;
-  if (v.image) {
-    document.getElementById('reqFlag').innerHTML = `<img src="${v.image}" style="width:80px;height:80px;border-radius:50%;object-fit:cover;display:inline-block;">`;
-  }
+  document.getElementById('reqFlag').innerHTML = v.image
+    ? `<img src="${v.image}" style="width:80px;height:80px;border-radius:50%;object-fit:cover;">`
+    : v.flag;
   document.getElementById('reqCountry').textContent = v.country;
   document.getElementById('reqType').textContent = v.type + ' ভিসা';
   document.getElementById('reqFee').textContent = convertPrice(v.fee);
   document.getElementById('reqTime').textContent = v.time;
 
-  const docsHtml = (v.documents || []).map(d => `
+  document.getElementById('reqList').innerHTML = (v.documents || []).map(d => `
     <div class="doc-check-item">
       <div class="doc-check-icon">✅</div>
       <div class="doc-check-body"><h5>${d}</h5></div>
     </div>
-  `).join('');
-  document.getElementById('reqList').innerHTML = docsHtml || '<p style="color:#888;">কোন ডকুমেন্ট তথ্য নেই</p>';
+  `).join('') || '<p style="color:#888;">তথ্য নেই</p>';
 
-  reqDiv.style.display = 'block';
+  document.getElementById('visaRequirements').style.display = 'block';
   document.getElementById('visa-section').scrollIntoView({ behavior: 'smooth' });
 }
 
-/* ============ VISA REQUIREMENTS (from dropdown) ============ */
 function showVisaRequirements(visaId) {
-  if (!visaId) {
-    document.getElementById('visaRequirements').style.display = 'none';
-    return;
-  }
+  if (!visaId) { document.getElementById('visaRequirements').style.display = 'none'; return; }
   showVisaDetails(visaId);
 }
 
-/* ============ OPEN VISA APPLICATION ============ */
+/* ============ VISA APPLICATION ============ */
 function openVisaApplication() {
-  if (!currentVisaCountry) {
-    alert('❌ প্রথমে দেশ সিলেক্ট করুন');
-    return;
-  }
+  if (!currentVisaCountry) { alert('❌ প্রথমে দেশ সিলেক্ট করুন'); return; }
   document.getElementById('visaAppCountry').value = currentVisaCountry.country;
   document.getElementById('visaAppType').value = currentVisaCountry.type;
   document.getElementById('visaAppFee').value = currentVisaCountry.fee;
@@ -2040,27 +1980,19 @@ function openVisaApplication() {
   document.getElementById('visaAppSubtitle').textContent = currentVisaCountry.flag + ' ' + currentVisaCountry.country + ' — ' + currentVisaCountry.type + ' ভিসা';
   document.getElementById('visaApplicationModal').classList.add('show');
 }
-function closeVisaApplication() {
-  document.getElementById('visaApplicationModal').classList.remove('show');
-}
+function closeVisaApplication() { document.getElementById('visaApplicationModal').classList.remove('show'); }
 
-/* ============ HANDLE VISA FILE ============ */
 function handleVisaFile(event, nameElId) {
   const file = event.target.files[0];
   if (!file) return;
   const nameEl = document.getElementById(nameElId);
   if (nameEl) nameEl.textContent = '✅ ' + file.name;
   event.target.parentElement.classList.add('has-file');
-}
-
-/* ============ SUBMIT VISA APPLICATION ============ */
-function submitVisaApplication(e) {
+       }
+   function submitVisaApplication(e) {
   e.preventDefault();
-
   const orderId = 'FLY-V-' + Date.now().toString().slice(-8);
-  const fileInput = document.getElementById('vDocPayment');
-  const file = fileInput.files[0];
-
+  const file = document.getElementById('vDocPayment').files[0];
   const order = {
     id: orderId,
     name: document.getElementById('vName').value,
@@ -2083,7 +2015,6 @@ function submitVisaApplication(e) {
     type: 'visa',
     customer: currentUser ? currentUser.phone : null
   };
-
   if (file) {
     const reader = new FileReader();
     reader.onload = function(ev) {
@@ -2092,7 +2023,7 @@ function submitVisaApplication(e) {
       orders[orderId] = order;
       saveAll();
       sendToWhatsApp(order, uploadedFiles[orderId]);
-      alert(`✅ ভিসা আবেদন সফল!\n\nঅর্ডার আইডি: ${orderId}\n\nসংরক্ষণ করুন।`);
+      alert(`✅ ভিসা আবেদন সফল!\n\nঅর্ডার আইডি: ${orderId}`);
       closeVisaApplication();
       document.getElementById('visaApplicationForm').reset();
       document.getElementById('trackId').value = orderId;
@@ -2106,12 +2037,12 @@ function submitVisaApplication(e) {
     alert(`✅ ভিসা আবেদন সফল!\n\nঅর্ডার আইডি: ${orderId}`);
     closeVisaApplication();
     document.getElementById('visaApplicationForm').reset();
-    document.getElementById('trackId').value = orderId;
-    document.getElementById('tracker').scrollIntoView({ behavior: 'smooth' });
   }
-   }
-   /* ============ OPEN BOOKING MODAL ============ */
+}
+
+/* ============ BOOKING MODAL ============ */
 function openBookingModal(pkgName, pkgPrice) {
+  console.log('Opening booking modal:', pkgName, pkgPrice);
   document.getElementById('selectedPkgName').value = pkgName;
   document.getElementById('selectedPkgPrice').value = pkgPrice;
   document.getElementById('bookingPkgName').innerHTML = `<b>${pkgName}</b> — ${convertPrice(pkgPrice)}`;
@@ -2119,8 +2050,6 @@ function openBookingModal(pkgName, pkgPrice) {
   document.getElementById('bookingForm').reset();
   document.getElementById('selectedPkgName').value = pkgName;
   document.getElementById('selectedPkgPrice').value = pkgPrice;
-
-  // Reset file upload
   document.getElementById('bookingFileUpload').classList.remove('has-file');
   document.getElementById('bookingFilePreview').innerHTML = `
     <div class="file-upload-icon">📎</div>
@@ -2130,17 +2059,14 @@ function openBookingModal(pkgName, pkgPrice) {
 }
 function closeBookingModal() { document.getElementById('bookingModal').classList.remove('show'); }
 
-/* ============ HANDLE BOOKING FILE ============ */
 function handleBookingFile(event) {
   const file = event.target.files[0];
   if (!file) return;
   const wrap = document.getElementById('bookingFilePreview');
-  const parent = document.getElementById('bookingFileUpload');
-  parent.classList.add('has-file');
-
+  document.getElementById('bookingFileUpload').classList.add('has-file');
   if (file.type.startsWith('image/')) {
     const reader = new FileReader();
-    reader.onload = function(e) {
+    reader.onload = (e) => {
       wrap.innerHTML = `<img src="${e.target.result}" class="file-preview-img"><div class="file-name">✅ ${file.name}</div>`;
     };
     reader.readAsDataURL(file);
@@ -2149,13 +2075,10 @@ function handleBookingFile(event) {
   }
 }
 
-/* ============ SUBMIT BOOKING ============ */
 function submitBooking(e) {
   e.preventDefault();
   const orderId = 'FLY-' + Date.now().toString().slice(-8);
-  const fileInput = document.getElementById('paymentSS');
-  const file = fileInput.files[0];
-
+  const file = document.getElementById('paymentSS').files[0];
   const order = {
     id: orderId,
     name: document.getElementById('fullName').value,
@@ -2175,7 +2098,6 @@ function submitBooking(e) {
     type: 'booking',
     customer: currentUser ? currentUser.phone : null
   };
-
   if (file) {
     const reader = new FileReader();
     reader.onload = function(ev) {
@@ -2193,9 +2115,8 @@ function submitBooking(e) {
     sendToWhatsApp(order, null);
     finalizeBooking(orderId);
   }
-}
-
-function finalizeBooking(orderId) {
+       }
+       function finalizeBooking(orderId) {
   alert(`✅ বুকিং সফল!\n\nআপনার অর্ডার আইডি: ${orderId}\n\nএই আইডি সংরক্ষণ করুন।\nশীঘ্রই আমাদের টিম যোগাযোগ করবে।`);
   closeBookingModal();
   document.getElementById('bookingForm').reset();
@@ -2203,18 +2124,16 @@ function finalizeBooking(orderId) {
   document.getElementById('tracker').scrollIntoView({ behavior: 'smooth' });
 }
 
-/* ============ WHATSAPP AUTO SEND ============ */
+/* ============ WHATSAPP ============ */
 function sendToWhatsApp(order, fileData) {
   if (settings.waNotify === 'off') return;
   const adminWA = settings.adminWhatsApp || settings.whatsapp || '8801623744440';
-
   let message = `🔔 *নতুন ${order.type === 'visa' ? 'ভিসা আবেদন' : 'বুকিং'}*\n\n`;
-  message += `📋 *অর্ডার আইডি:* ${order.id}\n`;
+  message += `📋 *অর্ডার:* ${order.id}\n`;
   message += `👤 *নাম:* ${order.name}\n`;
   if (order.father) message += `👨 *পিতা:* ${order.father}\n`;
   message += `📱 *মোবাইল:* ${order.phone}\n`;
   if (order.email) message += `✉️ *ইমেইল:* ${order.email}\n`;
-  if (order.dob) message += `🎂 *জন্ম তারিখ:* ${order.dob}\n`;
   if (order.address) message += `🏠 *ঠিকানা:* ${order.address}\n`;
   message += `🎫 *প্যাকেজ:* ${order.package}\n`;
   message += `💰 *মূল্য:* ৳${order.price}\n`;
@@ -2224,11 +2143,8 @@ function sendToWhatsApp(order, fileData) {
   if (order.note) message += `📝 *নোট:* ${order.note}\n`;
   message += `\n🆔 *NID:* ${order.nid}\n`;
   message += `🛂 *পাসপোর্ট:* ${order.passport}\n`;
-  if (order.passExpiry) message += `📅 *পাসপোর্ট এক্সপায়ারি:* ${order.passExpiry}\n`;
   message += `\n📅 ${order.date}`;
-
-  const encodedMsg = encodeURIComponent(message);
-  const waURL = `https://wa.me/${adminWA}?text=${encodedMsg}`;
+  const waURL = `https://wa.me/${adminWA}?text=${encodeURIComponent(message)}`;
   window.open(waURL, '_blank');
 }
 
@@ -2236,7 +2152,7 @@ function sendOrderToWhatsApp(orderId) {
   const o = orders[orderId];
   if (!o) return;
   const adminWA = settings.adminWhatsApp || settings.whatsapp;
-  let msg = `📋 *অর্ডার:* ${o.id}\n👤 ${o.name}\n📱 ${o.phone}\n📦 ${o.package}\n💰 ৳${o.price}\n📍 ${o.status}`;
+  const msg = `📋 *অর্ডার:* ${o.id}\n👤 ${o.name}\n📱 ${o.phone}\n📦 ${o.package}\n💰 ৳${o.price}\n📍 ${o.status}`;
   window.open(`https://wa.me/${adminWA}?text=${encodeURIComponent(msg)}`, '_blank');
 }
 
@@ -2246,17 +2162,12 @@ function callCustomer(phone) {
   window.location.href = 'tel:+' + clean;
 }
 
-/* ============ TRACK ORDER ============ */
+/* ============ TRACK ============ */
 function trackOrder() {
   const id = document.getElementById('trackId').value.trim().toUpperCase();
   const res = document.getElementById('trackerResult');
   const order = orders[id];
-
-  if (!order) {
-    res.style.display = 'none';
-    alert('❌ অর্ডার আইডি খুঁজে পাওয়া যায়নি।');
-    return;
-  }
+  if (!order) { res.style.display = 'none'; alert('❌ অর্ডার আইডি পাওয়া যায়নি'); return; }
   document.getElementById('resId').textContent = order.id;
   document.getElementById('resName').textContent = order.name;
   document.getElementById('resPkg').textContent = order.package;
@@ -2264,51 +2175,19 @@ function trackOrder() {
   document.getElementById('resProgress').style.width = (order.progress || 30) + '%';
   document.getElementById('resDate').textContent = order.date;
   res.style.display = 'block';
-   }
-   /* ============ NEWSLETTER ============ */
-function subscribeNewsletter(e) {
-  e.preventDefault();
-  alert('✅ ধন্যবাদ! আপনি সাবস্ক্রাইব করেছেন।');
-  e.target.reset();
 }
 
-/* ============ LIVE CHAT ============ */
+/* ============ NEWSLETTER / CHAT / COOKIE ============ */
+function subscribeNewsletter(e) { e.preventDefault(); alert('✅ ধন্যবাদ! সাবস্ক্রাইব সফল।'); e.target.reset(); }
 function openLiveChat() {
   const wa = settings.adminWhatsApp || settings.whatsapp;
   window.open(`https://wa.me/${wa}?text=${encodeURIComponent('আসসালামু আলাইকুম, আমি FlyMuna সম্পর্কে জানতে চাই।')}`, '_blank');
 }
+function acceptCookies() { localStorage.setItem('flyCookieConsent', 'all'); document.getElementById('cookieBanner').style.display = 'none'; }
+function declineCookies() { localStorage.setItem('flyCookieConsent', 'essential'); document.getElementById('cookieBanner').style.display = 'none'; }
 
-/* ============ COOKIE ============ */
-window.addEventListener('load', () => {
-  if (!localStorage.getItem('flyCookieConsent')) {
-    document.getElementById('cookieBanner').style.display = 'flex';
-  }
-  applySettings();
-  renderPublicPackages();
-});
-function acceptCookies() {
-  localStorage.setItem('flyCookieConsent', 'all');
-  document.getElementById('cookieBanner').style.display = 'none';
-}
-function declineCookies() {
-  localStorage.setItem('flyCookieConsent', 'essential');
-  document.getElementById('cookieBanner').style.display = 'none';
-}
-
-/* ============ LANGUAGE / CURRENCY ============ */
-function changeLang(lang) {
-  settings.lang = lang;
-  saveAll();
-  if (lang === 'en') alert('🌐 English — Full translation coming soon!');
-  else if (lang === 'ar') alert('🌐 العربية — قريباً!');
-  else alert('🌐 ভাষা বাংলায় পরিবর্তন করা হয়েছে');
-}
-function changeCurrency(cur) {
-  settings.currency = cur;
-  saveAll();
-  renderPublicPackages();
-  alert('💱 Currency: ' + cur);
-}
+function changeLang(lang) { settings.lang = lang; saveAll(); alert('🌐 Language: ' + lang.toUpperCase()); }
+function changeCurrency(cur) { settings.currency = cur; saveAll(); renderPublicPackages(); alert('💱 Currency: ' + cur); }
 
 /* ============ SEARCH ============ */
 function doSearch() {
@@ -2326,7 +2205,6 @@ function doSearch() {
   let results = allPkgs;
   if (q) results = results.filter(p => p.name.toLowerCase().includes(q) || (p.desc || '').toLowerCase().includes(q));
   if (type) results = results.filter(p => p.type === type);
-
   if (results.length === 0) { alert('❌ কোন প্যাকেজ পাওয়া যায়নি'); return; }
   const first = results[0];
   document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
@@ -2336,9 +2214,7 @@ function doSearch() {
   }, 500);
 }
 
-/* =====================================================
-   CUSTOMER AUTH
-   ===================================================== */
+/* ============ CUSTOMER AUTH ============ */
 function openCustomerLogin(e) {
   if (e) e.preventDefault();
   if (currentUser) { openCustomerPanel(); return; }
@@ -2365,24 +2241,20 @@ function customerLogin() {
     document.getElementById('custLoginError').style.display = 'block';
     setTimeout(() => document.getElementById('custLoginError').style.display = 'none', 3000);
   }
-}
-
-function customerRegister() {
+       }
+       function customerRegister() {
   const name = document.getElementById('custRegName').value.trim();
   const phone = document.getElementById('custRegPhone').value.trim();
   const email = document.getElementById('custRegEmail').value.trim();
   const pass = document.getElementById('custRegPass').value;
   const errBox = document.getElementById('custRegError');
-
   if (!name || !phone || !pass || pass.length < 6) {
     errBox.textContent = '❌ সব ঘর পূরণ করুন (পাসওয়ার্ড ৬+ অক্ষর)';
-    errBox.style.display = 'block';
-    return;
+    errBox.style.display = 'block'; return;
   }
   if (customers.find(c => c.phone === phone)) {
-    errBox.textContent = '❌ এই মোবাইল দিয়ে আগে রেজিস্টার করা আছে';
-    errBox.style.display = 'block';
-    return;
+    errBox.textContent = '❌ এই মোবাইল আগে রেজিস্টার করা';
+    errBox.style.display = 'block'; return;
   }
   const user = { name, phone, email, password: pass, date: new Date().toLocaleString('bn-BD') };
   customers.push(user);
@@ -2392,14 +2264,14 @@ function customerRegister() {
   closeCustomerRegister();
   alert('✅ রেজিস্ট্রেশন সফল!');
   openCustomerPanel();
-   }
-   function openCustomerPanel() {
+}
+
+function openCustomerPanel() {
   if (!currentUser) { openCustomerLogin(); return; }
   const myOrders = Object.values(orders).filter(o => o.customer === currentUser.phone || o.phone === currentUser.phone);
   let html = `<h3 style="color:var(--brand-dark);margin-bottom:8px;">👤 স্বাগতম, ${currentUser.name}</h3>`;
   html += `<p style="color:#666; margin-bottom:20px;">📱 ${currentUser.phone}</p>`;
   html += `<h4 style="color:var(--brand-dark); margin-bottom:10px;">📦 আমার বুকিং (${myOrders.length})</h4>`;
-
   if (myOrders.length === 0) {
     html += `<p style="color:#888;">এখনো কোন বুকিং নেই</p>`;
   } else {
@@ -2411,7 +2283,6 @@ function customerRegister() {
       </div>`;
     });
   }
-
   const panel = document.getElementById('customerPanel');
   panel.innerHTML = `
     <div class="admin-header">
@@ -2436,11 +2307,10 @@ function customerLogout() {
   closeCustomerPanel();
 }
 
-/* =====================================================
-   ADMIN AUTH
-   ===================================================== */
+/* ============ ADMIN AUTH ============ */
 function openAdminLogin(e) {
   if (e) e.preventDefault();
+  console.log('Opening admin login...');
   if (sessionStorage.getItem('adminLoggedIn') === 'true') { openAdminPanel(); return; }
   document.getElementById('adminLoginModal').classList.add('show');
   document.getElementById('adminUser').value = '';
@@ -2475,7 +2345,6 @@ function openAdminPanel() {
   renderBarChart();
 }
 
-/* ============ BAR CHART ============ */
 function renderBarChart() {
   const days = ['শনি','রবি','সোম','মঙ্গল','বুধ','বৃহঃ','শুক্র'];
   const values = [3, 5, 2, 7, 4, 6, 3];
@@ -2488,15 +2357,14 @@ function renderBarChart() {
       <div class="bar-label">${d}<br><b>${values[i]}</b></div>
     </div>
   `).join('');
-   }
-   /* ============ ADMIN TABS ============ */
+}
+
 function switchAdminTab(tab, btn) {
   document.querySelectorAll('.admin-tabs > .tab-btn').forEach(t => t.classList.remove('active'));
   if (btn && btn.parentElement.classList.contains('admin-tabs')) btn.classList.add('active');
   document.querySelectorAll('.admin-tab-content').forEach(c => c.style.display = 'none');
   const tabEl = document.getElementById('tab-' + tab);
   if (tabEl) tabEl.style.display = 'block';
-
   if (tab === 'bookings') { renderBookings('all'); updateStats(); }
   if (tab === 'customers') renderCustomers();
   if (tab === 'hajj') renderPackageList('hajj');
@@ -2509,7 +2377,7 @@ function switchAdminTab(tab, btn) {
   if (tab === 'settings') loadSettingsForm();
 }
 
-/* ============ BOOKINGS MANAGEMENT ============ */
+/* ============ BOOKINGS ============ */
 let currentFilter = 'all';
 function updateStats() {
   const all = Object.values(orders);
@@ -2530,24 +2398,19 @@ function renderBookings(filter) {
   let list = Object.values(orders);
   if (filter !== 'all') list = list.filter(o => o.status === filter);
   list.sort((a, b) => b.id.localeCompare(a.id));
-
-  if (list.length === 0) {
-    container.innerHTML = '<div class="empty-msg">📭 কোন বুকিং নেই</div>';
-    updateStats();
-    return;
-  }
+  if (list.length === 0) { container.innerHTML = '<div class="empty-msg">📭 কোন বুকিং নেই</div>'; updateStats(); return; }
   let html = `<div style="overflow-x:auto;"><table class="admin-table"><thead><tr>
     <th>ID</th><th>নাম</th><th>মোবাইল</th><th>প্যাকেজ</th><th>মূল্য</th><th>পেমেন্ট</th><th>স্ট্যাটাস</th><th>অ্যাকশন</th>
   </tr></thead><tbody>`;
   list.forEach(o => {
-    const statusOptions = ['পেমেন্ট যাচাই চলছে','কনফার্মড','ভিসা প্রসেসিং','সম্পন্ন','বাতিল'];
-    let statusSelect = `<select class="status-select" onchange="changeStatus('${o.id}', this.value)">`;
-    statusOptions.forEach(s => { statusSelect += `<option value="${s}" ${s === o.status ? 'selected' : ''}>${s}</option>`; });
-    statusSelect += `</select>`;
+    const opts = ['পেমেন্ট যাচাই চলছে','কনফার্মড','ভিসা প্রসেসিং','সম্পন্ন','বাতিল'];
+    let sel = `<select class="status-select" onchange="changeStatus('${o.id}', this.value)">`;
+    opts.forEach(s => { sel += `<option value="${s}" ${s === o.status ? 'selected' : ''}>${s}</option>`; });
+    sel += `</select>`;
     html += `<tr>
       <td><b>${o.id}</b></td><td>${o.name}</td><td>${o.phone}</td>
       <td>${o.package}</td><td>${convertPrice(o.price)}</td><td>${o.payment}</td>
-      <td>${statusSelect}</td>
+      <td>${sel}</td>
       <td>
         <button class="action-btn btn-view" onclick="viewBooking('${o.id}')">দেখুন</button>
         <button class="action-btn btn-del" onclick="deleteBooking('${o.id}')">ডিলিট</button>
@@ -2561,8 +2424,8 @@ function renderBookings(filter) {
 function changeStatus(orderId, newStatus) {
   if (!orders[orderId]) return;
   orders[orderId].status = newStatus;
-  const progressMap = { 'পেমেন্ট যাচাই চলছে':30, 'কনফার্মড':55, 'ভিসা প্রসেসিং':75, 'সম্পন্ন':100, 'বাতিল':0 };
-  orders[orderId].progress = progressMap[newStatus] || 30;
+  const pm = { 'পেমেন্ট যাচাই চলছে':30, 'কনফার্মড':55, 'ভিসা প্রসেসিং':75, 'সম্পন্ন':100, 'বাতিল':0 };
+  orders[orderId].progress = pm[newStatus] || 30;
   orders[orderId].date = new Date().toLocaleString('bn-BD');
   saveAll();
   renderBookings(currentFilter);
@@ -2584,32 +2447,26 @@ function viewBooking(id) {
     if (f.fileType && f.fileType.startsWith('image/')) {
       docHtml = `<img src="${f.data}" class="doc-preview"><br><p style="font-size:12px;color:#666;margin-top:6px;">📎 ${f.fileName}</p>`;
     } else {
-      docHtml = `<a href="${f.data}" download="${f.fileName}" class="btn" style="margin-top:10px;">📄 ${f.fileName} ডাউনলোড করুন</a>`;
+      docHtml = `<a href="${f.data}" download="${f.fileName}" class="btn" style="margin-top:10px;">📄 ${f.fileName} ডাউনলোড</a>`;
     }
   }
   const html = `
-    <div class="detail-row"><strong>অর্ডার আইডি:</strong><span>${o.id}</span></div>
+    <div class="detail-row"><strong>অর্ডার:</strong><span>${o.id}</span></div>
     <div class="detail-row"><strong>নাম:</strong><span>${o.name}</span></div>
     ${o.father ? `<div class="detail-row"><strong>পিতা:</strong><span>${o.father}</span></div>` : ''}
     <div class="detail-row"><strong>মোবাইল:</strong><span>${o.phone}</span></div>
     <div class="detail-row"><strong>ইমেইল:</strong><span>${o.email || 'N/A'}</span></div>
-    ${o.dob ? `<div class="detail-row"><strong>জন্ম তারিখ:</strong><span>${o.dob}</span></div>` : ''}
-    ${o.address ? `<div class="detail-row"><strong>ঠিকানা:</strong><span>${o.address}</span></div>` : ''}
     <div class="detail-row"><strong>NID:</strong><span>${o.nid}</span></div>
     <div class="detail-row"><strong>পাসপোর্ট:</strong><span>${o.passport}</span></div>
     <div class="detail-row"><strong>প্যাকেজ:</strong><span>${o.package}</span></div>
     <div class="detail-row"><strong>মূল্য:</strong><span>${convertPrice(o.price)}</span></div>
-    ${o.persons ? `<div class="detail-row"><strong>যাত্রী:</strong><span>${o.persons} জন</span></div>` : ''}
     <div class="detail-row"><strong>পেমেন্ট:</strong><span>${o.payment}</span></div>
-    <div class="detail-row"><strong>নোট:</strong><span>${o.note || 'N/A'}</span></div>
     <div class="detail-row"><strong>স্ট্যাটাস:</strong><span>${o.status}</span></div>
     <div class="detail-row"><strong>তারিখ:</strong><span>${o.date}</span></div>
-
     <div style="margin-top:20px; display:flex; gap:10px; flex-wrap:wrap;">
-      <button class="btn" onclick="sendOrderToWhatsApp('${o.id}')" style="flex:1; background:linear-gradient(135deg,#25D366,#128C7E);">💬 WhatsApp-এ পাঠান</button>
-      <button class="btn" onclick="callCustomer('${o.phone}')" style="flex:1;">📞 কল করুন</button>
+      <button class="btn" onclick="sendOrderToWhatsApp('${o.id}')" style="flex:1; background:linear-gradient(135deg,#25D366,#128C7E);">💬 WhatsApp</button>
+      <button class="btn" onclick="callCustomer('${o.phone}')" style="flex:1;">📞 কল</button>
     </div>
-
     <h4 style="margin-top:20px; color:var(--brand-dark);">📎 আপলোড ডকুমেন্ট:</h4>
     ${docHtml}
   `;
@@ -2617,9 +2474,7 @@ function viewBooking(id) {
   document.getElementById('detailModal').classList.add('show');
 }
 function closeDetail() { document.getElementById('detailModal').classList.remove('show'); }
-
-/* ============ CUSTOMERS LIST ============ */
-function renderCustomers() {
+       function renderCustomers() {
   const container = document.getElementById('customersContainer');
   if (customers.length === 0) { container.innerHTML = '<div class="empty-msg">📭 কোন গ্রাহক নেই</div>'; return; }
   let html = `<div style="overflow-x:auto;"><table class="admin-table"><thead><tr>
@@ -2631,8 +2486,9 @@ function renderCustomers() {
   });
   html += '</tbody></table></div>';
   container.innerHTML = html;
-   }
-   /* ============ PACKAGE ARRAY HELPERS ============ */
+}
+
+/* ============ PACKAGE HELPERS ============ */
 function getPkgArray(type) {
   if (type === 'hajj') return hajjPkgs;
   if (type === 'umrah') return umrahPkgs;
@@ -2653,7 +2509,6 @@ function setPkgArray(type, arr) {
   if (type === 'hotelBd') hotelBdPkgs = arr;
 }
 
-/* ============ RENDER PACKAGE LIST (Admin) ============ */
 function renderPackageList(type) {
   const container = document.getElementById(type + 'ListContainer');
   if (!container) return;
@@ -2663,12 +2518,11 @@ function renderPackageList(type) {
   list.forEach(p => {
     const featuresHtml = (p.features || []).map(f => `<li>✅ ${f}</li>`).join('');
     const badgeHtml = p.badge ? `<span class="pkg-badge">${p.badge}</span>` : '';
-    let visualHtml = p.image
+    const visualHtml = p.image
       ? `<img src="${p.image}" class="pkg-icon-img" alt="${p.name}">`
       : `<span class="pkg-icon">${p.icon || '🌍'}</span>`;
     html += `<div class="admin-pkg-card">
-      ${badgeHtml}
-      ${visualHtml}
+      ${badgeHtml}${visualHtml}
       <h4>${p.name}</h4>
       <div class="desc">${p.desc || ''}</div>
       <div class="price-tag">${convertPrice(p.price)}</div>
@@ -2683,13 +2537,10 @@ function renderPackageList(type) {
   container.innerHTML = html;
 }
 
-/* ============ PACKAGE FORM ============ */
 function openPackageForm(type, editId = null) {
   document.getElementById('packageModal').classList.add('show');
   document.getElementById('pkgType').value = type;
   document.getElementById('pkgEditId').value = editId || '';
-
-  // Reset image
   document.getElementById('pkgImageData').value = '';
   document.getElementById('pkgImage').value = '';
   document.getElementById('pkgImageUpload').classList.remove('has-image');
@@ -2698,13 +2549,11 @@ function openPackageForm(type, editId = null) {
     <div class="upload-text">ছবি আপলোড করতে ক্লিক করুন</div>
     <div class="upload-hint">JPG, PNG (সর্বোচ্চ 5MB)</div>
   `;
-
   const titles = {
     hajj:'হজ প্যাকেজ', umrah:'ওমরাহ প্যাকেজ', tour:'ইন্টারন্যাশনাল ট্যুর',
     air:'এয়ার প্যাকেজ', hotel:'ইন্টারন্যাশনাল হোটেল',
     bdTour:'বাংলাদেশ ট্যুর প্যাকেজ', hotelBd:'বাংলাদেশ হোটেল প্যাকেজ'
   };
-
   if (editId) {
     const p = getPkgArray(type).find(x => x.id === editId);
     if (!p) return;
@@ -2715,22 +2564,18 @@ function openPackageForm(type, editId = null) {
     document.getElementById('pkgPrice').value = p.price;
     document.getElementById('pkgFeatures').value = (p.features || []).join('\n');
     document.getElementById('pkgBadge').value = p.badge || '';
-
     if (p.image) {
       document.getElementById('pkgImageData').value = p.image;
       document.getElementById('pkgImageUpload').classList.add('has-image');
-      document.getElementById('pkgImagePreviewWrap').innerHTML = `<img src="${p.image}" class="pkg-image-preview" alt="Preview">`;
+      document.getElementById('pkgImagePreviewWrap').innerHTML = `<img src="${p.image}" class="pkg-image-preview">`;
     }
   } else {
     document.getElementById('packageModalTitle').textContent = '➕ নতুন ' + titles[type];
     document.getElementById('pkgName').value = '';
     document.getElementById('pkgIcon').value =
-      type === 'hajj' ? '🕋' :
-      type === 'umrah' ? '🕌' :
-      type === 'tour' ? '🌍' :
-      type === 'air' ? '✈️' :
-      type === 'bdTour' ? '🇧🇩' :
-      type === 'hotelBd' ? '🏨' : '🏨';
+      type === 'hajj' ? '🕋' : type === 'umrah' ? '🕌' :
+      type === 'tour' ? '🌍' : type === 'air' ? '✈️' :
+      type === 'bdTour' ? '🇧🇩' : '🏨';
     document.getElementById('pkgDesc').value = '';
     document.getElementById('pkgPrice').value = '';
     document.getElementById('pkgFeatures').value = '';
@@ -2739,20 +2584,15 @@ function openPackageForm(type, editId = null) {
 }
 function closePackageModal() { document.getElementById('packageModal').classList.remove('show'); }
 
-/* ============ PACKAGE IMAGE HANDLERS ============ */
 function handlePkgImage(event) {
   const file = event.target.files[0];
   if (!file) return;
-  if (file.size > 5 * 1024 * 1024) {
-    alert('❌ ছবির সাইজ 5MB এর বেশি!');
-    event.target.value = '';
-    return;
-  }
+  if (file.size > 5 * 1024 * 1024) { alert('❌ ছবির সাইজ 5MB এর বেশি!'); event.target.value = ''; return; }
   const reader = new FileReader();
-  reader.onload = function(e) {
+  reader.onload = (e) => {
     document.getElementById('pkgImageData').value = e.target.result;
     document.getElementById('pkgImageUpload').classList.add('has-image');
-    document.getElementById('pkgImagePreviewWrap').innerHTML = `<img src="${e.target.result}" class="pkg-image-preview" alt="Preview">`;
+    document.getElementById('pkgImagePreviewWrap').innerHTML = `<img src="${e.target.result}" class="pkg-image-preview">`;
   };
   reader.readAsDataURL(file);
 }
@@ -2767,9 +2607,8 @@ function removePkgImage(event) {
     <div class="upload-text">ছবি আপলোড করতে ক্লিক করুন</div>
     <div class="upload-hint">JPG, PNG (সর্বোচ্চ 5MB)</div>
   `;
-   }
-   /* ============ SAVE PACKAGE ============ */
-function savePackage() {
+       }
+      function savePackage() {
   const type = document.getElementById('pkgType').value;
   const editId = document.getElementById('pkgEditId').value;
   const name = document.getElementById('pkgName').value.trim();
@@ -2779,12 +2618,9 @@ function savePackage() {
   const featuresRaw = document.getElementById('pkgFeatures').value.trim();
   const badge = document.getElementById('pkgBadge').value.trim();
   const image = document.getElementById('pkgImageData').value;
-
   if (!name || !price) { alert('❌ নাম ও মূল্য দিন!'); return; }
-
   const features = featuresRaw ? featuresRaw.split('\n').map(f => f.trim()).filter(f => f) : [];
   const list = getPkgArray(type);
-
   if (editId) {
     const idx = list.findIndex(x => x.id === editId);
     if (idx > -1) list[idx] = { ...list[idx], name, icon, desc, price:Number(price), features, badge, image };
@@ -2808,7 +2644,7 @@ function deletePackage(type, id) {
   renderPublicPackages();
 }
 
-/* ============ VISA MANAGEMENT ============ */
+/* ============ VISA ADMIN ============ */
 function renderVisaList() {
   const container = document.getElementById('visaListContainer');
   if (visaList.length === 0) { container.innerHTML = '<div class="empty-msg">📭 নেই</div>'; return; }
@@ -2818,9 +2654,7 @@ function renderVisaList() {
   visaList.forEach(v => {
     html += `<tr>
       <td>${v.image ? `<img src="${v.image}" style="width:36px;height:36px;border-radius:50%;object-fit:cover;">` : `<span style="font-size:22px;">${v.flag}</span>`}</td>
-      <td><b>${v.country}</b></td>
-      <td>${v.type}</td>
-      <td>${v.time}</td>
+      <td><b>${v.country}</b></td><td>${v.type}</td><td>${v.time}</td>
       <td>${convertPrice(v.fee)}</td>
       <td><span style="font-size:11px;background:#e8f4ff;padding:3px 8px;border-radius:10px;">${(v.documents || []).length}টি</span></td>
       <td>
@@ -2865,30 +2699,30 @@ function saveVisa() {
   const fee = document.getElementById('visaFee').value.trim();
   const docsRaw = document.getElementById('visaDocs').value.trim();
   const documents = docsRaw ? docsRaw.split('\n').map(d => d.trim()).filter(d => d) : [];
-
   if (!country || !type || !time || !fee) { alert('❌ সব ঘর পূরণ করুন!'); return; }
-
   if (editId) {
     const idx = visaList.findIndex(x => x.id === editId);
     if (idx > -1) visaList[idx] = { ...visaList[idx], country, flag, type, time, fee:Number(fee), documents };
+    alert('✅ আপডেট হয়েছে!');
   } else {
     visaList.push({ id:'v' + Date.now(), country, flag, type, time, fee:Number(fee), documents, image:'' });
+    alert('✅ নতুন যোগ হয়েছে!');
   }
   saveAll();
   closeVisaModal();
   renderVisaList();
   renderPublicPackages();
-  alert('✅ সেভ হয়েছে!');
 }
 function editVisa(id) { openVisaForm(id); }
 function deleteVisa(id) {
-  if (!confirm('ডিলিট করবেন?')) return;
+  if (!confirm('ডিলিট?')) return;
   visaList = visaList.filter(x => x.id !== id);
   saveAll();
   renderVisaList();
   renderPublicPackages();
-   }
-   /* ============ SETTINGS ============ */
+}
+
+/* ============ SETTINGS ============ */
 function loadSettingsForm() {
   const setVal = (id, val) => { const el = document.getElementById(id); if (el) el.value = val; };
   setVal('setSiteName', settings.siteName);
@@ -2903,35 +2737,41 @@ function loadSettingsForm() {
   setVal('setWaNotify', settings.waNotify || 'on');
 }
 function saveSettings() {
-  const getVal = (id) => { const el = document.getElementById(id); return el ? el.value.trim() : ''; };
-  settings.siteName = getVal('setSiteName') || settings.siteName;
-  settings.phone = getVal('setPhone') || settings.phone;
-  settings.email = getVal('setEmail') || settings.email;
-  settings.address = getVal('setAddress') || settings.address;
-  settings.bkash = getVal('setBkash') || settings.bkash;
-  settings.nagad = getVal('setNagad') || settings.nagad;
-  settings.rocket = getVal('setRocket') || settings.rocket;
-  settings.whatsapp = getVal('setWhatsapp') || settings.whatsapp;
-  settings.adminWhatsApp = getVal('setAdminWhatsApp') || settings.whatsapp;
+  const g = (id) => { const el = document.getElementById(id); return el ? el.value.trim() : ''; };
+  settings.siteName = g('setSiteName') || settings.siteName;
+  settings.phone = g('setPhone') || settings.phone;
+  settings.email = g('setEmail') || settings.email;
+  settings.address = g('setAddress') || settings.address;
+  settings.bkash = g('setBkash') || settings.bkash;
+  settings.nagad = g('setNagad') || settings.nagad;
+  settings.rocket = g('setRocket') || settings.rocket;
+  settings.whatsapp = g('setWhatsapp') || settings.whatsapp;
+  settings.adminWhatsApp = g('setAdminWhatsApp') || settings.whatsapp;
   settings.waNotify = document.getElementById('setWaNotify')?.value || 'on';
-
   saveAll();
   applySettings();
   alert('✅ সেটিংস সেভ হয়েছে!');
 }
 
-/* ============ KEYBOARD SHORTCUTS ============ */
+/* ============ ESCAPE KEY ============ */
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
-    closeAdminLogin();
-    closeDetail();
-    closePackageModal();
-    closeVisaModal();
-    closeBookingModal();
-    closeVisaApplication();
-    closeCustomerLogin();
-    closeCustomerRegister();
+    closeAdminLogin(); closeDetail(); closePackageModal();
+    closeVisaModal(); closeBookingModal(); closeVisaApplication();
+    closeCustomerLogin(); closeCustomerRegister();
   }
+});
+
+/* ============ INITIALIZE ON LOAD ============ */
+window.addEventListener('load', function() {
+  console.log('✅ Page loaded, initializing...');
+  if (!localStorage.getItem('flyCookieConsent')) {
+    const cb = document.getElementById('cookieBanner');
+    if (cb) cb.style.display = 'flex';
+  }
+  applySettings();
+  renderPublicPackages();
+  console.log('✅ Initialization complete!');
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -2939,6 +2779,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (pf) pf.addEventListener('keypress', (e) => { if (e.key === 'Enter') adminLogin(); });
 });
 
+console.log('✅ FlyMuna JS Loaded Successfully!');
 </script>
 </body>
-</html>
+</html> 
