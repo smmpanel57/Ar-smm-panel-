@@ -1631,3 +1631,385 @@ footer { background:var(--brand-dark); color:#fff; padding:50px 25px 20px; margi
 <!-- ============ CUSTOMER PANEL ============ -->
 <div class="customer-panel" id="customerPanel"></div>
     
+<script>
+/* =====================================================
+   FLYMUNA TOURS & TRAVELS — COMPLETE JAVASCRIPT
+   ===================================================== */
+
+/* ============ ADMIN CREDENTIALS ============ */
+const ADMIN_CREDENTIALS = { username: 'admin', password: 'admin123' };
+
+/* ============ DEFAULT SETTINGS ============ */
+const DEFAULT_SETTINGS = {
+  siteName: 'FlyMuna Tours & Travels',
+  phone: '01623744440',
+  email: 'Info.atik83@gmail.com',
+  address: 'নাসির সুপার মার্কেট (২য় তলা), টাঙ্গাইল রোড, গাজীপুর চৌরাস্তা, গাজীপুর',
+  bkash: '01623744440',
+  nagad: '01623744440',
+  rocket: '01623744440',
+  whatsapp: '8801623744440',
+  adminWhatsApp: '8801623744440',
+  waNotify: 'on',
+  currency: 'BDT',
+  lang: 'bn'
+};
+
+/* ============ DEFAULT DATA ============ */
+const DEFAULT_HAJJ = [
+  { id:'h1', icon:'🕋', name:'সরকারি হজ প্যাকেজ', desc:'সরকারি ব্যবস্থাপনা', price:580000, features:['সরকারি ব্যবস্থাপনা','মক্কা-মদিনায় হোটেল','৩ বেলা খাবার','জিয়ারত'], badge:'সরকারি', image:'' },
+  { id:'h2', icon:'🕋', name:'প্রিমিয়াম হজ প্যাকেজ', desc:'৫ স্টার সেবা', price:850000, features:['৫ স্টার হোটেল','মক্কায় কাছে হোটেল','অভিজ্ঞ গাইড','VIP ট্রান্সপোর্ট'], badge:'প্রিমিয়াম', image:'' },
+  { id:'h3', icon:'🕋', name:'ইকোনমি হজ প্যাকেজ', desc:'সাশ্রয়ী', price:650000, features:['সাশ্রয়ী মূল্য','সব মৌলিক সেবা','জিয়ারত'], badge:'', image:'' }
+];
+
+const DEFAULT_UMRAH = [
+  { id:'u1', icon:'🕌', name:'ওমরাহ প্যাকেজ (১৫ দিন)', desc:'সারা বছর', price:145000, features:['ইকোনমি ক্লাস','৩ বেলা খাবার','হোটেল + ট্রান্সপোর্ট','জিয়ারত'], badge:'জনপ্রিয়', image:'' },
+  { id:'u2', icon:'🕌', name:'রমজান ওমরাহ প্যাকেজ', desc:'রমজানে বিশেষ', price:175000, features:['রমজানে বিশেষ সেবা','ইফতার ও সেহরি','হোটেল + ফ্লাইট'], badge:'', image:'' },
+  { id:'u3', icon:'🕌', name:'শর্ট ওমরাহ (৭ দিন)', desc:'কম সময়ে', price:105000, features:['কম সময়ে ওমরাহ','দ্রুত ভিসা','হোটেল'], badge:'', image:'' }
+];
+
+const DEFAULT_TOUR = [
+  { id:'t1', icon:'🇹🇭', name:'থাইল্যান্ড ট্যুর', desc:'ব্যাংকক - পাটায়া | ৫ দিন ৪ রাত', price:65000, features:['৪ স্টার হোটেল','সিটি ট্যুর','ভিসা প্রসেসিং'], badge:'নতুন', image:'' },
+  { id:'t2', icon:'🇲🇾', name:'মালয়েশিয়া ট্যুর', desc:'কুয়ালালামপুর | ৪ দিন ৩ রাত', price:58000, features:['৪ স্টার হোটেল','জেন্টিং ট্যুর','ভিসা প্রসেসিং'], badge:'', image:'' },
+  { id:'t3', icon:'🇦🇪', name:'দুবাই ট্যুর', desc:'দুবাই - আবুধাবি | ৫ দিন ৪ রাত', price:105000, features:['ডেজার্ট সাফারি','বুর্জ খলিফা','ভিসা প্রসেসিং'], badge:'হট ডিল', image:'' },
+  { id:'t4', icon:'🇸🇬', name:'সিঙ্গাপুর ট্যুর', desc:'সিঙ্গাপুর | ৪ দিন ৩ রাত', price:75000, features:['সেন্টোসা আইল্যান্ড','ইউনিভার্সাল স্টুডিও','ভিসা'], badge:'', image:'' },
+  { id:'t5', icon:'🇹🇷', name:'তুরস্ক ট্যুর', desc:'ইস্তাম্বুল | ৭ দিন', price:135000, features:['হোটেল + ব্রেকফাস্ট','সিটি ট্যুর','ভিসা'], badge:'', image:'' },
+  { id:'t6', icon:'🇨🇳', name:'চীন ট্যুর', desc:'বেইজিং - সাংহাই | ৬ দিন', price:95000, features:['গ্রেট ওয়াল','হোটেল + খাবার','ভিসা'], badge:'', image:'' }
+];
+
+const DEFAULT_BD_TOUR = [
+  { id:'bd1', icon:'🏖️', name:'কক্সবাজার ট্যুর', desc:'বিশ্বের দীর্ঘতম সমুদ্র সৈকত | ৩ দিন ২ রাত', price:12000, features:['সমুদ্র সৈকত','হিমছড়ি','ইনানী বিচ','হোটেল + খাবার'], badge:'জনপ্রিয়', image:'' },
+  { id:'bd2', icon:'🌿', name:'সিলেট ট্যুর', desc:'চা বাগান ও ঝর্ণার শহর | ৩ দিন ২ রাত', price:10500, features:['সাদা পাথর','জাফলং','বিছনাকান্দি','চা বাগান'], badge:'', image:'' },
+  { id:'bd3', icon:'⛰️', name:'বান্দরবান ট্যুর', desc:'পাহাড় ও ঝর্ণার রাজ্য | ৪ দিন ৩ রাত', price:13500, features:['নীলগিরি','নীলাচল','চিম্বুক পাহাড়','বগালেক'], badge:'অ্যাডভেঞ্চার', image:'' },
+  { id:'bd4', icon:'🏞️', name:'খাগড়াছড়ি ট্যুর', desc:'প্রাকৃতিক সৌন্দর্যের স্বর্গ | ৩ দিন ২ রাত', price:11500, features:['আলুটিলা','রিসাং ঝর্ণা','দেবতা পাহাড়','মানিকছড়ি'], badge:'', image:'' },
+  { id:'bd5', icon:'🌊', name:'রাঙ্গামাটি ট্যুর', desc:'কাপ্তাই লেক ও পাহাড় | ৩ দিন ২ রাত', price:12500, features:['কাপ্তাই লেক','সাজেক ভ্যালি','পুলিশ পাড়া','ঝুলন্ত ব্রিজ'], badge:'নতুন', image:'' },
+  { id:'bd6', icon:'🏛️', name:'ঢাকা সিটি ট্যুর', desc:'রাজধানী ভ্রমণ | ২ দিন ১ রাত', price:6500, features:['লালবাগ কেল্লা','আহসান মঞ্জিল','জাতীয় জাদুঘর','সদরঘাট'], badge:'', image:'' },
+  { id:'bd7', icon:'🕌', name:'সোনারগাঁও ও পানাম নগর', desc:'ঐতিহাসিক স্থান | ১ দিন', price:3500, features:['পানাম নগর','লোকশিল্প জাদুঘর','গোয়ালদী মসজিদ'], badge:'', image:'' },
+  { id:'bd8', icon:'🦁', name:'সুন্দরবন ট্যুর', desc:'বিশ্বের বৃহত্তম ম্যানগ্রোভ | ৩ দিন ২ রাত', price:15000, features:['হিরণ পয়েন্ট','দুবলার চর','জীববৈচিত্র্য','নৌকা ভ্রমণ'], badge:'ইকো ট্যুর', image:'' }
+];
+
+const DEFAULT_VISA = [
+  { id:'v1', flag:'🇹🇭', country:'থাইল্যান্ড', type:'ট্যুরিস্ট', time:'৫-৭ দিন', fee:3500, image:'', documents:['পাসপোর্ট (৬ মাস মেয়াদ)','NID কপি','২ ইঞ্চি ছবি (২ কপি)','ব্যাংক স্টেটমেন্ট (৩ মাস)','টিকেট কপি','হোটেল বুকিং'] },
+  { id:'v2', flag:'🇲🇾', country:'মালয়েশিয়া', type:'ট্যুরিস্ট', time:'৭-১০ দিন', fee:4000, image:'', documents:['পাসপোর্ট (৬ মাস মেয়াদ)','NID কপি','২ ইঞ্চি ছবি (২ কপি)','ব্যাংক স্টেটমেন্ট (৩ মাস)','টিকেট কপি','হোটেল বুকিং'] },
+  { id:'v3', flag:'🇦🇪', country:'দুবাই', type:'ট্যুরিস্ট', time:'৩-৫ দিন', fee:7000, image:'', documents:['পাসপোর্ট (৬ মাস মেয়াদ)','NID কপি','২ ইঞ্চি ছবি','ব্যাংক স্টেটমেন্ট','টিকেট কপি'] },
+  { id:'v4', flag:'🇸🇦', country:'সৌদি আরব', type:'ওমরাহ', time:'৭-১০ দিন', fee:8000, image:'', documents:['পাসপোর্ট (৮ মাস মেয়াদ)','NID কপি','২ ইঞ্চি ছবি (সাদা ব্যাকগ্রাউন্ড)','টিকা কার্ড (মেনিনজাইটিস)','ব্যাংক স্টেটমেন্ট'] },
+  { id:'v5', flag:'🇸🇬', country:'সিঙ্গাপুর', type:'ট্যুরিস্ট', time:'৫-৭ দিন', fee:3000, image:'', documents:['পাসপোর্ট (৬ মাস মেয়াদ)','NID কপি','২ ইঞ্চি ছবি','ব্যাংক স্টেটমেন্ট','টিকেট কপি','হোটেল বুকিং'] },
+  { id:'v6', flag:'🇮🇳', country:'ভারত', type:'ট্যুরিস্ট', time:'১০-১৫ দিন', fee:2500, image:'', documents:['পাসপোর্ট (৬ মাস মেয়াদ)','NID কপি','২ ইঞ্চি ছবি','ব্যাংক স্টেটমেন্ট','টিকেট কপি'] },
+  { id:'v7', flag:'🇨🇳', country:'চীন', type:'ট্যুরিস্ট', time:'৭-১০ দিন', fee:5000, image:'', documents:['পাসপোর্ট (৬ মাস মেয়াদ)','NID কপি','২ ইঞ্চি ছবি','ব্যাংক স্টেটমেন্ট','টিকেট কপি','হোটেল বুকিং'] },
+  { id:'v8', flag:'🇹🇷', country:'তুরস্ক', type:'ট্যুরিস্ট', time:'১০-১৫ দিন', fee:6000, image:'', documents:['পাসপোর্ট (৬ মাস মেয়াদ)','NID কপি','২ ইঞ্চি ছবি','ব্যাংক স্টেটমেন্ট','টিকেট কপি','হোটেল বুকিং'] }
+];
+
+const DEFAULT_AIR = [
+  { id:'a1', icon:'🇧🇩', name:'অভ্যন্তরীণ ফ্লাইট', desc:'ঢাকা-কক্সবাজার', price:4500, features:['ঢাকা-কক্সবাজার','ঢাকা-সিলেট','ঢাকা-চট্টগ্রাম'], badge:'', image:'' },
+  { id:'a2', icon:'🌏', name:'আন্তর্জাতিক ফ্লাইট', desc:'বিশ্বজুড়ে', price:40000, features:['বাংলাদেশ-থাইল্যান্ড','বাংলাদেশ-দুবাই','বাংলাদেশ-মালয়েশিয়া'], badge:'', image:'' }
+];
+
+const DEFAULT_HOTEL = [
+  { id:'hi1', icon:'🇹🇭', name:'থাইল্যান্ড হোটেল', desc:'ব্যাংকক / পাটায়া', price:6500, features:['৪ স্টার হোটেল','ব্রেকফাস্ট','এয়ারপোর্ট পিকআপ','সুইমিং পুল'], badge:'', image:'' },
+  { id:'hi2', icon:'🇲🇾', name:'মালয়েশিয়া হোটেল', desc:'কুয়ালালামপুর', price:5500, features:['৪ স্টার','ব্রেকফাস্ট','সিটি ভিউ','জিম'], badge:'', image:'' },
+  { id:'hi3', icon:'🇦🇪', name:'দুবাই হোটেল', desc:'দুবাই / আবুধাবি', price:9500, features:['৫ স্টার','ব্রেকফাস্ট','বার্জ খলিফা ভিউ','ট্রান্সফার'], badge:'প্রিমিয়াম', image:'' },
+  { id:'hi4', icon:'🇸🇬', name:'সিঙ্গাপুর হোটেল', desc:'সিঙ্গাপুর সিটি', price:8500, features:['৪ স্টার','ব্রেকফাস্ট','সেন্ট্রাল লোকেশন','ফ্রি WiFi'], badge:'', image:'' },
+  { id:'hi5', icon:'🕋', name:'মক্কা হোটেল', desc:'হারামের কাছে', price:12000, features:['৫ স্টার','হারাম ভিউ','৩ বেলা খাবার','শাটল সার্ভিস'], badge:'হজ/ওমরাহ', image:'' },
+  { id:'hi6', icon:'🕌', name:'মদিনা হোটেল', desc:'মসজিদে নববীর কাছে', price:10000, features:['৫ স্টার','মসজিদ ভিউ','৩ বেলা খাবার','গাইড'], badge:'', image:'' }
+];
+
+const DEFAULT_HOTEL_BD = [
+  { id:'hb1', icon:'🏖️', name:'কক্সবাজার হোটেল', desc:'সমুদ্রের পাশে', price:3500, features:['সি ভিউ রুম','ব্রেকফাস্ট','এয়ার কন্ডিশন','ফ্রি WiFi'], badge:'জনপ্রিয়', image:'' },
+  { id:'hb2', icon:'🌿', name:'সিলেট হোটেল', desc:'সিলেট সিটি', price:2800, features:['কমফোর্ট রুম','ব্রেকফাস্ট','পার্কিং','রুম সার্ভিস'], badge:'', image:'' },
+  { id:'hb3', icon:'⛰️', name:'বান্দরবান রিসোর্ট', desc:'পাহাড়ের উপর', price:4200, features:['পাহাড় ভিউ','৩ বেলা খাবার','ক্যাম্প ফায়ার','প্রকৃতি'], badge:'রিসোর্ট', image:'' },
+  { id:'hb4', icon:'🏞️', name:'রাঙ্গামাটি রিসোর্ট', desc:'কাপ্তাই লেকের পাশে', price:3800, features:['লেক ভিউ','ব্রেকফাস্ট','বোট সার্ভিস','নিরিবিলি'], badge:'', image:'' },
+  { id:'hb5', icon:'🌊', name:'সাজেক ভ্যালি রিসোর্ট', desc:'মেঘের উপত্যকা', price:4500, features:['মেঘ ভিউ','৩ বেলা খাবার','ক্যাম্প ফায়ার','গাইড'], badge:'হানিমুন', image:'' },
+  { id:'hb6', icon:'🏨', name:'ঢাকা ৫ স্টার হোটেল', desc:'গুলশান / বনানী', price:6500, features:['৫ স্টার','বুফে ব্রেকফাস্ট','জিম','সুইমিং পুল'], badge:'বিজনেস', image:'' },
+  { id:'hb7', icon:'🏛️', name:'ঢাকা বাজেট হোটেল', desc:'মতিঝিল / ফার্মগেট', price:1800, features:['কমফোর্ট রুম','AC','WiFi','সেন্ট্রাল'], badge:'', image:'' },
+  { id:'hb8', icon:'🦁', name:'সুন্দরবন ইকো রিসোর্ট', desc:'সুন্দরবনের ভেতরে', price:5200, features:['ইকো স্টে','৩ বেলা খাবার','নৌকা ভ্রমণ','প্রকৃতি ট্যুর'], badge:'ইকো', image:'' }
+];
+
+const DEFAULT_REVIEWS = [
+  { name:'মোহাম্মদ রফিকুল ইসলাম', location:'ঢাকা', stars:5, text:'আলহামদুলিল্লাহ! FlyMuna-র মাধ্যমে হজ পালন করেছি। সার্ভিস অসাধারণ।' },
+  { name:'ফারহানা আক্তার', location:'চট্টগ্রাম', stars:5, text:'থাইল্যান্ড ট্যুর দারুণ ছিল। সব নিখুঁত।' },
+  { name:'আব্দুল করিম', location:'সিলেট', stars:5, text:'দুবাই ভিসা ৪ দিনে পেয়েছি। ধন্যবাদ FlyMuna।' }
+];
+
+const DEFAULT_BLOG = [
+  { icon:'🛂', title:'দুবাই ভিসা পেতে কী কী লাগে?', excerpt:'২০২৬ সালে দুবাই ভিসার সম্পূর্ণ গাইড...', date:'১৫ জানু, ২০২৬' },
+  { icon:'🕋', title:'হজের প্রস্তুতি কেমন হওয়া উচিত', excerpt:'হজে যাওয়ার আগে যা যা জানা দরকার...', date:'১০ জানু, ২০২৬' },
+  { icon:'✈️', title:'সস্তায় বিদেশ ভ্রমণের ১০ টিপস', excerpt:'কম খরচে বিদেশ ভ্রমণের কার্যকরী পরামর্শ...', date:'৫ জানু, ২০২৬' }
+];
+
+const DEFAULT_FAQ = [
+  { q:'হজের জন্য কী কী ডকুমেন্ট লাগে?', a:'পাসপোর্ট, NID, ছবি, ভ্যাকসিন কার্ড এবং সরকারি ফরম পূরণ করতে হবে।' },
+  { q:'ভিসা কত দিনে পাওয়া যায়?', a:'দেশভেদে ৩-১৫ কার্যদিবস সময় লাগে।' },
+  { q:'পেমেন্ট কীভাবে করব?', a:'bKash/Nagad/Rocket নাম্বারে পাঠিয়ে স্ক্রিনশট আপলোড করুন।' },
+  { q:'রিফান্ড পলিসি কী?', a:'ট্রিপের ৩০+ দিন আগে বাতিলে ৯০% রিফান্ড।' }
+];
+
+/* ============ LOAD DATA FROM STORAGE ============ */
+let settings = JSON.parse(localStorage.getItem('flySettings') || 'null') || DEFAULT_SETTINGS;
+let orders = JSON.parse(localStorage.getItem('flyOrders') || '{}');
+let customers = JSON.parse(localStorage.getItem('flyCustomers') || '[]');
+let hajjPkgs = JSON.parse(localStorage.getItem('flyHajj') || 'null') || DEFAULT_HAJJ;
+let umrahPkgs = JSON.parse(localStorage.getItem('flyUmrah') || 'null') || DEFAULT_UMRAH;
+let tourPkgs = JSON.parse(localStorage.getItem('flyTour') || 'null') || DEFAULT_TOUR;
+let bdTourPkgs = JSON.parse(localStorage.getItem('flyBdTour') || 'null') || DEFAULT_BD_TOUR;
+let visaList = JSON.parse(localStorage.getItem('flyVisa') || 'null') || DEFAULT_VISA;
+let airPkgs = JSON.parse(localStorage.getItem('flyAir') || 'null') || DEFAULT_AIR;
+let hotelPkgs = JSON.parse(localStorage.getItem('flyHotel') || 'null') || DEFAULT_HOTEL;
+let hotelBdPkgs = JSON.parse(localStorage.getItem('flyHotelBd') || 'null') || DEFAULT_HOTEL_BD;
+let uploadedFiles = JSON.parse(localStorage.getItem('flyUploadedFiles') || '{}');
+let currentUser = JSON.parse(sessionStorage.getItem('flyCurrentUser') || 'null');
+let currentVisaCountry = null;
+
+/* ============ SAVE ALL ============ */
+function saveAll() {
+  localStorage.setItem('flySettings', JSON.stringify(settings));
+  localStorage.setItem('flyOrders', JSON.stringify(orders));
+  localStorage.setItem('flyCustomers', JSON.stringify(customers));
+  localStorage.setItem('flyHajj', JSON.stringify(hajjPkgs));
+  localStorage.setItem('flyUmrah', JSON.stringify(umrahPkgs));
+  localStorage.setItem('flyTour', JSON.stringify(tourPkgs));
+  localStorage.setItem('flyBdTour', JSON.stringify(bdTourPkgs));
+  localStorage.setItem('flyVisa', JSON.stringify(visaList));
+  localStorage.setItem('flyAir', JSON.stringify(airPkgs));
+  localStorage.setItem('flyHotel', JSON.stringify(hotelPkgs));
+  localStorage.setItem('flyHotelBd', JSON.stringify(hotelBdPkgs));
+}
+
+/* ============ CURRENCY ============ */
+const CURRENCY_RATES = { BDT: 1, USD: 0.0091, EUR: 0.0084, SAR: 0.034 };
+const CURRENCY_SYMBOLS = { BDT: '৳', USD: '$', EUR: '€', SAR: '﷼' };
+
+function convertPrice(bdtPrice) {
+  const rate = CURRENCY_RATES[settings.currency] || 1;
+  const sym = CURRENCY_SYMBOLS[settings.currency] || '৳';
+  const converted = bdtPrice * rate;
+  return sym + ' ' + converted.toLocaleString('en-US', { maximumFractionDigits: 0 });
+}
+
+/* ============ APPLY SETTINGS ============ */
+function applySettings() {
+  document.title = settings.siteName + ' | হজ, ওমরাহ, ট্যুর ও ভিসা';
+  const topPhone = document.getElementById('topPhone');
+  if (topPhone) topPhone.textContent = '+' + settings.phone;
+  const topEmail = document.getElementById('topEmail');
+  if (topEmail) topEmail.textContent = settings.email;
+  const contactPhone = document.getElementById('contactPhone');
+  if (contactPhone) contactPhone.textContent = '+' + settings.phone;
+  const contactEmail = document.getElementById('contactEmail');
+  if (contactEmail) contactEmail.textContent = settings.email;
+  const contactAddress = document.getElementById('contactAddress');
+  if (contactAddress) contactAddress.textContent = settings.address;
+  const footerPhone = document.getElementById('footerPhone');
+  if (footerPhone) footerPhone.textContent = '+' + settings.phone;
+  const footerEmail = document.getElementById('footerEmail');
+  if (footerEmail) footerEmail.textContent = settings.email;
+  const waFloat = document.getElementById('waFloat');
+  if (waFloat) waFloat.href = 'https://wa.me/' + settings.whatsapp;
+  const bkashNum = document.getElementById('bkashNum');
+  if (bkashNum) bkashNum.textContent = settings.bkash;
+  const nagadNum = document.getElementById('nagadNum');
+  if (nagadNum) nagadNum.textContent = settings.nagad;
+  const rocketNum = document.getElementById('rocketNum');
+  if (rocketNum) rocketNum.textContent = settings.rocket;
+  const vBkash = document.getElementById('vBkashNum');
+  if (vBkash) vBkash.textContent = settings.bkash;
+  const vNagad = document.getElementById('vNagadNum');
+  if (vNagad) vNagad.textContent = settings.nagad;
+}
+
+/* ============ RENDER PACKAGE CARD ============ */
+function renderPublicCard(p) {
+  const featuresHtml = (p.features || []).map(f => `<li>✅ ${f}</li>`).join('');
+
+  // Country tag
+  let countryTag = '🌍 Travel';
+  const name = (p.name || '').toLowerCase();
+  if (name.includes('কক্সবাজার') || name.includes('সিলেট') || name.includes('বান্দরবান') || name.includes('খাগড়াছড়ি') || name.includes('রাঙ্গামাটি') || name.includes('সুন্দরবন') || name.includes('ঢাকা') || name.includes('সোনারগাঁও')) countryTag = '🇧🇩 বাংলাদেশ';
+  else if (name.includes('থাইল্যান্ড')) countryTag = '🇹🇭 থাইল্যান্ড';
+  else if (name.includes('মালয়েশিয়া')) countryTag = '🇲🇾 মালয়েশিয়া';
+  else if (name.includes('দুবাই')) countryTag = '🇦🇪 UAE';
+  else if (name.includes('সিঙ্গাপুর')) countryTag = '🇸🇬 সিঙ্গাপুর';
+  else if (name.includes('তুরস্ক')) countryTag = '🇹🇷 তুরস্ক';
+  else if (name.includes('চীন')) countryTag = '🇨🇳 চীন';
+  else if (name.includes('হজ') || name.includes('ওমরাহ') || name.includes('মক্কা') || name.includes('মদিনা')) countryTag = '🇸🇦 সৌদি আরব';
+
+  const badgeHtml = p.badge ? `<span class="badge-overlay">${p.badge}</span>` : '';
+
+  // With image
+  if (p.image) {
+    return `<div class="card" style="padding:0; overflow:hidden;">
+      <div class="pkg-img-wrap">
+        <span class="country-tag">${countryTag}</span>
+        ${badgeHtml}
+        <img src="${p.image}" class="pkg-img" alt="${p.name}">
+      </div>
+      <div style="padding:18px;">
+        <h4 style="font-size:17px; margin-bottom:6px;">${p.icon || '🌍'} ${p.name}</h4>
+        <p style="font-size:13px; color:#666; min-height:36px;">${p.desc || ''}</p>
+        <ul style="margin:10px 0 12px 18px; font-size:13px;">${featuresHtml}</ul>
+        <div class="price-tag-pro">
+          <div>
+            <div class="price-label">মূল্য / জন</div>
+            <div class="price-value">${convertPrice(p.price)}</div>
+          </div>
+          <div style="font-size:24px;">💎</div>
+        </div>
+        <button class="btn" style="width:100%;" onclick='openBookingModal(${JSON.stringify(p.name)}, ${p.price})'>📝 বুক করুন</button>
+      </div>
+    </div>`;
+  }
+
+  // Without image
+  return `<div class="card" style="padding:18px;">
+    ${p.badge ? `<span class="badge">${p.badge}</span>` : ''}
+    <h4 style="font-size:16px;">${p.icon || '🌍'} ${p.name}</h4>
+    <p style="font-size:13px; color:#666;">${p.desc || ''}</p>
+    <ul style="margin:10px 0 12px 18px; font-size:13px;">${featuresHtml}</ul>
+    <div class="price-tag-pro">
+      <div>
+        <div class="price-label">মূল্য / জন</div>
+        <div class="price-value">${convertPrice(p.price)}</div>
+      </div>
+      <div style="font-size:24px;">💎</div>
+    </div>
+    <button class="btn" style="width:100%;" onclick='openBookingModal(${JSON.stringify(p.name)}, ${p.price})'>📝 বুক করুন</button>
+  </div>`;
+}
+
+/* ============ RENDER ALL PUBLIC ============ */
+function renderPublicPackages() {
+  const set = (id, html) => { const el = document.getElementById(id); if (el) el.innerHTML = html; };
+
+  set('hajjGrid', hajjPkgs.map(renderPublicCard).join(''));
+  set('umrahGrid', umrahPkgs.map(renderPublicCard).join(''));
+  set('tourGrid', tourPkgs.map(renderPublicCard).join(''));
+  set('bdTourGrid', bdTourPkgs.map(renderPublicCard).join(''));
+  set('airGrid', airPkgs.map(renderPublicCard).join(''));
+  set('hotelIntlGrid', hotelPkgs.map(renderPublicCard).join(''));
+  set('hotelBdGrid', hotelBdPkgs.map(renderPublicCard).join(''));
+
+  // Reviews
+  set('reviewsGrid', DEFAULT_REVIEWS.map(r => `
+    <div class="review-card">
+      <div class="stars">${'★'.repeat(r.stars)}${'☆'.repeat(5 - r.stars)}</div>
+      <p>"${r.text}"</p>
+      <div class="reviewer">— ${r.name}, ${r.location}</div>
+    </div>
+  `).join(''));
+
+  // Blog
+  set('blogGrid', DEFAULT_BLOG.map(b => `
+    <div class="blog-card">
+      <div class="blog-img">${b.icon}</div>
+      <div class="blog-content">
+        <div class="blog-date">${b.date}</div>
+        <h4>${b.title}</h4>
+        <p>${b.excerpt}</p>
+        <a href="#" style="color:var(--brand-blue); font-weight:600; font-size:13px;">আরও পড়ুন →</a>
+      </div>
+    </div>
+  `).join(''));
+
+  // FAQ
+  set('faqContainer', DEFAULT_FAQ.map(f => `
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <span>${f.q}</span>
+        <span class="arrow">▼</span>
+      </div>
+      <div class="faq-a">${f.a}</div>
+    </div>
+  `).join(''));
+
+  // Visa Cards
+  set('visaCardGrid', visaList.map(v => `
+    <div class="visa-card" onclick="showVisaDetails('${v.id}')">
+      ${v.image ? `<img src="${v.image}" class="pkg-img-round">` : `<span class="visa-flag">${v.flag}</span>`}
+      <div class="visa-country">${v.country}</div>
+      <div class="visa-type">${v.type} ভিসা</div>
+      <div class="visa-meta">
+        <span class="label">⏱️ সময়:</span>
+        <span class="value">${v.time}</span>
+      </div>
+      <div class="visa-fee-box">
+        <div class="fee-label">ভিসা ফি</div>
+        <div class="fee">${convertPrice(v.fee)}</div>
+      </div>
+      <button class="apply-btn" onclick="event.stopPropagation(); showVisaDetails('${v.id}')">📋 বিস্তারিত দেখুন</button>
+    </div>
+  `).join(''));
+
+  // Populate visa country dropdown
+  const sel = document.getElementById('visaCheckCountry');
+  if (sel) {
+    sel.innerHTML = '<option value="">-- দেশ সিলেক্ট করুন --</option>' +
+      visaList.map(v => `<option value="${v.id}">${v.flag} ${v.country}</option>`).join('');
+  }
+}
+
+/* ============ FAQ TOGGLE ============ */
+function toggleFaq(el) {
+  el.classList.toggle('open');
+}
+
+/* ============ SERVICE TOGGLE ============ */
+function toggleService(card) {
+  const targetId = card.getAttribute('data-target');
+  const targetPanel = document.getElementById(targetId);
+  const allCards = document.querySelectorAll('.service-card');
+  const allPanels = document.querySelectorAll('.expand-panel');
+
+  if (targetPanel.classList.contains('open')) {
+    targetPanel.classList.remove('open');
+    card.classList.remove('active');
+    return;
+  }
+  allCards.forEach(c => c.classList.remove('active'));
+  allPanels.forEach(p => p.classList.remove('open'));
+  card.classList.add('active');
+  targetPanel.classList.add('open');
+  setTimeout(() => targetPanel.scrollIntoView({ behavior: 'smooth', block: 'start' }), 200);
+}
+
+/* ============ HOTEL TAB SWITCH ============ */
+function switchHotelTab(tab) {
+  const intlList = document.getElementById('hotelIntlList');
+  const bdList = document.getElementById('hotelBdList');
+  const intlBtn = document.getElementById('hotelTabIntl');
+  const bdBtn = document.getElementById('hotelTabBd');
+
+  if (tab === 'international') {
+    intlList.style.display = 'block';
+    bdList.style.display = 'none';
+    intlBtn.classList.add('active');
+    bdBtn.classList.remove('active');
+  } else {
+    intlList.style.display = 'none';
+    bdList.style.display = 'block';
+    bdBtn.classList.add('active');
+    intlBtn.classList.remove('active');
+  }
+}
+
+/* ============ VISA DETAILS ============ */
+function showVisaDetails(visaId) {
+  const v = visaList.find(x => x.id === visaId);
+  if (!v) return;
+  currentVisaCountry = v;
+
+  const reqDiv = document.getElementById('visaRequirements');
+  document.getElementById('reqFlag').textContent = v.image ? '' : v.flag;
+  if (v.image) {
+    document.getElementById('reqFlag').innerHTML = `<img src="${v.image}" style="width:80px;height:80px;border-radius:50%;object-fit:cover;display:inline-block;">`;
+  }
+  document.getElementById('reqCountry').textContent = v.country;
+  document.getElementById('reqType').textContent = v.type + ' ভিসা';
+  document.getElementById('reqFee').textContent = convertPrice(v.fee);
+  document.getElementById('reqTime').textContent = v.time;
+
+  const docsHtml = (v.documents || []).map(d => `
+    <div class="doc-check-item">
+      <div class="doc-check-icon">✅</div>
+      <div class="doc-check-body"><h5>${d}</h5></div>
+    </div>
+  `).join('');
+  document.getElementById('reqList').innerHTML = docsHtml || '<p style="color:#888;">কোন ডকুমেন্ট তথ্য নেই</
