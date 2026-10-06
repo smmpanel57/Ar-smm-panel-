@@ -764,7 +764,7 @@ footer { background:var(--brand-dark); color:#fff; padding:50px 25px 20px; margi
 <div class="trust-bar">
   <div class="trust-item">🔒 SSL সুরক্ষিত</div>
   <div class="trust-item">✅ BTB রেজিস্টার্ড</div>
-  <div class="trust-item">⭐ ৫০০+ গ্রাহক</div>
+  <div class="trust-item">⭐ ৫০০০+ গ্রাহক</div>
   <div class="trust-item">💬 ২৪/৭ সাপোর্ট</div>
   <div class="trust-item">💰 মানি ব্যাক</div>
 </div>
@@ -1069,7 +1069,7 @@ footer { background:var(--brand-dark); color:#fff; padding:50px 25px 20px; margi
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© ২০২৬ FlyMuna Tours & Travels | সর্বস্বত্ব সংরক্ষিত</p>
+    <p>© ২০২৫ FlyMuna Tours & Travels | সর্বস্বত্ব সংরক্ষিত</p>
   </div>
 </footer>
 
@@ -2608,7 +2608,7 @@ function openPackageForm(type, editId = null) {
   document.getElementById('pkgImagePreviewWrap').innerHTML = `
     <div class="upload-icon">🖼️</div>
     <div class="upload-text">ছবি আপলোড করতে ক্লিক করুন</div>
-    <div class="upload-hint">JPG, PNG (সর্বোচ্চ 5MB)</div>
+    <div class="upload-hint">JPG, PNG (সর্বোচ্চ 10MB)</div>
   `;
   const titles = {
     hajj:'হজ প্যাকেজ', umrah:'ওমরাহ প্যাকেজ', tour:'ইন্টারন্যাশনাল ট্যুর',
@@ -2648,7 +2648,7 @@ function closePackageModal() { document.getElementById('packageModal')?.classLis
 function handlePkgImage(event) {
   const file = event.target.files[0];
   if (!file) return;
-  if (file.size > 5 * 1024 * 1024) { alert('❌ ছবির সাইজ 5MB এর বেশি!'); event.target.value = ''; return; }
+  if (file.size > 5 * 1024 * 1024) { alert('❌ ছবির সাইজ 10MB এর বেশি!'); event.target.value = ''; return; }
   const reader = new FileReader();
   reader.onload = (e) => {
     document.getElementById('pkgImageData').value = e.target.result;
@@ -3051,7 +3051,7 @@ function renderPackageList(type){
 /* ---------- Booking Uploads + IDs ---------- */
 function handleProUpload(input,labelId){
   const f=input.files?.[0];if(!f)return;
-  if(f.size>5*1024*1024){input.value='';showProToast('❌ ফাইল 5MB-এর মধ্যে রাখুন');return;}
+  if(f.size>5*1024*1024){input.value='';showProToast('❌ ফাইল 10MB-এর মধ্যে রাখুন');return;}
   const label=document.getElementById(labelId);if(label)label.textContent='✅ '+f.name;
 }
 const originalSubmitBooking=window.submitBooking;
