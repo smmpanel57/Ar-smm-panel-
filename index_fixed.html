@@ -1,0 +1,2853 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FlyMuna Tours & Travels | হজ, ওমরাহ, ট্যুর ও ভিসা সেবা</title>
+<meta name="description" content="FlyMuna Tours & Travels - বাংলাদেশ থেকে হজ, ওমরাহ, ট্যুর প্যাকেজ ও বিশ্বস্ত ভিসা প্রসেসিং সেবা। অফিস: গাজীপুর চৌরাস্তা।">
+<meta name="keywords" content="হজ, ওমরাহ, ট্যুর, ভিসা, বাংলাদেশ ট্যুর, FlyMuna, গাজীপুর">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✈️</text></svg>">
+<style>
+/* ============================================
+   FLYMUNA TOURS & TRAVELS - COMPLETE STYLESHEET
+   ============================================ */
+:root {
+  --brand-blue: #0080FF;
+  --brand-orange: #FF6B1A;
+  --brand-dark: #0a2540;
+  --brand-light: #f0f7ff;
+  --brand-grad: linear-gradient(135deg, #0080FF, #FF6B1A);
+  --success: #00b894;
+  --warning: #f39c12;
+  --danger: #e63946;
+}
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, sans-serif; }
+html { scroll-behavior:smooth; }
+body { background:#f8fafc; color:#222; line-height:1.6; }
+
+/* ============ LOGO ============ */
+.flymuna-logo { display:inline-flex; align-items:center; gap:8px; text-decoration:none; font-weight:800; }
+.flymuna-mark { width:38px; height:38px; }
+.flymuna-mark svg { width:100%; height:100%; }
+.flymuna-text { font-size:22px; letter-spacing:-0.5px; }
+.flymuna-text .fly { color:var(--brand-blue); }
+.flymuna-text .muna { color:var(--brand-orange); }
+.flymuna-logo-small .flymuna-mark { width:32px; height:32px; }
+.flymuna-logo-small .flymuna-text { font-size:18px; }
+
+/* ============ TOPBAR ============ */
+.topbar {
+  background:var(--brand-dark); color:#fff; padding:8px 25px; font-size:13px;
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; align-items:center;
+}
+.topbar a { color:#fff; text-decoration:none; transition:0.3s; }
+.topbar a:hover { color:var(--brand-orange); }
+.topbar-left, .topbar-right { display:flex; gap:15px; flex-wrap:wrap; align-items:center; }
+.topbar select {
+  background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.3);
+  padding:4px 8px; border-radius:5px; font-size:12px; cursor:pointer; font-family:inherit;
+}
+.topbar select option { color:#222; }
+
+/* ============ HEADER ============ */
+header {
+  background:#fff; padding:14px 25px; position:sticky; top:0; z-index:100;
+  display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;
+  box-shadow:0 2px 12px rgba(0,128,255,0.08);
+}
+nav { display:flex; flex-wrap:wrap; align-items:center; gap:4px; }
+nav a {
+  color:var(--brand-dark); text-decoration:none; padding:8px 14px; font-weight:600;
+  font-size:14px; border-radius:8px; transition:0.3s;
+}
+nav a:hover { background:var(--brand-light); color:var(--brand-blue); }
+.nav-btn-primary {
+  background:var(--brand-blue); color:#fff !important;
+  padding:9px 18px !important; border-radius:20px;
+}
+.nav-btn-primary:hover { background:var(--brand-orange) !important; color:#fff !important; }
+
+/* ============ HERO ============ */
+.hero {
+  background: linear-gradient(rgba(10,37,64,0.75), rgba(10,37,64,0.75)),
+    url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600') center/cover;
+  padding:80px 25px 100px; text-align:center; color:#fff;
+}
+.hero h2 { font-size:42px; margin-bottom:15px; font-weight:800; line-height:1.2; }
+.hero h2 .highlight {
+  background:var(--brand-grad); -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent; background-clip:text;
+}
+.hero p { font-size:17px; margin-bottom:30px; max-width:750px; margin-left:auto; margin-right:auto; opacity:0.95; }
+
+/* ============ SEARCH BOX ============ */
+.search-box {
+  background:#fff; border-radius:16px; padding:18px; max-width:900px;
+  margin:-50px auto 0; box-shadow:0 12px 40px rgba(0,128,255,0.2);
+  position:relative; z-index:10;
+}
+.search-grid { display:grid; grid-template-columns:2fr 1fr 1fr auto; gap:10px; }
+.search-grid input, .search-grid select {
+  padding:13px 14px; border:1px solid #e0e8f0; border-radius:10px;
+  font-size:14px; width:100%; font-family:inherit;
+}
+.search-grid input:focus, .search-grid select:focus {
+  outline:none; border-color:var(--brand-blue);
+  box-shadow:0 0 0 3px rgba(0,128,255,0.1);
+}
+.search-grid button {
+  background:var(--brand-grad); color:#fff; padding:13px 28px;
+  border:none; border-radius:10px; cursor:pointer; font-weight:700;
+  font-size:15px; white-space:nowrap; font-family:inherit;
+}
+
+/* ============ BUTTONS ============ */
+.btn {
+  background:var(--brand-grad); color:#fff; padding:12px 28px; border:none;
+  border-radius:30px; font-weight:bold; cursor:pointer; font-size:15px;
+  transition:0.3s; text-decoration:none; display:inline-block; font-family:inherit;
+}
+.btn:hover { transform:translateY(-2px); box-shadow:0 8px 20px rgba(0,128,255,0.3); }
+
+/* ============ TRUST BAR ============ */
+.trust-bar {
+  background:#fff; padding:22px; display:flex; justify-content:center;
+  align-items:center; gap:40px; flex-wrap:wrap;
+  box-shadow:0 2px 10px rgba(0,0,0,0.04); margin-top:40px;
+}
+.trust-item { display:flex; align-items:center; gap:8px; font-weight:600; color:var(--brand-dark); font-size:14px; }
+
+/* ============ SECTIONS ============ */
+section { padding:60px 25px; max-width:1200px; margin:auto; }
+section h2 { text-align:center; font-size:30px; margin-bottom:10px; color:var(--brand-dark); font-weight:800; }
+section h2::after {
+  content:''; width:80px; height:4px; background:var(--brand-grad);
+  display:block; margin:12px auto 25px; border-radius:2px;
+}
+.section-sub { text-align:center; color:#666; margin-bottom:35px; max-width:750px; margin-left:auto; margin-right:auto; font-size:15px; }
+
+/* ============ SERVICE GRID ============ */
+.service-grid {
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));
+  gap:18px; max-width:1200px; margin:0 auto;
+}
+.service-card {
+  background:#fff; border-radius:16px; padding:24px 15px; text-align:center;
+  cursor:pointer; transition:all 0.35s ease;
+  box-shadow:0 4px 15px rgba(0,128,255,0.06); border:2px solid transparent;
+}
+.service-card:hover {
+  transform:translateY(-8px); border-color:var(--brand-blue);
+  box-shadow:0 12px 30px rgba(0,128,255,0.2);
+}
+.service-card.active {
+  border-color:var(--brand-orange);
+  box-shadow:0 12px 30px rgba(255,107,26,0.3); background:#fff9f5;
+}
+.service-icon { font-size:48px; margin-bottom:10px; display:block; }
+.service-card h3 { color:var(--brand-dark); font-size:15px; margin-bottom:5px; font-weight:700; }
+.service-card p { font-size:12px; color:#888; }
+
+/* ============ EXPAND PANEL ============ */
+.expand-panel {
+  max-height:0; overflow:hidden;
+  transition:max-height 0.6s ease, padding 0.3s ease;
+  background:#fff; border-radius:16px; margin-top:0;
+}
+.expand-panel.open {
+  max-height:8000px; padding:30px 25px; margin-top:25px;
+  box-shadow:0 6px 25px rgba(0,128,255,0.1); border:2px solid var(--brand-blue);
+}
+.expand-panel h3 { color:var(--brand-blue); font-size:22px; margin-bottom:8px; text-align:center; font-weight:700; }
+.expand-panel .panel-desc { text-align:center; color:#666; margin-bottom:25px; font-size:14px; }
+
+/* ============ PACKAGE CARDS ============ */
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px; }
+.card {
+  background:#f8fafc; border-radius:14px; padding:20px;
+  box-shadow:0 3px 12px rgba(0,128,255,0.06); transition:0.3s;
+  position:relative; border:1px solid #e8f0f8;
+}
+.card:hover { transform:translateY(-4px); box-shadow:0 10px 25px rgba(0,128,255,0.15); border-color:var(--brand-blue); }
+.card h4 { color:var(--brand-dark); margin-bottom:8px; font-size:16px; font-weight:700; }
+.card .price { color:var(--brand-orange); font-weight:800; font-size:22px; margin:10px 0; }
+.card ul { margin-left:18px; margin-bottom:14px; font-size:13px; }
+.card ul li { margin-bottom:4px; }
+.badge {
+  position:absolute; top:12px; right:12px;
+  background:var(--brand-orange); color:#fff;
+  padding:4px 12px; border-radius:20px; font-size:11px; font-weight:700; z-index:2;
+}
+.badge-new { background:var(--brand-blue); }
+
+/* ============ PROFESSIONAL PACKAGE CARD (with image) ============ */
+.card .pkg-img-wrap {
+  position:relative; margin:-20px -20px 15px -20px;
+  border-radius:14px 14px 0 0; overflow:hidden;
+  height:180px;
+}
+.card .pkg-img-wrap::after {
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(to top, rgba(10,37,64,0.4), transparent 50%);
+}
+.card .pkg-img-wrap .pkg-img {
+  width:100%; height:100%; object-fit:cover;
+  margin:0; border-radius:0; transition:transform 0.5s;
+}
+.card:hover .pkg-img-wrap .pkg-img { transform:scale(1.08); }
+.card .pkg-img-wrap .country-tag {
+  position:absolute; top:12px; left:12px;
+  background:rgba(255,255,255,0.95); color:var(--brand-dark);
+  padding:4px 12px; border-radius:20px;
+  font-size:12px; font-weight:700; z-index:2;
+}
+.card .pkg-img-wrap .badge-overlay {
+  position:absolute; top:12px; right:12px;
+  background:var(--brand-orange); color:#fff;
+  padding:4px 12px; border-radius:20px;
+  font-size:11px; font-weight:700; z-index:2;
+}
+.card .pkg-img-wrap .spot-logo {
+  position:absolute; bottom:12px; left:12px;
+  width:48px; height:48px; border-radius:50%;
+  background:#fff; padding:4px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.2); z-index:2;
+}
+.card .pkg-img-wrap .spot-logo img {
+  width:100%; height:100%; border-radius:50%; object-fit:cover;
+}
+
+/* ============ PRICE TAG PRO ============ */
+.card .price-tag-pro {
+  display:flex; align-items:center; justify-content:space-between;
+  margin:12px 0; padding:12px 14px;
+  background:linear-gradient(135deg, #fff9f5, #f0f7ff);
+  border-radius:10px; border:1px dashed var(--brand-orange);
+}
+.card .price-tag-pro .price-label { font-size:11px; color:#888; font-weight:600; }
+.card .price-tag-pro .price-value {
+  font-size:20px; color:var(--brand-orange);
+  font-weight:800; line-height:1;
+}
+
+/* ============ VISA CARDS ============ */
+.visa-card-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; }
+.visa-card {
+  background:#fff; border-radius:16px; padding:22px;
+  box-shadow:0 4px 18px rgba(0,128,255,0.08);
+  border:2px solid #e8f0f8; transition:0.3s;
+  cursor:pointer; position:relative; overflow:hidden;
+}
+.visa-card:hover {
+  transform:translateY(-6px); border-color:var(--brand-blue);
+  box-shadow:0 12px 30px rgba(0,128,255,0.2);
+}
+.visa-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:5px;
+  background:var(--brand-grad);
+}
+.visa-flag { font-size:56px; text-align:center; margin-bottom:12px; display:block; line-height:1; }
+.visa-card .pkg-img-round {
+  width:70px; height:70px; border-radius:50%;
+  object-fit:cover; margin:0 auto 12px; display:block;
+  border:3px solid #e8f0f8;
+}
+.visa-country { text-align:center; font-size:19px; font-weight:800; color:var(--brand-dark); margin-bottom:6px; }
+.visa-type { text-align:center; color:var(--brand-blue); font-size:13px; font-weight:600; margin-bottom:14px; }
+.visa-meta {
+  display:flex; justify-content:space-between;
+  padding:10px 0; border-top:1px dashed #e8f0f8; font-size:13px;
+}
+.visa-meta .label { color:#888; }
+.visa-meta .value { color:var(--brand-dark); font-weight:700; }
+.visa-fee-box {
+  background:linear-gradient(135deg, #fff9f5, #f0f7ff);
+  padding:12px; border-radius:10px; margin-top:10px; text-align:center;
+}
+.visa-fee-box .fee { color:var(--brand-orange); font-size:22px; font-weight:800; }
+.visa-fee-box .fee-label { font-size:11px; color:#888; }
+.visa-card .apply-btn {
+  width:100%; margin-top:14px; padding:12px;
+  background:var(--brand-grad); color:#fff; border:none;
+  border-radius:25px; font-weight:700; cursor:pointer; font-size:14px; font-family:inherit;
+}
+
+/* ============ DOCUMENT CHECKLIST ============ */
+.doc-check-item {
+  display:flex; gap:12px; padding:12px 0;
+  border-bottom:1px solid #f0f4f8;
+}
+.doc-check-icon {
+  width:34px; height:34px; border-radius:50%;
+  background:var(--brand-light); color:var(--brand-blue);
+  display:flex; align-items:center; justify-content:center;
+  font-size:16px; flex-shrink:0;
+}
+.doc-check-body { flex:1; }
+.doc-check-body h5 { color:var(--brand-dark); font-size:14px; margin-bottom:2px; }
+.doc-check-body p { color:#777; font-size:12px; }
+
+/* ============ STEPS ============ */
+.steps {
+  display:flex; justify-content:space-between; margin:25px 0;
+  position:relative; flex-wrap:wrap; gap:10px;
+}
+.steps::before {
+  content:''; position:absolute; top:18px; left:10%; right:10%;
+  height:2px; background:#e0e8f0; z-index:1;
+}
+.step { position:relative; z-index:2; text-align:center; flex:1; background:#fff; padding:0 8px; }
+.step-num {
+  width:38px; height:38px; border-radius:50%; margin:0 auto 8px;
+  background:#e8f0f8; color:#888; display:flex;
+  align-items:center; justify-content:center;
+  font-weight:800; font-size:15px;
+}
+.step.active .step-num { background:var(--brand-grad); color:#fff; }
+.step.done .step-num { background:var(--success); color:#fff; }
+.step-label { font-size:11px; color:#666; font-weight:600; }
+
+/* ============ FORM ELEMENTS ============ */
+.form-group { margin-top:16px; }
+.form-group label {
+  display:block; font-weight:600; font-size:14px;
+  color:var(--brand-dark); margin-bottom:6px;
+}
+.form-group label.required::after { content:' *'; color:var(--brand-orange); }
+.form-group input, .form-group select, .form-group textarea {
+  width:100%; padding:11px 14px; border:2px solid #e0e8f0;
+  border-radius:10px; font-size:14px; font-family:inherit;
+  background:#fafcfe;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  outline:none; border-color:var(--brand-blue); background:#fff;
+  box-shadow:0 0 0 3px rgba(0,128,255,0.1);
+}
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:15px; }
+
+/* ============ FILE UPLOAD ============ */
+.file-upload {
+  border:2px dashed #c8d8e8; border-radius:12px; padding:18px;
+  text-align:center; cursor:pointer; background:#fafcfe;
+  position:relative; min-height:130px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+}
+.file-upload input[type="file"] {
+  position:absolute; inset:0; opacity:0; cursor:pointer;
+}
+.file-upload-icon { font-size:32px; color:var(--brand-blue); margin-bottom:6px; }
+.file-upload-text { font-size:13px; color:#666; }
+.file-upload.has-file { border-color:var(--success); background:#f0fdf4; }
+.file-upload .file-preview-img { max-width:100%; max-height:180px; border-radius:10px; }
+.file-upload .file-name { color:var(--success); font-weight:700; margin-top:6px; font-size:13px; }
+
+/* ============ IMAGE UPLOAD (Admin) ============ */
+.pkg-image-upload {
+  border:2px dashed #c8d8e8; border-radius:12px; padding:20px;
+  text-align:center; cursor:pointer;
+  background:#fafcfe; position:relative; margin-top:6px;
+  min-height:150px; display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+}
+.pkg-image-upload:hover { border-color:var(--brand-blue); background:var(--brand-light); }
+.pkg-image-upload input[type="file"] {
+  position:absolute; inset:0; opacity:0; cursor:pointer;
+}
+.pkg-image-upload .upload-icon { font-size:40px; color:var(--brand-blue); margin-bottom:8px; }
+.pkg-image-upload .upload-text { font-size:13px; color:#666; font-weight:600; }
+.pkg-image-upload .upload-hint { font-size:11px; color:#aaa; margin-top:4px; }
+.pkg-image-upload.has-image { border-color:var(--success); background:#f0fdf4; padding:10px; }
+.pkg-image-preview { max-width:100%; max-height:180px; border-radius:10px; object-fit:cover; }
+.pkg-image-remove {
+  position:absolute; top:8px; right:8px;
+  background:var(--danger); color:#fff; border:none;
+  width:28px; height:28px; border-radius:50%;
+  cursor:pointer; font-weight:bold; font-size:14px;
+  display:none; align-items:center; justify-content:center; z-index:10;
+}
+.pkg-image-upload.has-image .pkg-image-remove { display:flex; }
+
+/* ============ MODAL ============ */
+.modal-overlay {
+  position:fixed; inset:0; background:rgba(10,37,64,0.75);
+  display:none; justify-content:center; align-items:center; z-index:2000;
+  padding:20px; overflow-y:auto;
+}
+.modal-overlay.show { display:flex; }
+.modal {
+  background:#fff; padding:30px; border-radius:18px;
+  max-width:680px; width:100%; box-shadow:0 20px 60px rgba(0,0,0,0.4);
+  animation:slideDown 0.3s ease; max-height:92vh; overflow-y:auto;
+}
+@keyframes slideDown { from { opacity:0; transform:translateY(-30px); } to { opacity:1; transform:translateY(0); } }
+.modal h3 { color:var(--brand-dark); margin-bottom:6px; text-align:center; font-weight:800; }
+.modal p.sub { text-align:center; color:#666; font-size:13px; margin-bottom:20px; }
+.modal .btn { width:100%; margin-top:20px; padding:14px; }
+.modal .close-btn {
+  background:#f0f2f5; color:#333; margin-top:10px; width:100%;
+  padding:12px; border:none; border-radius:30px; cursor:pointer;
+  font-weight:700; font-size:14px; font-family:inherit;
+}
+
+/* ============ INFO BOXES ============ */
+.info-box {
+  background:linear-gradient(135deg, #e8f4ff, #fff9f5);
+  border-left:4px solid var(--brand-blue);
+  padding:16px; border-radius:10px; margin:15px 0;
+  font-size:13px; color:#444;
+}
+.info-box.warning {
+  border-left-color:var(--warning);
+  background:linear-gradient(135deg, #fff9e6, #fff5e6);
+}
+.info-box.success {
+  border-left-color:var(--success);
+  background:linear-gradient(135deg, #e8f9f0, #f0fdf4);
+}
+.pay-info-box {
+  background:linear-gradient(135deg, #fff9f5, #f0f7ff);
+  border:2px dashed var(--brand-orange); border-radius:12px;
+  padding:16px; margin-top:14px; font-size:13px;
+}
+.pay-number {
+  background:var(--brand-dark); color:#fff; padding:8px 14px; border-radius:8px;
+  font-weight:700; font-size:16px; letter-spacing:1px;
+  display:inline-block; margin-top:6px;
+}
+.error-msg {
+  background:#ffe5e5; color:#c0392b; padding:10px; border-radius:8px;
+  font-size:13px; margin-top:12px; display:none; text-align:center;
+}
+
+/* ============ TRACKER ============ */
+.tracker-result {
+  margin-top:20px; padding:20px; background:var(--brand-light);
+  border-radius:12px; display:none; border-left:5px solid var(--brand-blue);
+}
+.status-badge {
+  display:inline-block; padding:5px 14px; border-radius:20px;
+  background:var(--brand-orange); color:#fff; font-weight:700; font-size:13px;
+}
+.progress-bar { background:#e0e8f0; height:8px; border-radius:4px; margin:15px 0; overflow:hidden; }
+.progress-fill { background:var(--brand-grad); height:100%; width:30%; border-radius:4px; transition:0.5s; }
+
+/* ============ REVIEWS ============ */
+.review-card {
+  background:#fff; padding:22px; border-radius:14px;
+  box-shadow:0 3px 12px rgba(0,128,255,0.08);
+  border-left:4px solid var(--brand-blue);
+}
+.stars { color:var(--brand-orange); font-size:18px; margin-bottom:8px; }
+.reviewer { font-weight:700; color:var(--brand-dark); margin-top:10px; font-size:14px; }
+
+/* ============ BLOG ============ */
+.blog-card {
+  background:#fff; border-radius:14px; overflow:hidden;
+  box-shadow:0 3px 12px rgba(0,128,255,0.08); transition:0.3s;
+}
+.blog-card:hover { transform:translateY(-6px); }
+.blog-img {
+  height:160px; background:var(--brand-grad); display:flex;
+  align-items:center; justify-content:center; font-size:50px; color:#fff;
+}
+.blog-content { padding:18px; }
+.blog-content h4 { color:var(--brand-dark); margin-bottom:8px; font-size:16px; }
+.blog-content p { color:#666; font-size:13px; margin-bottom:10px; }
+.blog-date { font-size:12px; color:var(--brand-blue); font-weight:600; }
+
+/* ============ FAQ ============ */
+.faq-item {
+  background:#fff; border-radius:12px; margin-bottom:10px;
+  box-shadow:0 2px 8px rgba(0,128,255,0.06);
+  overflow:hidden; border:1px solid #e8f0f8;
+}
+.faq-q {
+  padding:16px 20px; cursor:pointer; font-weight:600; color:var(--brand-dark);
+  display:flex; justify-content:space-between; align-items:center;
+}
+.faq-q:hover { background:var(--brand-light); }
+.faq-q .arrow { transition:0.3s; color:var(--brand-blue); }
+.faq-item.open .faq-q .arrow { transform:rotate(180deg); }
+.faq-a { max-height:0; overflow:hidden; transition:0.3s; padding:0 20px; color:#555; font-size:14px; }
+.faq-item.open .faq-a { max-height:400px; padding:0 20px 18px; }
+
+/* ============ NEWSLETTER ============ */
+.newsletter {
+  background:var(--brand-grad); border-radius:20px; padding:45px 25px;
+  text-align:center; color:#fff; max-width:900px; margin:auto;
+}
+.newsletter h3 { font-size:26px; margin-bottom:10px; font-weight:800; }
+.newsletter-form { display:flex; gap:10px; max-width:500px; margin:auto; flex-wrap:wrap; justify-content:center; }
+.newsletter-form input {
+  flex:1; min-width:220px; padding:13px 18px; border:none; border-radius:30px;
+  font-size:14px; font-family:inherit;
+}
+.newsletter-form button {
+  background:var(--brand-dark); color:#fff; padding:13px 28px;
+  border:none; border-radius:30px; font-weight:700; cursor:pointer; font-size:14px; font-family:inherit;
+}
+
+/* ============ TABLE ============ */
+.table-wrap { overflow-x:auto; }
+table { width:100%; border-collapse:collapse; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 4px 15px rgba(0,128,255,0.08); }
+th, td { padding:12px 15px; text-align:left; border-bottom:1px solid #e8f0f8; font-size:13px; }
+th { background:var(--brand-blue); color:#fff; font-weight:600; }
+tr:hover { background:var(--brand-light); }
+
+/* ============ ADMIN PANEL ============ */
+.admin-panel { position:fixed; inset:0; background:#f8fafc; z-index:2500; display:none; overflow-y:auto; }
+.admin-panel.show { display:block; }
+.admin-header {
+  background:linear-gradient(135deg, var(--brand-dark), var(--brand-blue));
+  color:#fff; padding:16px 25px;
+  display:flex; justify-content:space-between; align-items:center;
+  flex-wrap:wrap; gap:10px; position:sticky; top:0; z-index:10;
+}
+.admin-header h2 { font-size:18px; }
+.admin-header .logout-btn {
+  background:var(--brand-orange); color:#fff; padding:9px 20px; border:none;
+  border-radius:20px; cursor:pointer; font-weight:700; font-size:13px; font-family:inherit;
+}
+.admin-body { padding:25px; max-width:1300px; margin:auto; }
+.stats-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:15px; margin-bottom:25px; }
+.stat-card {
+  background:#fff; padding:22px; border-radius:14px;
+  box-shadow:0 3px 12px rgba(0,128,255,0.08); position:relative;
+  overflow:hidden; border-left:4px solid var(--brand-blue);
+}
+.stat-card.orange { border-left-color:var(--brand-orange); }
+.stat-card .num { font-size:30px; font-weight:800; color:var(--brand-dark); }
+.stat-card .lbl { font-size:13px; color:#666; margin-top:5px; }
+.stat-card .icon { position:absolute; top:15px; right:15px; font-size:32px; opacity:0.15; }
+.chart-card { background:#fff; padding:22px; border-radius:14px; box-shadow:0 3px 12px rgba(0,128,255,0.08); margin-bottom:25px; }
+.chart-card h3 { color:var(--brand-dark); font-size:16px; margin-bottom:15px; }
+.bar-chart { display:flex; align-items:flex-end; gap:12px; height:150px; padding:15px 0; }
+.bar-item { flex:1; display:flex; flex-direction:column; align-items:center; gap:6px; }
+.bar-fill { width:100%; background:var(--brand-grad); border-radius:6px 6px 0 0; min-height:5px; }
+.bar-label { font-size:11px; color:#666; }
+.admin-tabs { display:flex; gap:8px; margin-bottom:20px; flex-wrap:wrap; }
+.tab-btn {
+  background:#fff; color:var(--brand-dark); padding:10px 20px; border:2px solid var(--brand-blue);
+  border-radius:25px; cursor:pointer; font-weight:700; font-size:13px; font-family:inherit;
+}
+.tab-btn.active, .tab-btn:hover { background:var(--brand-blue); color:#fff; }
+.admin-table { width:100%; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 3px 12px rgba(0,128,255,0.08); }
+.admin-table th { background:var(--brand-dark); color:#fff; padding:12px; font-size:13px; text-align:left; }
+.admin-table td { padding:12px; font-size:13px; border-bottom:1px solid #e8f0f8; }
+.admin-table tr:hover { background:var(--brand-light); }
+.status-select { padding:6px 10px; border-radius:6px; border:1px solid #ccc; font-size:12px; cursor:pointer; font-family:inherit; }
+.action-btn { padding:6px 12px; border:none; border-radius:6px; cursor:pointer; font-size:12px; margin-right:4px; font-weight:600; font-family:inherit; }
+.btn-view { background:var(--brand-blue); color:#fff; }
+.btn-del { background:#e63946; color:#fff; }
+.btn-edit-pkg { background:var(--brand-blue); color:#fff; padding:8px; border:none; border-radius:6px; cursor:pointer; font-weight:700; font-size:12px; flex:1; font-family:inherit; }
+.btn-del-pkg { background:#e63946; color:#fff; padding:8px; border:none; border-radius:6px; cursor:pointer; font-weight:700; font-size:12px; flex:1; font-family:inherit; }
+.admin-action-bar {
+  display:flex; justify-content:space-between; align-items:center;
+  margin-bottom:20px; flex-wrap:wrap; gap:12px;
+  padding:15px; background:#fff; border-radius:12px;
+  box-shadow:0 3px 10px rgba(0,128,255,0.06);
+}
+.admin-action-bar h3 { color:var(--brand-dark); font-size:17px; }
+.admin-pkg-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; }
+.admin-pkg-card {
+  background:#fff; border-radius:12px; padding:18px;
+  box-shadow:0 3px 10px rgba(0,128,255,0.06);
+  border-left:4px solid var(--brand-blue); position:relative;
+}
+.admin-pkg-card .pkg-icon { font-size:36px; margin-bottom:8px; display:block; }
+.admin-pkg-card .pkg-icon-img {
+  width:100%; height:130px; object-fit:cover;
+  border-radius:10px; margin-bottom:10px;
+}
+.admin-pkg-card h4 { color:var(--brand-dark); margin-bottom:6px; font-size:16px; }
+.admin-pkg-card .desc { color:#666; font-size:13px; margin-bottom:8px; }
+.admin-pkg-card .price-tag { color:var(--brand-orange); font-weight:800; font-size:18px; margin-bottom:8px; }
+.admin-pkg-card ul { margin-left:16px; font-size:12px; color:#555; margin-bottom:12px; }
+.admin-pkg-card .actions { display:flex; gap:8px; margin-top:10px; }
+.pkg-badge {
+  position:absolute; top:12px; right:12px;
+  background:var(--brand-orange); color:#fff; padding:3px 10px;
+  border-radius:20px; font-size:10px; font-weight:700;
+}
+.empty-msg { text-align:center; padding:40px; color:#888; font-size:15px; }
+.detail-row { display:flex; padding:8px 0; border-bottom:1px solid #e8f0f8; font-size:14px; }
+.detail-row strong { min-width:130px; color:var(--brand-dark); }
+.detail-row span { flex:1; word-break:break-word; }
+.doc-preview { max-width:100%; max-height:400px; border-radius:8px; margin-top:10px; border:2px solid #e8f0f8; }
+ /* ============ COOKIE BANNER ============ */
+#cookieBanner {
+  position:fixed; bottom:0; left:0; right:0; background:var(--brand-dark); color:#fff;
+  padding:16px 22px; display:none; justify-content:space-between;
+  align-items:center; z-index:1000; flex-wrap:wrap; gap:12px;
+}
+#cookieBanner button { padding:8px 18px; font-size:13px; font-family:inherit; }
+
+/* ============ FLOATING BUTTONS ============ */
+.whatsapp-float {
+  position:fixed; bottom:22px; right:22px; background:#25D366;
+  width:56px; height:56px; border-radius:50%; display:flex;
+  align-items:center; justify-content:center; z-index:999;
+  box-shadow:0 4px 15px rgba(0,0,0,0.3); text-decoration:none;
+  font-size:28px; transition:0.3s;
+}
+.whatsapp-float:hover { transform:scale(1.1); }
+.livechat-float {
+  position:fixed; bottom:90px; right:22px;
+  background:var(--brand-grad); color:#fff;
+  width:56px; height:56px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  z-index:999; box-shadow:0 4px 15px rgba(0,128,255,0.4);
+  cursor:pointer; font-size:24px; border:none;
+}
+.livechat-float:hover { transform:scale(1.1); }
+
+/* ============ FOOTER ============ */
+footer { background:var(--brand-dark); color:#fff; padding:50px 25px 20px; margin-top:40px; }
+.footer-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:30px; max-width:1200px; margin:auto; }
+.footer-grid h4 { color:#fff; margin-bottom:15px; font-size:16px; }
+.footer-grid h4::after {
+  content:''; display:block; width:35px; height:3px;
+  background:var(--brand-orange); margin-top:6px; border-radius:2px;
+}
+.footer-grid a { color:#b8c8d8; text-decoration:none; display:block; margin-bottom:8px; font-size:13px; transition:0.3s; }
+.footer-grid a:hover { color:var(--brand-orange); padding-left:4px; }
+.footer-grid p { font-size:13px; color:#b8c8d8; margin-bottom:8px; }
+.footer-social { display:flex; gap:10px; margin-top:10px; }
+.footer-social a {
+  width:36px; height:36px; background:rgba(255,255,255,0.1);
+  border-radius:50%; display:flex; align-items:center; justify-content:center;
+  color:#fff; font-size:16px;
+}
+.footer-social a:hover { background:var(--brand-orange); padding:0; }
+.footer-bottom {
+  text-align:center; margin-top:35px; padding-top:20px;
+  border-top:1px solid rgba(255,255,255,0.1); font-size:13px; color:#8899aa;
+}
+
+/* ============ CUSTOMER PANEL ============ */
+.customer-panel {
+  position:fixed; inset:0; background:#f8fafc; z-index:2400;
+  display:none; overflow-y:auto;
+}
+.customer-panel.show { display:block; }
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:768px){
+  .hero h2 { font-size:26px; }
+  .hero p { font-size:14px; }
+  .search-grid { grid-template-columns:1fr; }
+  header { flex-direction:column; gap:10px; }
+  nav { justify-content:center; }
+  .form-row { grid-template-columns:1fr; }
+  section { padding:40px 16px; }
+  .service-grid { grid-template-columns:repeat(auto-fit, minmax(130px,1fr)); gap:12px; }
+  .service-icon { font-size:38px; }
+  .trust-bar { gap:20px; }
+}
+</style>
+</head> 
+ <body id="top">
+
+<!-- ============ COOKIE BANNER ============ -->
+<div id="cookieBanner">
+  <span>🍪 আমরা আপনার অভিজ্ঞতা উন্নত করতে কুকি ব্যবহার করি।</span>
+  <div>
+    <button class="btn" onclick="acceptCookies()">সব গ্রহণ</button>
+    <button class="btn" style="background:#666;" onclick="declineCookies()">শুধু প্রয়োজনীয়</button>
+  </div>
+</div>
+
+<!-- ============ TOPBAR ============ -->
+<div class="topbar">
+  <div class="topbar-left">
+    <span>📞 <span id="topPhone">+৮৮০ ১৬২৩-৭৪৪৪৪০</span></span>
+    <span>✉️ <span id="topEmail">Info.atik83@gmail.com</span></span>
+  </div>
+  <div class="topbar-right">
+    <select onchange="changeLang(this.value)">
+      <option value="bn">🇧🇩 বাংলা</option>
+      <option value="en">🇬🇧 English</option>
+      <option value="ar">🇸🇦 العربية</option>
+    </select>
+    <select onchange="changeCurrency(this.value)">
+      <option value="BDT">৳ BDT</option>
+      <option value="USD">$ USD</option>
+      <option value="EUR">€ EUR</option>
+      <option value="SAR">﷼ SAR</option>
+    </select>
+    <a href="#" onclick="openCustomerLogin(event)">👤 লগইন</a>
+  </div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <a href="#top" class="flymuna-logo">
+    <div class="flymuna-mark">
+      <svg viewBox="0 0 100 100">
+        <polygon points="20,45 65,25 55,45" fill="#0080FF"/>
+        <polygon points="20,45 55,45 45,75" fill="#0080FF"/>
+        <polygon points="35,40 75,30 65,50" fill="#FF6B1A"/>
+        <polygon points="35,40 65,50 55,70" fill="#FF6B1A"/>
+      </svg>
+    </div>
+    <span class="flymuna-text"><span class="fly">Fly</span><span class="muna">Muna</span></span>
+  </a>
+  <nav>
+    <a href="#services">সেবাসমূহ</a>
+    <a href="#visa-section">ভিসা চেক</a>
+    <a href="#blog">ব্লগ</a>
+    <a href="#faq">FAQ</a>
+    <a href="#tracker">ট্র্যাকার</a>
+    <a href="#contact">যোগাযোগ</a>
+    <a href="#" class="nav-btn-primary" onclick="openAdminLogin(event)">🔐 Admin</a>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <h2>আপনার স্বপ্নের ভ্রমণ <span class="highlight">FlyMuna</span> এর সাথে</h2>
+  <p>হজ, ওমরাহ, ট্যুর প্যাকেজ ও বিশ্বস্ত ভিসা প্রসেসিং সেবা — বাংলাদেশ থেকে সারা বিশ্বে</p>
+</div>
+
+<!-- ============ SEARCH BOX ============ -->
+<div style="padding:0 25px; max-width:900px; margin:auto;">
+  <div class="search-box">
+    <div class="search-grid">
+      <input type="text" id="searchDestination" placeholder="🔍 গন্তব্য খুঁজুন... (দুবাই, কক্সবাজার, থাইল্যান্ড)">
+      <input type="date" id="searchDate">
+      <select id="searchType">
+        <option value="">সব সেবা</option>
+        <option value="hajj">হজ</option>
+        <option value="umrah">ওমরাহ</option>
+        <option value="tour">ট্যুর</option>
+        <option value="bdTour">বাংলাদেশ ট্যুর</option>
+        <option value="visa">ভিসা</option>
+      </select>
+      <button onclick="doSearch()">🔍 সার্চ</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ TRUST BAR ============ -->
+<div class="trust-bar">
+  <div class="trust-item">🔒 SSL সুরক্ষিত</div>
+  <div class="trust-item">✅ BTB রেজিস্টার্ড</div>
+  <div class="trust-item">⭐ ৫০০+ গ্রাহক</div>
+  <div class="trust-item">💬 ২৪/৭ সাপোর্ট</div>
+  <div class="trust-item">💰 মানি ব্যাক</div>
+</div>
+
+<!-- ============ SERVICES ============ -->
+<section id="services">
+  <h2>🎯 আমাদের সেবাসমূহ</h2>
+  <p class="section-sub">আইকনে ক্লিক করুন — সেই সেবার প্যাকেজ দেখতে পাবেন</p>
+
+  <div class="service-grid">
+    <div class="service-card" data-target="panel-hajj" onclick="toggleService(this)">
+      <span class="service-icon">🕋</span>
+      <h3>হজ প্যাকেজ</h3>
+      <p>সরকার অনুমোদিত</p>
+    </div>
+    <div class="service-card" data-target="panel-umrah" onclick="toggleService(this)">
+      <span class="service-icon">🕌</span>
+      <h3>ওমরাহ প্যাকেজ</h3>
+      <p>সারা বছর</p>
+    </div>
+    <div class="service-card" data-target="panel-tour" onclick="toggleService(this)">
+      <span class="service-icon">🌍</span>
+      <h3>ইন্টারন্যাশনাল ট্যুর</h3>
+      <p>বিশ্বজুড়ে</p>
+    </div>
+    <div class="service-card" data-target="panel-bd-tour" onclick="toggleService(this)">
+      <span class="service-icon">🇧🇩</span>
+      <h3>বাংলাদেশ ট্যুর</h3>
+      <p>দেশব্যাপী ভ্রমণ</p>
+    </div>
+    <div class="service-card" data-target="panel-visa" onclick="toggleService(this)">
+      <span class="service-icon">🛂</span>
+      <h3>ভিসা সেবা</h3>
+      <p>১০+ দেশ</p>
+    </div>
+    <div class="service-card" data-target="panel-air" onclick="toggleService(this)">
+      <span class="service-icon">✈️</span>
+      <h3>এয়ার টিকেট</h3>
+      <p>সস্তা দামে</p>
+    </div>
+    <div class="service-card" data-target="panel-hotel" onclick="toggleService(this)">
+      <span class="service-icon">🏨</span>
+      <h3>হোটেল বুকিং</h3>
+      <p>দেশ-বিদেশ</p>
+    </div>
+  </div>
+
+  <!-- ===== Panel: হজ ===== -->
+  <div class="expand-panel" id="panel-hajj">
+    <h3>🕋 হজ প্যাকেজ ২০২৬</h3>
+    <p class="panel-desc">সরকার অনুমোদিত ও নির্ভরযোগ্য হজ সেবা</p>
+    <div class="grid" id="hajjGrid"></div>
+  </div>
+
+  <!-- ===== Panel: ওমরাহ ===== -->
+  <div class="expand-panel" id="panel-umrah">
+    <h3>🕌 ওমরাহ প্যাকেজ</h3>
+    <p class="panel-desc">সারা বছর ওমরাহ পালনের সুবিধা</p>
+    <div class="grid" id="umrahGrid"></div>
+  </div>
+
+  <!-- ===== Panel: ইন্টারন্যাশনাল ট্যুর ===== -->
+  <div class="expand-panel" id="panel-tour">
+    <h3>🌍 ইন্টারন্যাশনাল ট্যুর প্যাকেজ</h3>
+    <p class="panel-desc">বিশ্বের সেরা গন্তব্যগুলোতে ভ্রমণ</p>
+    <div class="grid" id="tourGrid"></div>
+  </div>
+
+  <!-- ===== Panel: বাংলাদেশ ট্যুর ===== -->
+  <div class="expand-panel" id="panel-bd-tour">
+    <h3>🇧🇩 বাংলাদেশ ট্যুর প্যাকেজ</h3>
+    <p class="panel-desc">দেশের সেরা পর্যটন স্থানগুলোতে ভ্রমণ করুন — কম খরচে, বেশি আনন্দে</p>
+    <div class="grid" id="bdTourGrid"></div>
+  </div>
+
+  <!-- ===== Panel: ভিসা ===== -->
+  <div class="expand-panel" id="panel-visa">
+    <h3>🛂 ভিসা সেবা</h3>
+    <p class="panel-desc">দেশ সিলেক্ট করুন — ডকুমেন্ট লিস্ট ও আবেদন ফরম পাবেন</p>
+    <div class="visa-card-grid" id="visaCardGrid"></div>
+  </div>
+
+  <!-- ===== Panel: এয়ার ===== -->
+  <div class="expand-panel" id="panel-air">
+    <h3>✈️ এয়ার টিকেট বুকিং</h3>
+    <p class="panel-desc">দেশ-বিদেশের যেকোনো ফ্লাইট সাশ্রয়ী মূল্যে</p>
+    <div class="grid" id="airGrid"></div>
+  </div>
+
+  <!-- ===== Panel: হোটেল (২টি ট্যাব) ===== -->
+  <div class="expand-panel" id="panel-hotel">
+    <h3>🏨 হোটেল বুকিং</h3>
+    <p class="panel-desc">দেশে-বিদেশে সেরা হোটেল সাশ্রয়ী দামে</p>
+
+    <div style="display:flex; gap:10px; justify-content:center; margin-bottom:25px; flex-wrap:wrap;">
+      <button class="tab-btn active" id="hotelTabIntl" onclick="switchHotelTab('international')">
+        🌍 ইন্টারন্যাশনাল হোটেল
+      </button>
+      <button class="tab-btn" id="hotelTabBd" onclick="switchHotelTab('bangladesh')">
+        🇧🇩 বাংলাদেশ হোটেল
+      </button>
+    </div>
+
+    <div id="hotelIntlList">
+      <div class="grid" id="hotelIntlGrid"></div>
+    </div>
+    <div id="hotelBdList" style="display:none;">
+      <div class="grid" id="hotelBdGrid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISA CHECK SECTION ============ -->
+<section id="visa-section" style="background:linear-gradient(135deg, #f0f7ff, #fff9f5); border-radius:20px; max-width:1200px;">
+  <h2>🔎 স্মার্ট ভিসা চেকার</h2>
+  <p class="section-sub">আপনার পছন্দের দেশ সিলেক্ট করুন — দেখুন কী কী ডকুমেন্ট লাগবে এবং আবেদন করুন</p>
+
+  <div style="background:#fff; padding:25px; border-radius:16px; box-shadow:0 6px 25px rgba(0,128,255,0.1); max-width:850px; margin:auto;">
+    <div class="form-row">
+      <div class="form-group">
+        <label>🌍 দেশ নির্বাচন করুন</label>
+        <select id="visaCheckCountry" onchange="showVisaRequirements(this.value)">
+          <option value="">-- দেশ সিলেক্ট করুন --</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>🛂 ভিসার ধরন</label>
+        <select id="visaCheckType">
+          <option value="ট্যুরিস্ট">ট্যুরিস্ট ভিসা</option>
+          <option value="ওমরাহ">ওমরাহ ভিসা</option>
+          <option value="বিজনেস">বিজনেস ভিসা</option>
+          <option value="স্টুডেন্ট">স্টুডেন্ট ভিসা</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="visaRequirements" style="display:none; margin-top:25px;">
+      <div style="text-align:center; margin-bottom:20px;">
+        <div style="font-size:64px;" id="reqFlag">🌍</div>
+        <h3 style="color:var(--brand-dark); margin-top:8px;" id="reqCountry">Country</h3>
+        <p style="color:var(--brand-blue); font-weight:600;" id="reqType">ট্যুরিস্ট ভিসা</p>
+      </div>
+
+      <div class="steps">
+        <div class="step active"><div class="step-num">১</div><div class="step-label">দেশ সিলেক্ট</div></div>
+        <div class="step"><div class="step-num">২</div><div class="step-label">ডকুমেন্ট</div></div>
+        <div class="step"><div class="step-num">৩</div><div class="step-label">আপলোড</div></div>
+        <div class="step"><div class="step-num">৪</div><div class="step-label">পেমেন্ট</div></div>
+      </div>
+
+      <div class="info-box">
+        <strong>💰 ভিসা ফি:</strong> <span id="reqFee" style="color:var(--brand-orange); font-weight:800; font-size:18px;">৳০</span>
+        &nbsp;|&nbsp;
+        <strong>⏱️ প্রসেসিং:</strong> <span id="reqTime">-</span>
+      </div>
+
+      <h4 style="color:var(--brand-dark); margin-top:20px; margin-bottom:10px;">
+        📋 প্রয়োজনীয় ডকুমেন্ট চেকলিস্ট
+      </h4>
+      <div id="reqList" style="background:#fafcfe; padding:15px; border-radius:12px;"></div>
+
+      <div class="info-box warning" style="margin-top:15px;">
+        <strong>⚠️ গুরুত্বপূর্ণ:</strong> সব ডকুমেন্ট স্ক্যান কপি (কালার) হতে হবে। মূল কপি ভিসা অফিসে সাবমিট করতে হবে।
+      </div>
+
+      <button class="btn" onclick="openVisaApplication()" style="width:100%; margin-top:20px; padding:15px;">
+        📝 ভিসার জন্য আবেদন করুন
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section id="reviews">
+  <h2>⭐ গ্রাহকদের মতামত</h2>
+  <p class="section-sub">৫০০+ সন্তুষ্ট গ্রাহকের আস্থা</p>
+  <div class="grid" id="reviewsGrid"></div>
+</section>
+
+<!-- ============ BLOG ============ -->
+<section id="blog">
+  <h2>📝 সাম্প্রতিক ব্লগ</h2>
+  <p class="section-sub">ভিসা, ট্যুর ও ভ্রমণ সংক্রান্ত টিপস</p>
+  <div class="grid" id="blogGrid"></div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <h2>❓ সাধারণ প্রশ্ন</h2>
+  <p class="section-sub">সাধারণ জিজ্ঞাসার উত্তর</p>
+  <div style="max-width:800px; margin:auto;" id="faqContainer"></div>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section>
+  <div class="newsletter">
+    <h3>📧 নিউজলেটার সাবস্ক্রাইব করুন</h3>
+    <p>সেরা ডিল এবং অফার সবার আগে পান</p>
+    <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+      <input type="email" placeholder="আপনার ইমেইল" required>
+      <button type="submit">সাবস্ক্রাইব</button>
+    </form>
+  </div>
+</section>
+
+<!-- ============ TRACKER ============ -->
+<section id="tracker">
+  <h2>🔍 অর্ডার / ভিসা ট্র্যাকার</h2>
+  <p class="section-sub">অর্ডার আইডি দিয়ে অবস্থা জানুন</p>
+  <div style="background:#fff; padding:30px; border-radius:14px; max-width:800px; margin:auto; box-shadow:0 4px 20px rgba(0,128,255,0.1);">
+    <label style="font-weight:600;">আপনার অর্ডার আইডি</label>
+    <input type="text" id="trackId" placeholder="FLY-2026-001" style="width:100%; padding:12px 14px; margin-top:6px; border:1px solid #d8e0e8; border-radius:8px; font-size:14px; font-family:inherit;">
+    <button class="btn" onclick="trackOrder()" style="width:100%; margin-top:20px; padding:14px;">ট্র্যাক করুন</button>
+    <div class="tracker-result" id="trackerResult">
+      <h3>অর্ডার: <span id="resId"></span></h3>
+      <p><strong>গ্রাহক:</strong> <span id="resName"></span></p>
+      <p><strong>প্যাকেজ:</strong> <span id="resPkg"></span></p>
+      <p><strong>বর্তমান অবস্থা:</strong> <span class="status-badge" id="resStatus"></span></p>
+      <div class="progress-bar"><div class="progress-fill" id="resProgress"></div></div>
+      <p><strong>সর্বশেষ আপডেট:</strong> <span id="resDate"></span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" style="text-align:center;">
+  <h2>📞 যোগাযোগ</h2>
+  <p class="section-sub">যেকোনো প্রশ্নে আমাদের সাথে যোগাযোগ করুন</p>
+  <div class="grid" style="max-width:900px; margin:auto;">
+    <div class="card">
+      <h4>📍 অফিস ঠিকানা</h4>
+      <p id="contactAddress">নাসির সুপার মার্কেট (২য় তলা), টাঙ্গাইল রোড, গাজীপুর চৌরাস্তা, গাজীপুর</p>
+    </div>
+    <div class="card">
+      <h4>📱 ফোন</h4>
+      <p id="contactPhone">+৮৮০ ১৬২৩-৭৪৪৪৪০</p>
+    </div>
+    <div class="card">
+      <h4>✉️ ইমেইল</h4>
+      <p id="contactEmail">Info.atik83@gmail.com</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <a href="#top" class="flymuna-logo" style="margin-bottom:15px;">
+        <div class="flymuna-mark">
+          <svg viewBox="0 0 100 100">
+            <polygon points="20,45 65,25 55,45" fill="#0080FF"/>
+            <polygon points="20,45 55,45 45,75" fill="#0080FF"/>
+            <polygon points="35,40 75,30 65,50" fill="#FF6B1A"/>
+            <polygon points="35,40 65,50 55,70" fill="#FF6B1A"/>
+          </svg>
+        </div>
+        <span class="flymuna-text">
+          <span class="fly" style="color:#0080FF;">Fly</span><span class="muna" style="color:#FF6B1A;">Muna</span>
+        </span>
+      </a>
+      <p>বাংলাদেশ থেকে বিশ্বের যেকোনো প্রান্তে ভ্রমণ সেবা।</p>
+      <p style="margin-top:8px;">🏆 BTB রেজিস্টার্ড</p>
+      <div class="footer-social">
+        <a href="#">📘</a>
+        <a href="#">📷</a>
+        <a href="#">▶️</a>
+        <a href="#">💼</a>
+      </div>
+    </div>
+    <div>
+      <h4>দ্রুত লিঙ্ক</h4>
+      <a href="#services">সেবাসমূহ</a>
+      <a href="#visa-section">ভিসা চেক</a>
+      <a href="#blog">ব্লগ</a>
+      <a href="#faq">FAQ</a>
+      <a href="#tracker">ট্র্যাকার</a>
+      <a href="#contact">যোগাযোগ</a>
+    </div>
+    <div>
+      <h4>গুরুত্বপূর্ণ</h4>
+      <a href="privacy.html">গোপনীয়তা নীতি</a>
+      <a href="terms.html">সেবার শর্তাবলী</a>
+      <a href="refund.html">রিফান্ড নীতি</a>
+    </div>
+    <div>
+      <h4>যোগাযোগ</h4>
+      <p>📍 নাসির সুপার মার্কেট (২য় তলা)</p>
+      <p>টাঙ্গাইল রোড, গাজীপুর চৌরাস্তা</p>
+      <p>📱 <span id="footerPhone">+৮৮০ ১৬২৩-৭৪৪৪৪০</span></p>
+      <p>✉️ <span id="footerEmail">Info.atik83@gmail.com</span></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© ২০২৬ FlyMuna Tours & Travels | সর্বস্বত্ব সংরক্ষিত</p>
+  </div>
+</footer>
+
+<!-- ============ FLOATING BUTTONS ============ -->
+<a href="https://wa.me/8801623744440" class="whatsapp-float" target="_blank" id="waFloat" title="WhatsApp">💬</a>
+<button class="livechat-float" onclick="openLiveChat()" title="Live Chat">💭</button>
+<!-- ============ BOOKING MODAL ============ -->
+<div class="modal-overlay" id="bookingModal">
+  <div class="modal">
+    <h3>📝 বুকিং ফর্ম</h3>
+    <p class="sub" id="bookingPkgName"></p>
+    <form id="bookingForm" onsubmit="submitBooking(event)">
+      <input type="hidden" id="selectedPkgName">
+      <input type="hidden" id="selectedPkgPrice">
+
+      <div class="form-group">
+        <label class="required">পূর্ণ নাম</label>
+        <input type="text" id="fullName" required placeholder="আপনার নাম">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="required">মোবাইল</label>
+          <input type="tel" id="phone" required placeholder="01XXXXXXXXX" pattern="01[0-9]{9}">
+        </div>
+        <div class="form-group">
+          <label>ইমেইল</label>
+          <input type="email" id="email" placeholder="example@mail.com">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="required">NID নম্বর</label>
+          <input type="text" id="nid" required placeholder="NID নম্বর">
+        </div>
+        <div class="form-group">
+          <label class="required">পাসপোর্ট নম্বর</label>
+          <input type="text" id="passport" required placeholder="পাসপোর্ট নম্বর">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>যাত্রীর সংখ্যা</label>
+          <input type="number" id="persons" value="1" min="1" max="20">
+        </div>
+        <div class="form-group">
+          <label class="required">পেমেন্ট পদ্ধতি</label>
+          <select id="paymentMethod" required>
+            <option value="">-- নির্বাচন --</option>
+            <option value="bKash">বিকাশ</option>
+            <option value="Nagad">নগদ</option>
+            <option value="Rocket">রকেট</option>
+            <option value="Bank">ব্যাংক ট্রান্সফার</option>
+            <option value="Cash">অফিসে ক্যাশ</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="pay-info-box">
+        <strong>💳 পেমেন্ট করুন নিচের নাম্বারে:</strong>
+        <div style="margin-top:8px;">
+          📱 <strong>bKash:</strong> <span class="pay-number" id="bkashNum">01623744440</span><br>
+          📱 <strong>Nagad:</strong> <span class="pay-number" id="nagadNum">01623744440</span><br>
+          📱 <strong>Rocket:</strong> <span class="pay-number" id="rocketNum">01623744440</span>
+        </div>
+        <p style="margin-top:10px; font-size:12px; color:#888;">⚠️ পেমেন্ট করার পর নিচে স্ক্রিনশট আপলোড করুন।</p>
+      </div>
+
+      <div class="form-group">
+        <label class="required">পেমেন্ট স্ক্রিনশট / ডকুমেন্ট আপলোড</label>
+        <div class="file-upload" id="bookingFileUpload">
+          <input type="file" id="paymentSS" accept="image/*,application/pdf" required onchange="handleBookingFile(event)">
+          <div id="bookingFilePreview">
+            <div class="file-upload-icon">📎</div>
+            <div class="file-upload-text">ছবি / PDF আপলোড করতে ক্লিক করুন</div>
+            <div class="file-upload-text" style="font-size:11px; color:#aaa; margin-top:4px;">JPG, PNG, PDF (সর্বোচ্চ 5MB)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>অতিরিক্ত নোট</label>
+        <textarea id="note" rows="3" placeholder="বিশেষ অনুরোধ"></textarea>
+      </div>
+
+      <button type="submit" class="btn">✅ বুকিং কনফার্ম করুন</button>
+      <button type="button" class="close-btn" onclick="closeBookingModal()">বাতিল</button>
+    </form>
+  </div>
+</div>
+
+<!-- ============ VISA APPLICATION MODAL ============ -->
+<div class="modal-overlay" id="visaApplicationModal">
+  <div class="modal" style="max-width:720px;">
+    <h3>📝 ভিসা আবেদন ফরম</h3>
+    <p class="sub" id="visaAppSubtitle">পূরণ করুন এবং ডকুমেন্ট আপলোড করুন</p>
+
+    <div class="steps" style="margin:15px 0;">
+      <div class="step done"><div class="step-num">✓</div><div class="step-label">দেশ</div></div>
+      <div class="step active"><div class="step-num">২</div><div class="step-label">ডকুমেন্ট</div></div>
+      <div class="step"><div class="step-num">৩</div><div class="step-label">পেমেন্ট</div></div>
+    </div>
+
+    <form id="visaApplicationForm" onsubmit="submitVisaApplication(event)">
+      <input type="hidden" id="visaAppCountry">
+      <input type="hidden" id="visaAppType">
+      <input type="hidden" id="visaAppFee">
+
+      <h4 style="color:var(--brand-dark); margin-top:15px; margin-bottom:10px;">👤 ব্যক্তিগত তথ্য</h4>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="required">পূর্ণ নাম</label>
+          <input type="text" id="vName" required placeholder="আপনার নাম">
+        </div>
+        <div class="form-group">
+          <label class="required">পিতার নাম</label>
+          <input type="text" id="vFather" required placeholder="পিতার নাম">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="required">মোবাইল</label>
+          <input type="tel" id="vPhone" required placeholder="01XXXXXXXXX" pattern="01[0-9]{9}">
+        </div>
+        <div class="form-group">
+          <label class="required">জন্ম তারিখ</label>
+          <input type="date" id="vDob" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="required">ঠিকানা</label>
+        <input type="text" id="vAddress" required placeholder="বর্তমান ঠিকানা">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="required">NID নম্বর</label>
+          <input type="text" id="vNid" required placeholder="NID">
+        </div>
+        <div class="form-group">
+          <label class="required">পাসপোর্ট নম্বর</label>
+          <input type="text" id="vPassport" required placeholder="পাসপোর্ট">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>পাসপোর্ট ইস্যু তারিখ</label>
+          <input type="date" id="vPassIssue">
+        </div>
+        <div class="form-group">
+          <label>পাসপোর্ট এক্সপায়ারি</label>
+          <input type="date" id="vPassExpiry">
+        </div>
+      </div>
+
+      <h4 style="color:var(--brand-dark); margin-top:20px; margin-bottom:10px;">📎 ডকুমেন্ট আপলোড</h4>
+
+      <div class="form-group">
+        <label class="required">পাসপোর্টের স্ক্যান কপি</label>
+        <div class="file-upload">
+          <input type="file" id="vDocPassport" accept="image/*,application/pdf" required onchange="handleVisaFile(event, 'vDocPassportName')">
+          <div class="file-upload-icon">🛂</div>
+          <div class="file-upload-text">ক্লিক করে আপলোড করুন</div>
+          <div class="file-name" id="vDocPassportName"></div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="required">NID / জন্মনিবন্ধন কপি</label>
+        <div class="file-upload">
+          <input type="file" id="vDocNid" accept="image/*,application/pdf" required onchange="handleVisaFile(event, 'vDocNidName')">
+          <div class="file-upload-icon">🆔</div>
+          <div class="file-upload-text">ক্লিক করে আপলোড করুন</div>
+          <div class="file-name" id="vDocNidName"></div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="required">ছবি (২ ইঞ্চি x ২ ইঞ্চি)</label>
+        <div class="file-upload">
+          <input type="file" id="vDocPhoto" accept="image/*" required onchange="handleVisaFile(event, 'vDocPhotoName')">
+          <div class="file-upload-icon">📷</div>
+          <div class="file-upload-text">ক্লিক করে আপলোড করুন</div>
+          <div class="file-name" id="vDocPhotoName"></div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>ব্যাংক স্টেটমেন্ট</label>
+        <div class="file-upload">
+          <input type="file" id="vDocBank" accept="image/*,application/pdf" onchange="handleVisaFile(event, 'vDocBankName')">
+          <div class="file-upload-icon">🏦</div>
+          <div class="file-upload-text">(ঐচ্ছিক)</div>
+          <div class="file-name" id="vDocBankName"></div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>অন্যান্য ডকুমেন্ট</label>
+        <div class="file-upload">
+          <input type="file" id="vDocOther" accept="image/*,application/pdf" onchange="handleVisaFile(event, 'vDocOtherName')">
+          <div class="file-upload-icon">📎</div>
+          <div class="file-upload-text">(ঐচ্ছিক)</div>
+          <div class="file-name" id="vDocOtherName"></div>
+        </div>
+      </div>
+
+      <div class="pay-info-box" style="margin-top:20px;">
+        <strong>💰 ভিসা ফি:</strong> <span style="color:var(--brand-orange); font-weight:800; font-size:18px;" id="visaAppFeeDisplay">৳০</span>
+        <div style="margin-top:8px;">
+          📱 <strong>bKash:</strong> <span class="pay-number" id="vBkashNum">01623744440</span><br>
+          📱 <strong>Nagad:</strong> <span class="pay-number" id="vNagadNum">01623744440</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="required">পেমেন্ট স্ক্রিনশট</label>
+        <div class="file-upload">
+          <input type="file" id="vDocPayment" accept="image/*" required onchange="handleVisaFile(event, 'vDocPaymentName')">
+          <div class="file-upload-icon">💳</div>
+          <div class="file-upload-text">পেমেন্ট স্ক্রিনশট আপলোড করুন</div>
+          <div class="file-name" id="vDocPaymentName"></div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn">✅ ভিসা আবেদন জমা দিন</button>
+      <button type="button" class="close-btn" onclick="closeVisaApplication()">বাতিল</button>
+    </form>
+  </div>
+</div>
+
+<!-- ============ CUSTOMER LOGIN MODAL ============ -->
+<div class="modal-overlay" id="customerLoginModal">
+  <div class="modal" style="max-width:420px;">
+    <h3>👤 গ্রাহক লগইন</h3>
+    <p class="sub">আপনার অ্যাকাউন্টে লগইন করুন</p>
+    <div class="form-group">
+      <label>মোবাইল</label>
+      <input type="text" id="custLoginPhone" placeholder="01XXXXXXXXX">
+    </div>
+    <div class="form-group">
+      <label>পাসওয়ার্ড</label>
+      <input type="password" id="custLoginPass" placeholder="••••••">
+    </div>
+    <div class="error-msg" id="custLoginError">❌ ভুল তথ্য!</div>
+    <button class="btn" onclick="customerLogin()">লগইন</button>
+    <button class="close-btn" onclick="closeCustomerLogin()">বন্ধ</button>
+    <p style="text-align:center; font-size:12px; color:#888; margin-top:12px;">
+      অ্যাকাউন্ট নেই? <a href="#" onclick="switchToRegister(event)" style="color:var(--brand-blue); font-weight:600;">রেজিস্টার করুন</a>
+    </p>
+  </div>
+</div>
+
+<!-- ============ CUSTOMER REGISTER MODAL ============ -->
+<div class="modal-overlay" id="customerRegisterModal">
+  <div class="modal" style="max-width:420px;">
+    <h3>📝 নতুন রেজিস্ট্রেশন</h3>
+    <p class="sub">নতুন অ্যাকাউন্ট খুলুন</p>
+    <div class="form-group">
+      <label class="required">পূর্ণ নাম</label>
+      <input type="text" id="custRegName" placeholder="আপনার নাম">
+    </div>
+    <div class="form-group">
+      <label class="required">মোবাইল</label>
+      <input type="tel" id="custRegPhone" placeholder="01XXXXXXXXX">
+    </div>
+    <div class="form-group">
+      <label>ইমেইল</label>
+      <input type="email" id="custRegEmail" placeholder="example@mail.com">
+    </div>
+    <div class="form-group">
+      <label class="required">পাসওয়ার্ড</label>
+      <input type="password" id="custRegPass" placeholder="কমপক্ষে ৬ অক্ষর">
+    </div>
+    <div class="error-msg" id="custRegError"></div>
+    <button class="btn" onclick="customerRegister()">রেজিস্টার</button>
+    <button class="close-btn" onclick="closeCustomerRegister()">বন্ধ</button>
+  </div>
+</div>
+
+<!-- ============ ADMIN LOGIN MODAL ============ -->
+<div class="modal-overlay" id="adminLoginModal">
+  <div class="modal" style="max-width:400px;">
+    <h3>🔐 Admin Login</h3>
+    <p class="sub">শুধুমাত্র অনুমোদিত ব্যক্তির জন্য</p>
+    <div class="form-group">
+      <label>আইডি</label>
+      <input type="text" id="adminUser" placeholder="admin">
+    </div>
+    <div class="form-group">
+      <label>পাসওয়ার্ড</label>
+      <input type="password" id="adminPass" placeholder="••••••">
+    </div>
+    <div class="error-msg" id="loginError">❌ ভুল আইডি বা পাসওয়ার্ড!</div>
+    <button class="btn" onclick="adminLogin()">লগইন</button>
+    <button class="close-btn" onclick="closeAdminLogin()">বন্ধ</button>
+    <p style="text-align:center; font-size:11px; color:#888; margin-top:12px;">
+      ডেমো: <b>admin</b> / <b>admin123</b>
+    </p>
+  </div>
+</div>
+
+<!-- ============ PACKAGE FORM MODAL (Admin) ============ -->
+<div class="modal-overlay" id="packageModal">
+  <div class="modal">
+    <h3 id="packageModalTitle">➕ নতুন প্যাকেজ</h3>
+    <p class="sub">প্যাকেজের তথ্য দিন</p>
+
+    <div class="form-group">
+      <label>📸 প্যাকেজের ছবি / লোগো</label>
+      <div class="pkg-image-upload" id="pkgImageUpload">
+        <input type="file" id="pkgImage" accept="image/*" onchange="handlePkgImage(event)">
+        <button type="button" class="pkg-image-remove" onclick="removePkgImage(event)">✕</button>
+        <div id="pkgImagePreviewWrap">
+          <div class="upload-icon">🖼️</div>
+          <div class="upload-text">ছবি আপলোড করতে ক্লিক করুন</div>
+          <div class="upload-hint">JPG, PNG (সর্বোচ্চ 5MB)</div>
+        </div>
+      </div>
+      <input type="hidden" id="pkgImageData">
+    </div>
+
+    <div class="form-group">
+      <label class="required">প্যাকেজের নাম</label>
+      <input type="text" id="pkgName" placeholder="যেমন: থাইল্যান্ড ট্যুর">
+    </div>
+
+    <div class="form-group">
+      <label>আইকন / ইমোজি (ছবি না দিলে এটা দেখাবে)</label>
+      <input type="text" id="pkgIcon" value="🌍" placeholder="🇹🇭 / 🕋 / 🌍">
+    </div>
+
+    <div class="form-group">
+      <label>সংক্ষিপ্ত বিবরণ</label>
+      <input type="text" id="pkgDesc" placeholder="যেমন: ৫ দিন ৪ রাত">
+    </div>
+
+    <div class="form-group">
+      <label class="required">মূল্য (৳)</label>
+      <input type="number" id="pkgPrice" placeholder="65000">
+    </div>
+
+    <div class="form-group">
+      <label>ফিচার (প্রতি লাইনে একটি)</label>
+      <textarea id="pkgFeatures" rows="4" placeholder="হোটেল + ব্রেকফাস্ট&#10;এয়ারপোর্ট পিকআপ&#10;ভিসা প্রসেসিং"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>ব্যাজ (ঐচ্ছিক)</label>
+      <input type="text" id="pkgBadge" placeholder="নতুন / হট ডিল">
+    </div>
+
+    <input type="hidden" id="pkgType">
+    <input type="hidden" id="pkgEditId">
+
+    <button class="btn" onclick="savePackage()">💾 সেভ করুন</button>
+    <button class="close-btn" onclick="closePackageModal()">বাতিল</button>
+  </div>
+</div>
+
+<!-- ============ VISA FORM MODAL (Admin) ============ -->
+<div class="modal-overlay" id="visaModal">
+  <div class="modal">
+    <h3 id="visaModalTitle">➕ নতুন ভিসা</h3>
+    <div class="form-group">
+      <label class="required">দেশ</label>
+      <input type="text" id="visaCountry" placeholder="থাইল্যান্ড">
+    </div>
+    <div class="form-group">
+      <label class="required">ফ্ল্যাগ ইমোজি</label>
+      <input type="text" id="visaFlag" value="🌍">
+    </div>
+    <div class="form-group">
+      <label class="required">ভিসার ধরন</label>
+      <input type="text" id="visaType" value="ট্যুরিস্ট">
+    </div>
+    <div class="form-group">
+      <label class="required">প্রসেসিং সময়</label>
+      <input type="text" id="visaTime" placeholder="৫-৭ দিন">
+    </div>
+    <div class="form-group">
+      <label class="required">ফি (৳)</label>
+      <input type="number" id="visaFee" placeholder="3500">
+    </div>
+    <div class="form-group">
+      <label>প্রয়োজনীয় ডকুমেন্ট (প্রতি লাইনে একটি)</label>
+      <textarea id="visaDocs" rows="5" placeholder="পাসপোর্ট (৬ মাস মেয়াদ)&#10;NID কপি&#10;২ ইঞ্চি ছবি&#10;ব্যাংক স্টেটমেন্ট"></textarea>
+    </div>
+    <input type="hidden" id="visaEditId">
+    <button class="btn" onclick="saveVisa()">💾 সেভ</button>
+    <button class="close-btn" onclick="closeVisaModal()">বাতিল</button>
+  </div>
+</div>
+
+<!-- ============ BOOKING DETAIL MODAL (Admin) ============ -->
+<div class="modal-overlay" id="detailModal">
+  <div class="modal" style="max-width:650px;">
+    <h3>📋 বুকিং বিস্তারিত</h3>
+    <div id="detailContent" style="margin-top:20px;"></div>
+    <button class="close-btn" onclick="closeDetail()">বন্ধ</button>
+  </div>
+</div>
+
+<!-- ============ ADMIN PANEL ============ -->
+<div class="admin-panel" id="adminPanel">
+  <div class="admin-header">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <div class="flymuna-mark" style="width:32px;height:32px;">
+        <svg viewBox="0 0 100 100">
+          <polygon points="20,45 65,25 55,45" fill="#fff"/>
+          <polygon points="20,45 55,45 45,75" fill="#fff"/>
+          <polygon points="35,40 75,30 65,50" fill="#FF6B1A"/>
+          <polygon points="35,40 65,50 55,70" fill="#FF6B1A"/>
+        </svg>
+      </div>
+      <h2>Admin Dashboard — FlyMuna</h2>
+    </div>
+    <div>
+      <span style="margin-right:15px; font-size:13px;">👤 <span id="adminName">Admin</span></span>
+      <button class="logout-btn" onclick="adminLogout()">লগআউট</button>
+    </div>
+  </div>
+
+  <div class="admin-body">
+    <div class="stats-grid">
+      <div class="stat-card"><span class="icon">📋</span><div class="num" id="statTotal">0</div><div class="lbl">মোট বুকিং</div></div>
+      <div class="stat-card orange"><span class="icon">⏳</span><div class="num" id="statPending">0</div><div class="lbl">পেন্ডিং</div></div>
+      <div class="stat-card"><span class="icon">✅</span><div class="num" id="statConfirmed">0</div><div class="lbl">কনফার্মড</div></div>
+      <div class="stat-card orange"><span class="icon">💰</span><div class="num" id="statRevenue">৳০</div><div class="lbl">মোট রেভিনিউ</div></div>
+    </div>
+
+    <div class="chart-card">
+      <h3>📊 সাপ্তাহিক বুকিং</h3>
+      <div class="bar-chart" id="barChart"></div>
+    </div>
+
+    <div class="admin-tabs">
+      <button class="tab-btn active" onclick="switchAdminTab('bookings', this)">📋 বুকিং</button>
+      <button class="tab-btn" onclick="switchAdminTab('customers', this)">👥 গ্রাহক</button>
+      <button class="tab-btn" onclick="switchAdminTab('hajj', this)">🕋 হজ</button>
+      <button class="tab-btn" onclick="switchAdminTab('umrah', this)">🕌 ওমরাহ</button>
+      <button class="tab-btn" onclick="switchAdminTab('tour', this)">🌍 ইন্টারন্যাশনাল</button>
+      <button class="tab-btn" onclick="switchAdminTab('bdTour', this)">🇧🇩 বাংলাদেশ ট্যুর</button>
+      <button class="tab-btn" onclick="switchAdminTab('visa', this)">🛂 ভিসা</button>
+      <button class="tab-btn" onclick="switchAdminTab('other', this)">✈️ এয়ার/হোটেল</button>
+      <button class="tab-btn" onclick="switchAdminTab('hotelBd', this)">🏨 বাংলাদেশ হোটেল</button>
+      <button class="tab-btn" onclick="switchAdminTab('settings', this)">⚙️ সেটিংস</button>
+    </div>
+
+    <div class="admin-tab-content" id="tab-bookings">
+      <div class="admin-tabs" style="margin-bottom:15px;">
+        <button class="tab-btn active" onclick="filterBookings('all', this)">সব</button>
+        <button class="tab-btn" onclick="filterBookings('পেমেন্ট যাচাই চলছে', this)">পেন্ডিং</button>
+        <button class="tab-btn" onclick="filterBookings('কনফার্মড', this)">কনফার্মড</button>
+        <button class="tab-btn" onclick="filterBookings('ভিসা প্রসেসিং', this)">ভিসা</button>
+        <button class="tab-btn" onclick="filterBookings('সম্পন্ন', this)">সম্পন্ন</button>
+      </div>
+      <div id="bookingsContainer"></div>
+    </div>
+
+    <div class="admin-tab-content" id="tab-customers" style="display:none;">
+      <div class="admin-action-bar"><h3>👥 গ্রাহক ম্যানেজমেন্ট</h3></div>
+      <div id="customersContainer"></div>
+    </div>
+
+    <div class="admin-tab-content" id="tab-hajj" style="display:none;">
+      <div class="admin-action-bar">
+        <h3>🕋 হজ প্যাকেজ</h3>
+        <button class="btn" onclick="openPackageForm('hajj')">➕ নতুন</button>
+      </div>
+      <div id="hajjListContainer"></div>
+    </div>
+ <div class="admin-tab-content" id="tab-umrah" style="display:none;">
+      <div class="admin-action-bar">
+        <h3>🕌 ওমরাহ প্যাকেজ</h3>
+        <button class="btn" onclick="openPackageForm('umrah')">➕ নতুন</button>
+      </div>
+      <div id="umrahListContainer"></div>
+    </div>
+
+    <div class="admin-tab-content" id="tab-tour" style="display:none;">
+      <div class="admin-action-bar">
+        <h3>🌍 ইন্টারন্যাশনাল ট্যুর</h3>
+        <button class="btn" onclick="openPackageForm('tour')">➕ নতুন</button>
+      </div>
+      <div id="tourListContainer"></div>
+    </div>
+
+    <div class="admin-tab-content" id="tab-bdTour" style="display:none;">
+      <div class="admin-action-bar">
+        <h3>🇧🇩 বাংলাদেশ ট্যুর</h3>
+        <button class="btn" onclick="openPackageForm('bdTour')">➕ নতুন বাংলাদেশ ট্যুর</button>
+      </div>
+      <div id="bdTourListContainer"></div>
+    </div>
+
+    <div class="admin-tab-content" id="tab-visa" style="display:none;">
+      <div class="admin-action-bar">
+        <h3>🛂 ভিসা তথ্য</h3>
+        <button class="btn" onclick="openVisaForm()">➕ নতুন ভিসা</button>
+      </div>
+      <div id="visaListContainer"></div>
+    </div>
+
+    <div class="admin-tab-content" id="tab-other" style="display:none;">
+      <div class="admin-action-bar">
+        <h3>✈️ এয়ার প্যাকেজ</h3>
+        <button class="btn" onclick="openPackageForm('air')">➕ নতুন</button>
+      </div>
+      <div id="airListContainer" style="margin-bottom:30px;"></div>
+
+      <div class="admin-action-bar">
+        <h3>🏨 ইন্টারন্যাশনাল হোটেল</h3>
+        <button class="btn" onclick="openPackageForm('hotel')">➕ নতুন</button>
+      </div>
+      <div id="hotelListContainer"></div>
+    </div>
+
+    <div class="admin-tab-content" id="tab-hotelBd" style="display:none;">
+      <div class="admin-action-bar">
+        <h3>🏨 বাংলাদেশ হোটেল</h3>
+        <button class="btn" onclick="openPackageForm('hotelBd')">➕ নতুন বাংলাদেশ হোটেল</button>
+      </div>
+      <div id="hotelBdListContainer"></div>
+    </div>
+
+    <div class="admin-tab-content" id="tab-settings" style="display:none;">
+      <div class="admin-action-bar"><h3>⚙️ সাইট সেটিংস</h3></div>
+      <div style="background:#fff; padding:25px; border-radius:12px; box-shadow:0 3px 10px rgba(0,128,255,0.08);">
+        <div class="form-row">
+          <div class="form-group">
+            <label style="font-weight:600;">সাইটের নাম</label>
+            <input type="text" id="setSiteName">
+          </div>
+          <div class="form-group">
+            <label style="font-weight:600;">ফোন</label>
+            <input type="text" id="setPhone">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label style="font-weight:600;">ইমেইল</label>
+            <input type="text" id="setEmail">
+          </div>
+          <div class="form-group">
+            <label style="font-weight:600;">ঠিকানা</label>
+            <input type="text" id="setAddress">
+          </div>
+        </div>
+
+        <h4 style="margin-top:25px; color:var(--brand-dark);">💳 পেমেন্ট নাম্বার</h4>
+        <div class="form-row">
+          <div class="form-group">
+            <label style="font-weight:600;">bKash</label>
+            <input type="text" id="setBkash">
+          </div>
+          <div class="form-group">
+            <label style="font-weight:600;">Nagad</label>
+            <input type="text" id="setNagad">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label style="font-weight:600;">Rocket</label>
+            <input type="text" id="setRocket">
+          </div>
+          <div class="form-group">
+            <label style="font-weight:600;">WhatsApp</label>
+            <input type="text" id="setWhatsapp">
+          </div>
+        </div>
+
+        <h4 style="margin-top:25px; color:var(--brand-dark);">📱 WhatsApp নোটিফিকেশন</h4>
+        <div class="form-row">
+          <div class="form-group">
+            <label style="font-weight:600;">Admin WhatsApp (ফাইল পেতে)</label>
+            <input type="text" id="setAdminWhatsApp" placeholder="8801623744440">
+            <p style="font-size:11px; color:#888; margin-top:4px;">দেশের কোড সহ (যেমন: 8801623744440)</p>
+          </div>
+          <div class="form-group">
+            <label style="font-weight:600;">WhatsApp নোটিফিকেশন</label>
+            <select id="setWaNotify">
+              <option value="on">✅ চালু</option>
+              <option value="off">❌ বন্ধ</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="btn" onclick="saveSettings()" style="margin-top:25px; width:100%;">💾 সেটিংস সেভ করুন</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CUSTOMER PANEL ============ -->
+<div class="customer-panel" id="customerPanel"></div>
+
+    <script>
+/* =====================================================
+   FLYMUNA — COMPLETE WORKING JAVASCRIPT
+   ===================================================== */
+
+console.log('✅ FlyMuna JS Loading...');
+
+/* ============ ADMIN CREDENTIALS ============ */
+const ADMIN_CREDENTIALS = { username: 'admin', password: 'admin123' };
+
+/* ============ DEFAULT SETTINGS ============ */
+const DEFAULT_SETTINGS = {
+  siteName: 'FlyMuna Tours & Travels',
+  phone: '01623744440',
+  email: 'Info.atik83@gmail.com',
+  address: 'নাসির সুপার মার্কেট (২য় তলা), টাঙ্গাইল রোড, গাজীপুর চৌরাস্তা, গাজীপুর',
+  bkash: '01623744440',
+  nagad: '01623744440',
+  rocket: '01623744440',
+  whatsapp: '8801623744440',
+  adminWhatsApp: '8801623744440',
+  waNotify: 'on',
+  currency: 'BDT',
+  lang: 'bn'
+};
+
+/* ============ DEFAULT DATA ============ */
+const DEFAULT_HAJJ = [
+  { id:'h1', icon:'🕋', name:'সরকারি হজ প্যাকেজ', desc:'সরকারি ব্যবস্থাপনা', price:580000, features:['সরকারি ব্যবস্থাপনা','মক্কা-মদিনায় হোটেল','৩ বেলা খাবার','জিয়ারত'], badge:'সরকারি', image:'' },
+  { id:'h2', icon:'🕋', name:'প্রিমিয়াম হজ প্যাকেজ', desc:'৫ স্টার সেবা', price:850000, features:['৫ স্টার হোটেল','মক্কায় কাছে হোটেল','অভিজ্ঞ গাইড','VIP ট্রান্সপোর্ট'], badge:'প্রিমিয়াম', image:'' },
+  { id:'h3', icon:'🕋', name:'ইকোনমি হজ প্যাকেজ', desc:'সাশ্রয়ী', price:650000, features:['সাশ্রয়ী মূল্য','সব মৌলিক সেবা','জিয়ারত'], badge:'', image:'' }
+];
+const DEFAULT_UMRAH = [
+  { id:'u1', icon:'🕌', name:'ওমরাহ প্যাকেজ (১৫ দিন)', desc:'সারা বছর', price:145000, features:['ইকোনমি ক্লাস','৩ বেলা খাবার','হোটেল + ট্রান্সপোর্ট','জিয়ারত'], badge:'জনপ্রিয়', image:'' },
+  { id:'u2', icon:'🕌', name:'রমজান ওমরাহ প্যাকেজ', desc:'রমজানে বিশেষ', price:175000, features:['রমজানে বিশেষ সেবা','ইফতার ও সেহরি','হোটেল + ফ্লাইট'], badge:'', image:'' },
+  { id:'u3', icon:'🕌', name:'শর্ট ওমরাহ (৭ দিন)', desc:'কম সময়ে', price:105000, features:['কম সময়ে ওমরাহ','দ্রুত ভিসা','হোটেল'], badge:'', image:'' }
+];
+const DEFAULT_TOUR = [
+  { id:'t1', icon:'🇹🇭', name:'থাইল্যান্ড ট্যুর', desc:'ব্যাংকক - পাটায়া | ৫ দিন ৪ রাত', price:65000, features:['৪ স্টার হোটেল','সিটি ট্যুর','ভিসা প্রসেসিং'], badge:'নতুন', image:'' },
+  { id:'t2', icon:'🇲🇾', name:'মালয়েশিয়া ট্যুর', desc:'কুয়ালালামপুর | ৪ দিন ৩ রাত', price:58000, features:['৪ স্টার হোটেল','জেন্টিং ট্যুর','ভিসা প্রসেসিং'], badge:'', image:'' },
+  { id:'t3', icon:'🇦🇪', name:'দুবাই ট্যুর', desc:'দুবাই - আবুধাবি | ৫ দিন ৪ রাত', price:105000, features:['ডেজার্ট সাফারি','বুর্জ খলিফা','ভিসা প্রসেসিং'], badge:'হট ডিল', image:'' },
+  { id:'t4', icon:'🇸🇬', name:'সিঙ্গাপুর ট্যুর', desc:'সিঙ্গাপুর | ৪ দিন ৩ রাত', price:75000, features:['সেন্টোসা আইল্যান্ড','ইউনিভার্সাল স্টুডিও','ভিসা'], badge:'', image:'' },
+  { id:'t5', icon:'🇹🇷', name:'তুরস্ক ট্যুর', desc:'ইস্তাম্বুল | ৭ দিন', price:135000, features:['হোটেল + ব্রেকফাস্ট','সিটি ট্যুর','ভিসা'], badge:'', image:'' },
+  { id:'t6', icon:'🇨🇳', name:'চীন ট্যুর', desc:'বেইজিং - সাংহাই | ৬ দিন', price:95000, features:['গ্রেট ওয়াল','হোটেল + খাবার','ভিসা'], badge:'', image:'' }
+];
+const DEFAULT_BD_TOUR = [
+  { id:'bd1', icon:'🏖️', name:'কক্সবাজার ট্যুর', desc:'বিশ্বের দীর্ঘতম সমুদ্র সৈকত | ৩ দিন ২ রাত', price:12000, features:['সমুদ্র সৈকত','হিমছড়ি','ইনানী বিচ','হোটেল + খাবার'], badge:'জনপ্রিয়', image:'' },
+  { id:'bd2', icon:'🌿', name:'সিলেট ট্যুর', desc:'চা বাগান ও ঝর্ণার শহর | ৩ দিন ২ রাত', price:10500, features:['সাদা পাথর','জাফলং','বিছনাকান্দি','চা বাগান'], badge:'', image:'' },
+  { id:'bd3', icon:'⛰️', name:'বান্দরবান ট্যুর', desc:'পাহাড় ও ঝর্ণার রাজ্য | ৪ দিন ৩ রাত', price:13500, features:['নীলগিরি','নীলাচল','চিম্বুক পাহাড়','বগালেক'], badge:'অ্যাডভেঞ্চার', image:'' },
+  { id:'bd4', icon:'🏞️', name:'খাগড়াছড়ি ট্যুর', desc:'প্রাকৃতিক সৌন্দর্যের স্বর্গ | ৩ দিন ২ রাত', price:11500, features:['আলুটিলা','রিসাং ঝর্ণা','দেবতা পাহাড়','মানিকছড়ি'], badge:'', image:'' },
+  { id:'bd5', icon:'🌊', name:'রাঙ্গামাটি ট্যুর', desc:'কাপ্তাই লেক ও পাহাড় | ৩ দিন ২ রাত', price:12500, features:['কাপ্তাই লেক','সাজেক ভ্যালি','পুলিশ পাড়া','ঝুলন্ত ব্রিজ'], badge:'নতুন', image:'' },
+  { id:'bd6', icon:'🏛️', name:'ঢাকা সিটি ট্যুর', desc:'রাজধানী ভ্রমণ | ২ দিন ১ রাত', price:6500, features:['লালবাগ কেল্লা','আহসান মঞ্জিল','জাতীয় জাদুঘর','সদরঘাট'], badge:'', image:'' },
+  { id:'bd7', icon:'🕌', name:'সোনারগাঁও ও পানাম নগর', desc:'ঐতিহাসিক স্থান | ১ দিন', price:3500, features:['পানাম নগর','লোকশিল্প জাদুঘর','গোয়ালদী মসজিদ'], badge:'', image:'' },
+  { id:'bd8', icon:'🦁', name:'সুন্দরবন ট্যুর', desc:'বিশ্বের বৃহত্তম ম্যানগ্রোভ | ৩ দিন ২ রাত', price:15000, features:['হিরণ পয়েন্ট','দুবলার চর','জীববৈচিত্র্য','নৌকা ভ্রমণ'], badge:'ইকো ট্যুর', image:'' }
+];
+const DEFAULT_VISA = [
+  { id:'v1', flag:'🇹🇭', country:'থাইল্যান্ড', type:'ট্যুরিস্ট', time:'৫-৭ দিন', fee:3500, image:'', documents:['পাসপোর্ট (৬ মাস মেয়াদ)','NID কপি','২ ইঞ্চি ছবি (২ কপি)','ব্যাংক স্টেটমেন্ট (৩ মাস)','টিকেট কপি','হোটেল বুকিং'] },
+  { id:'v2', flag:'🇲🇾', country:'মালয়েশিয়া', type:'ট্যুরিস্ট', time:'৭-১০ দিন', fee:4000, image:'', documents:['পাসপোর্ট (৬ মাস মেয়াদ)','NID কপি','২ ইঞ্চি ছবি (২ কপি)','ব্যাংক স্টেটমেন্ট (৩ মাস)','টিকেট কপি','হোটেল বুকিং'] },
+  { id:'v3', flag:'🇦🇪', country:'দুবাই', type:'ট্যুরিস্ট', time:'৩-৫ দিন', fee:7000, image:'', documents:['পাসপোর্ট (৬ মাস মেয়াদ)','NID কপি','২ ইঞ্চি ছবি','ব্যাংক স্টেটমেন্ট','টিকেট কপি'] },
+  { id:'v4', flag:'🇸🇦', country:'সৌদি আরব', type:'ওমরাহ', time:'৭-১০ দিন', fee:8000, image:'', documents:['পাসপোর্ট (৮ মাস মেয়াদ)','NID কপি','২ ইঞ্চি ছবি (সাদা ব্যাকগ্রাউন্ড)','টিকা কার্ড (মেনিনজাইটিস)','ব্যাংক স্টেটমেন্ট'] },
+  { id:'v5', flag:'🇸🇬', country:'সিঙ্গাপুর', type:'ট্যুরিস্ট', time:'৫-৭ দিন', fee:3000, image:'', documents:['পাসপোর্ট (৬ মাস মেয়াদ)','NID কপি','২ ইঞ্চি ছবি','ব্যাংক স্টেটমেন্ট','টিকেট কপি','হোটেল বুকিং'] },
+  { id:'v6', flag:'🇮🇳', country:'ভারত', type:'ট্যুরিস্ট', time:'১০-১৫ দিন', fee:2500, image:'', documents:['পাসপোর্ট (৬ মাস মেয়াদ)','NID কপি','২ ইঞ্চি ছবি','ব্যাংক স্টেটমেন্ট','টিকেট কপি'] },
+  { id:'v7', flag:'🇨🇳', country:'চীন', type:'ট্যুরিস্ট', time:'৭-১০ দিন', fee:5000, image:'', documents:['পাসপোর্ট (৬ মাস মেয়াদ)','NID কপি','২ ইঞ্চি ছবি','ব্যাংক স্টেটমেন্ট','টিকেট কপি','হোটেল বুকিং'] },
+  { id:'v8', flag:'🇹🇷', country:'তুরস্ক', type:'ট্যুরিস্ট', time:'১০-১৫ দিন', fee:6000, image:'', documents:['পাসপোর্ট (৬ মাস মেয়াদ)','NID কপি','২ ইঞ্চি ছবি','ব্যাংক স্টেটমেন্ট','টিকেট কপি','হোটেল বুকিং'] }
+];
+const DEFAULT_AIR = [
+  { id:'a1', icon:'🇧🇩', name:'অভ্যন্তরীণ ফ্লাইট', desc:'ঢাকা-কক্সবাজার', price:4500, features:['ঢাকা-কক্সবাজার','ঢাকা-সিলেট','ঢাকা-চট্টগ্রাম'], badge:'', image:'' },
+  { id:'a2', icon:'🌏', name:'আন্তর্জাতিক ফ্লাইট', desc:'বিশ্বজুড়ে', price:40000, features:['বাংলাদেশ-থাইল্যান্ড','বাংলাদেশ-দুবাই','বাংলাদেশ-মালয়েশিয়া'], badge:'', image:'' }
+];
+const DEFAULT_HOTEL = [
+  { id:'hi1', icon:'🇹🇭', name:'থাইল্যান্ড হোটেল', desc:'ব্যাংকক / পাটায়া', price:6500, features:['৪ স্টার হোটেল','ব্রেকফাস্ট','এয়ারপোর্ট পিকআপ','সুইমিং পুল'], badge:'', image:'' },
+  { id:'hi2', icon:'🇲🇾', name:'মালয়েশিয়া হোটেল', desc:'কুয়ালালামপুর', price:5500, features:['৪ স্টার','ব্রেকফাস্ট','সিটি ভিউ','জিম'], badge:'', image:'' },
+  { id:'hi3', icon:'🇦🇪', name:'দুবাই হোটেল', desc:'দুবাই / আবুধাবি', price:9500, features:['৫ স্টার','ব্রেকফাস্ট','বার্জ খলিফা ভিউ','ট্রান্সফার'], badge:'প্রিমিয়াম', image:'' },
+  { id:'hi4', icon:'🇸🇬', name:'সিঙ্গাপুর হোটেল', desc:'সিঙ্গাপুর সিটি', price:8500, features:['৪ স্টার','ব্রেকফাস্ট','সেন্ট্রাল লোকেশন','ফ্রি WiFi'], badge:'', image:'' },
+  { id:'hi5', icon:'🕋', name:'মক্কা হোটেল', desc:'হারামের কাছে', price:12000, features:['৫ স্টার','হারাম ভিউ','৩ বেলা খাবার','শাটল সার্ভিস'], badge:'হজ/ওমরাহ', image:'' },
+  { id:'hi6', icon:'🕌', name:'মদিনা হোটেল', desc:'মসজিদে নববীর কাছে', price:10000, features:['৫ স্টার','মসজিদ ভিউ','৩ বেলা খাবার','গাইড'], badge:'', image:'' }
+];
+const DEFAULT_HOTEL_BD = [
+  { id:'hb1', icon:'🏖️', name:'কক্সবাজার হোটেল', desc:'সমুদ্রের পাশে', price:3500, features:['সি ভিউ রুম','ব্রেকফাস্ট','AC','ফ্রি WiFi'], badge:'জনপ্রিয়', image:'' },
+  { id:'hb2', icon:'🌿', name:'সিলেট হোটেল', desc:'সিলেট সিটি', price:2800, features:['কমফোর্ট রুম','ব্রেকফাস্ট','পার্কিং','রুম সার্ভিস'], badge:'', image:'' },
+  { id:'hb3', icon:'⛰️', name:'বান্দরবান রিসোর্ট', desc:'পাহাড়ের উপর', price:4200, features:['পাহাড় ভিউ','৩ বেলা খাবার','ক্যাম্প ফায়ার','প্রকৃতি'], badge:'রিসোর্ট', image:'' },
+  { id:'hb4', icon:'🏞️', name:'রাঙ্গামাটি রিসোর্ট', desc:'কাপ্তাই লেকের পাশে', price:3800, features:['লেক ভিউ','ব্রেকফাস্ট','বোট সার্ভিস','নিরিবিলি'], badge:'', image:'' },
+  { id:'hb5', icon:'🌊', name:'সাজেক ভ্যালি রিসোর্ট', desc:'মেঘের উপত্যকা', price:4500, features:['মেঘ ভিউ','৩ বেলা খাবার','ক্যাম্প ফায়ার','গাইড'], badge:'হানিমুন', image:'' },
+  { id:'hb6', icon:'🏨', name:'ঢাকা ৫ স্টার হোটেল', desc:'গুলশান / বনানী', price:6500, features:['৫ স্টার','বুফে ব্রেকফাস্ট','জিম','সুইমিং পুল'], badge:'বিজনেস', image:'' },
+  { id:'hb7', icon:'🏛️', name:'ঢাকা বাজেট হোটেল', desc:'মতিঝিল / ফার্মগেট', price:1800, features:['কমফোর্ট রুম','AC','WiFi','সেন্ট্রাল'], badge:'', image:'' },
+  { id:'hb8', icon:'🦁', name:'সুন্দরবন ইকো রিসোর্ট', desc:'সুন্দরবনের ভেতরে', price:5200, features:['ইকো স্টে','৩ বেলা খাবার','নৌকা ভ্রমণ','প্রকৃতি ট্যুর'], badge:'ইকো', image:'' }
+];
+const DEFAULT_REVIEWS = [
+  { name:'মোহাম্মদ রফিকুল ইসলাম', location:'ঢাকা', stars:5, text:'আলহামদুলিল্লাহ! FlyMuna-র মাধ্যমে হজ পালন করেছি। সার্ভিস অসাধারণ।' },
+  { name:'ফারহানা আক্তার', location:'চট্টগ্রাম', stars:5, text:'থাইল্যান্ড ট্যুর দারুণ ছিল। সব নিখুঁত।' },
+  { name:'আব্দুল করিম', location:'সিলেট', stars:5, text:'দুবাই ভিসা ৪ দিনে পেয়েছি। ধন্যবাদ FlyMuna।' }
+];
+const DEFAULT_BLOG = [
+  { icon:'🛂', title:'দুবাই ভিসা পেতে কী কী লাগে?', excerpt:'২০২৬ সালে দুবাই ভিসার সম্পূর্ণ গাইড...', date:'১৫ জানু, ২০২৬' },
+  { icon:'🕋', title:'হজের প্রস্তুতি কেমন হওয়া উচিত', excerpt:'হজে যাওয়ার আগে যা যা জানা দরকার...', date:'১০ জানু, ২০২৬' },
+  { icon:'✈️', title:'সস্তায় বিদেশ ভ্রমণের ১০ টিপস', excerpt:'কম খরচে বিদেশ ভ্রমণের কার্যকরী পরামর্শ...', date:'৫ জানু, ২০২৬' }
+];
+const DEFAULT_FAQ = [
+  { q:'হজের জন্য কী কী ডকুমেন্ট লাগে?', a:'পাসপোর্ট, NID, ছবি, ভ্যাকসিন কার্ড এবং সরকারি ফরম পূরণ করতে হবে।' },
+  { q:'ভিসা কত দিনে পাওয়া যায়?', a:'দেশভেদে ৩-১৫ কার্যদিবস সময় লাগে।' },
+  { q:'পেমেন্ট কীভাবে করব?', a:'bKash/Nagad/Rocket নাম্বারে পাঠিয়ে স্ক্রিনশট আপলোড করুন।' },
+  { q:'রিফান্ড পলিসি কী?', a:'ট্রিপের ৩০+ দিন আগে বাতিলে ৯০% রিফান্ড।' }
+];
+
+/* ============ LOAD DATA ============ */
+// Safe storage helpers: a broken/old saved value must never stop the whole website JS.
+function safeStorageGet(storage, key, fallback) {
+  try {
+    const raw = storage.getItem(key);
+    if (raw === null || raw === '') return fallback;
+    const parsed = JSON.parse(raw);
+    return parsed ?? fallback;
+  } catch (err) {
+    console.warn('Storage read failed for', key, err);
+    return fallback;
+  }
+}
+function safeStorageSet(storage, key, value) {
+  try { storage.setItem(key, JSON.stringify(value)); return true; }
+  catch (err) { console.warn('Storage save failed for', key, err); return false; }
+}
+function safeSessionText(key, fallback = '') {
+  try { return sessionStorage.getItem(key) ?? fallback; }
+  catch (err) { return fallback; }
+}
+function safeSessionSet(key, value) {
+  try { sessionStorage.setItem(key, value); return true; }
+  catch (err) { return false; }
+}
+function safeSessionRemove(key) {
+  try { sessionStorage.removeItem(key); } catch (err) {}
+}
+
+let settings = safeStorageGet(localStorage, 'flySettings', DEFAULT_SETTINGS);
+if (!settings || typeof settings !== 'object' || Array.isArray(settings)) settings = {...DEFAULT_SETTINGS};
+settings = {...DEFAULT_SETTINGS, ...settings};
+let orders = safeStorageGet(localStorage, 'flyOrders', {});
+if (!orders || typeof orders !== 'object' || Array.isArray(orders)) orders = {};
+let customers = safeStorageGet(localStorage, 'flyCustomers', []);
+if (!Array.isArray(customers)) customers = [];
+let hajjPkgs = safeStorageGet(localStorage, 'flyHajj', DEFAULT_HAJJ); if (!Array.isArray(hajjPkgs)) hajjPkgs = DEFAULT_HAJJ;
+let umrahPkgs = safeStorageGet(localStorage, 'flyUmrah', DEFAULT_UMRAH); if (!Array.isArray(umrahPkgs)) umrahPkgs = DEFAULT_UMRAH;
+let tourPkgs = safeStorageGet(localStorage, 'flyTour', DEFAULT_TOUR); if (!Array.isArray(tourPkgs)) tourPkgs = DEFAULT_TOUR;
+let bdTourPkgs = safeStorageGet(localStorage, 'flyBdTour', DEFAULT_BD_TOUR); if (!Array.isArray(bdTourPkgs)) bdTourPkgs = DEFAULT_BD_TOUR;
+let visaList = safeStorageGet(localStorage, 'flyVisa', DEFAULT_VISA); if (!Array.isArray(visaList)) visaList = DEFAULT_VISA;
+let airPkgs = safeStorageGet(localStorage, 'flyAir', DEFAULT_AIR); if (!Array.isArray(airPkgs)) airPkgs = DEFAULT_AIR;
+let hotelPkgs = safeStorageGet(localStorage, 'flyHotel', DEFAULT_HOTEL); if (!Array.isArray(hotelPkgs)) hotelPkgs = DEFAULT_HOTEL;
+let hotelBdPkgs = safeStorageGet(localStorage, 'flyHotelBd', DEFAULT_HOTEL_BD); if (!Array.isArray(hotelBdPkgs)) hotelBdPkgs = DEFAULT_HOTEL_BD;
+let uploadedFiles = safeStorageGet(localStorage, 'flyUploadedFiles', {});
+if (!uploadedFiles || typeof uploadedFiles !== 'object' || Array.isArray(uploadedFiles)) uploadedFiles = {};
+let currentUser = safeStorageGet(sessionStorage, 'flyCurrentUser', null);
+let currentVisaCountry = null;
+
+function saveAll() {
+  safeStorageSet(localStorage, 'flySettings', settings);
+  safeStorageSet(localStorage, 'flyOrders', orders);
+  safeStorageSet(localStorage, 'flyCustomers', customers);
+  safeStorageSet(localStorage, 'flyHajj', hajjPkgs);
+  safeStorageSet(localStorage, 'flyUmrah', umrahPkgs);
+  safeStorageSet(localStorage, 'flyTour', tourPkgs);
+  safeStorageSet(localStorage, 'flyBdTour', bdTourPkgs);
+  safeStorageSet(localStorage, 'flyVisa', visaList);
+  safeStorageSet(localStorage, 'flyAir', airPkgs);
+  safeStorageSet(localStorage, 'flyHotel', hotelPkgs);
+  safeStorageSet(localStorage, 'flyHotelBd', hotelBdPkgs);
+}
+
+/* ============ CURRENCY ============ */
+const CURRENCY_RATES = { BDT: 1, USD: 0.0091, EUR: 0.0084, SAR: 0.034 };
+const CURRENCY_SYMBOLS = { BDT: '৳', USD: '$', EUR: '€', SAR: '﷼' };
+function convertPrice(bdtPrice) {
+  const rate = CURRENCY_RATES[settings.currency] || 1;
+  const sym = CURRENCY_SYMBOLS[settings.currency] || '৳';
+  return sym + ' ' + (bdtPrice * rate).toLocaleString('en-US', { maximumFractionDigits: 0 });
+}
+
+/* ============ APPLY SETTINGS ============ */
+function applySettings() {
+  const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+  set('topPhone', '+' + settings.phone);
+  set('topEmail', settings.email);
+  set('contactPhone', '+' + settings.phone);
+  set('contactEmail', settings.email);
+  set('contactAddress', settings.address);
+  set('footerPhone', '+' + settings.phone);
+  set('footerEmail', settings.email);
+  const wa = document.getElementById('waFloat');
+  if (wa) wa.href = 'https://wa.me/' + settings.whatsapp;
+  set('bkashNum', settings.bkash);
+  set('nagadNum', settings.nagad);
+  set('rocketNum', settings.rocket);
+  set('vBkashNum', settings.bkash);
+  set('vNagadNum', settings.nagad);
+}
+
+/* ============ RENDER CARD ============ */
+function renderPublicCard(p) {
+  const featuresHtml = (p.features || []).map(f => `<li>✅ ${f}</li>`).join('');
+  let countryTag = '🌍 Travel';
+  const name = (p.name || '').toLowerCase();
+  if (name.includes('কক্সবাজার') || name.includes('সিলেট') || name.includes('বান্দরবান') || name.includes('খাগড়াছড়ি') || name.includes('রাঙ্গামাটি') || name.includes('সুন্দরবন') || name.includes('ঢাকা') || name.includes('সোনারগাঁও')) countryTag = '🇧🇩 বাংলাদেশ';
+  else if (name.includes('থাইল্যান্ড')) countryTag = '🇹🇭 থাইল্যান্ড';
+  else if (name.includes('মালয়েশিয়া')) countryTag = '🇲🇾 মালয়েশিয়া';
+  else if (name.includes('দুবাই')) countryTag = '🇦🇪 UAE';
+  else if (name.includes('সিঙ্গাপুর')) countryTag = '🇸🇬 সিঙ্গাপুর';
+  else if (name.includes('তুরস্ক')) countryTag = '🇹🇷 তুরস্ক';
+  else if (name.includes('চীন')) countryTag = '🇨🇳 চীন';
+  else if (name.includes('হজ') || name.includes('ওমরাহ') || name.includes('মক্কা') || name.includes('মদিনা')) countryTag = '🇸🇦 সৌদি আরব';
+
+  const badgeHtml = p.badge ? `<span class="badge-overlay">${p.badge}</span>` : '';
+
+  if (p.image) {
+    return `<div class="card" style="padding:0; overflow:hidden;">
+      <div class="pkg-img-wrap">
+        <span class="country-tag">${countryTag}</span>
+        ${badgeHtml}
+        <img src="${p.image}" class="pkg-img" alt="${p.name}">
+      </div>
+      <div style="padding:18px;">
+        <h4 style="font-size:17px; margin-bottom:6px;">${p.icon || '🌍'} ${p.name}</h4>
+        <p style="font-size:13px; color:#666;">${p.desc || ''}</p>
+        <ul style="margin:10px 0 12px 18px; font-size:13px;">${featuresHtml}</ul>
+        <div class="price-tag-pro">
+          <div><div class="price-label">মূল্য / জন</div><div class="price-value">${convertPrice(p.price)}</div></div>
+          <div style="font-size:24px;">💎</div>
+        </div>
+        <button class="btn" style="width:100%;" onclick="openBookingModal('${p.name.replace(/'/g, "\\'")}', ${p.price})">📝 বুক করুন</button>
+      </div>
+    </div>`;
+  }
+  return `<div class="card" style="padding:18px;">
+    ${p.badge ? `<span class="badge">${p.badge}</span>` : ''}
+    <h4 style="font-size:16px;">${p.icon || '🌍'} ${p.name}</h4>
+    <p style="font-size:13px; color:#666;">${p.desc || ''}</p>
+    <ul style="margin:10px 0 12px 18px; font-size:13px;">${featuresHtml}</ul>
+    <div class="price-tag-pro">
+      <div><div class="price-label">মূল্য / জন</div><div class="price-value">${convertPrice(p.price)}</div></div>
+      <div style="font-size:24px;">💎</div>
+    </div>
+    <button class="btn" style="width:100%;" onclick="openBookingModal('${p.name.replace(/'/g, "\\'")}', ${p.price})">📝 বুক করুন</button>
+  </div>`;
+}
+
+function renderPublicPackages() {
+  const set = (id, html) => { const el = document.getElementById(id); if (el) el.innerHTML = html; };
+  set('hajjGrid', hajjPkgs.map(renderPublicCard).join(''));
+  set('umrahGrid', umrahPkgs.map(renderPublicCard).join(''));
+  set('tourGrid', tourPkgs.map(renderPublicCard).join(''));
+  set('bdTourGrid', bdTourPkgs.map(renderPublicCard).join(''));
+  set('airGrid', airPkgs.map(renderPublicCard).join(''));
+  set('hotelIntlGrid', hotelPkgs.map(renderPublicCard).join(''));
+  set('hotelBdGrid', hotelBdPkgs.map(renderPublicCard).join(''));
+
+  set('reviewsGrid', DEFAULT_REVIEWS.map(r => `
+    <div class="review-card">
+      <div class="stars">${'★'.repeat(r.stars)}${'☆'.repeat(5 - r.stars)}</div>
+      <p>"${r.text}"</p>
+      <div class="reviewer">— ${r.name}, ${r.location}</div>
+    </div>
+  `).join(''));
+
+  set('blogGrid', DEFAULT_BLOG.map(b => `
+    <div class="blog-card">
+      <div class="blog-img">${b.icon}</div>
+      <div class="blog-content">
+        <div class="blog-date">${b.date}</div>
+        <h4>${b.title}</h4>
+        <p>${b.excerpt}</p>
+        <a href="#" style="color:var(--brand-blue); font-weight:600; font-size:13px;">আরও পড়ুন →</a>
+      </div>
+    </div>
+  `).join(''));
+
+  set('faqContainer', DEFAULT_FAQ.map(f => `
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q"><span>${f.q}</span><span class="arrow">▼</span></div>
+      <div class="faq-a">${f.a}</div>
+    </div>
+  `).join(''));
+
+  set('visaCardGrid', visaList.map(v => `
+    <div class="visa-card" onclick="showVisaDetails('${v.id}')">
+      ${v.image ? `<img src="${v.image}" class="pkg-img-round">` : `<span class="visa-flag">${v.flag}</span>`}
+      <div class="visa-country">${v.country}</div>
+      <div class="visa-type">${v.type} ভিসা</div>
+      <div class="visa-meta"><span class="label">⏱️ সময়:</span><span class="value">${v.time}</span></div>
+      <div class="visa-fee-box"><div class="fee-label">ভিসা ফি</div><div class="fee">${convertPrice(v.fee)}</div></div>
+      <button class="apply-btn" onclick="event.stopPropagation(); showVisaDetails('${v.id}')">📋 বিস্তারিত দেখুন</button>
+    </div>
+  `).join(''));
+
+  const sel = document.getElementById('visaCheckCountry');
+  if (sel) {
+    sel.innerHTML = '<option value="">-- দেশ সিলেক্ট করুন --</option>' +
+      visaList.map(v => `<option value="${v.id}">${v.flag} ${v.country}</option>`).join('');
+  }
+}
+
+/* ============ FAQ TOGGLE ============ */
+function toggleFaq(el) { el.classList.toggle('open'); }
+
+/* ============ SERVICE TOGGLE (MAIN FUNCTION) ============ */
+function toggleService(card) {
+  console.log('Service clicked:', card);
+  const targetId = card.getAttribute('data-target');
+  const targetPanel = document.getElementById(targetId);
+  if (!targetPanel) { console.error('Panel not found:', targetId); return; }
+
+  const allCards = document.querySelectorAll('.service-card');
+  const allPanels = document.querySelectorAll('.expand-panel');
+
+  if (targetPanel.classList.contains('open')) {
+    targetPanel.classList.remove('open');
+    card.classList.remove('active');
+    return;
+  }
+  allCards.forEach(c => c.classList.remove('active'));
+  allPanels.forEach(p => p.classList.remove('open'));
+  card.classList.add('active');
+  targetPanel.classList.add('open');
+  setTimeout(() => targetPanel.scrollIntoView({ behavior: 'smooth', block: 'start' }), 200);
+}
+
+/* ============ HOTEL TAB ============ */
+function switchHotelTab(tab) {
+  const intlList = document.getElementById('hotelIntlList');
+  const bdList = document.getElementById('hotelBdList');
+  const intlBtn = document.getElementById('hotelTabIntl');
+  const bdBtn = document.getElementById('hotelTabBd');
+  if (tab === 'international') {
+    intlList.style.display = 'block';
+    bdList.style.display = 'none';
+    intlBtn.classList.add('active');
+    bdBtn.classList.remove('active');
+  } else {
+    intlList.style.display = 'none';
+    bdList.style.display = 'block';
+    bdBtn.classList.add('active');
+    intlBtn.classList.remove('active');
+  }
+}
+
+/* ============ VISA DETAILS ============ */
+function showVisaDetails(visaId) {
+  const v = visaList.find(x => x.id === visaId);
+  if (!v) return;
+  currentVisaCountry = v;
+
+  document.getElementById('reqFlag').innerHTML = v.image
+    ? `<img src="${v.image}" style="width:80px;height:80px;border-radius:50%;object-fit:cover;">`
+    : v.flag;
+  document.getElementById('reqCountry').textContent = v.country;
+  document.getElementById('reqType').textContent = v.type + ' ভিসা';
+  document.getElementById('reqFee').textContent = convertPrice(v.fee);
+  document.getElementById('reqTime').textContent = v.time;
+
+  document.getElementById('reqList').innerHTML = (v.documents || []).map(d => `
+    <div class="doc-check-item">
+      <div class="doc-check-icon">✅</div>
+      <div class="doc-check-body"><h5>${d}</h5></div>
+    </div>
+  `).join('') || '<p style="color:#888;">তথ্য নেই</p>';
+
+  document.getElementById('visaRequirements').style.display = 'block';
+  document.getElementById('visa-section').scrollIntoView({ behavior: 'smooth' });
+}
+
+function showVisaRequirements(visaId) {
+  if (!visaId) { document.getElementById('visaRequirements').style.display = 'none'; return; }
+  showVisaDetails(visaId);
+}
+
+/* ============ VISA APPLICATION ============ */
+function openVisaApplication() {
+  if (!currentVisaCountry) { alert('❌ প্রথমে দেশ সিলেক্ট করুন'); return; }
+  document.getElementById('visaAppCountry').value = currentVisaCountry.country;
+  document.getElementById('visaAppType').value = currentVisaCountry.type;
+  document.getElementById('visaAppFee').value = currentVisaCountry.fee;
+  document.getElementById('visaAppFeeDisplay').textContent = convertPrice(currentVisaCountry.fee);
+  document.getElementById('visaAppSubtitle').textContent = currentVisaCountry.flag + ' ' + currentVisaCountry.country + ' — ' + currentVisaCountry.type + ' ভিসা';
+  document.getElementById('visaApplicationModal').classList.add('show');
+}
+function closeVisaApplication() { document.getElementById('visaApplicationModal').classList.remove('show'); }
+
+function handleVisaFile(event, nameElId) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const nameEl = document.getElementById(nameElId);
+  if (nameEl) nameEl.textContent = '✅ ' + file.name;
+  event.target.parentElement.classList.add('has-file');
+       }
+   function submitVisaApplication(e) {
+  e.preventDefault();
+  const orderId = 'FLY-V-' + Date.now().toString().slice(-8);
+  const file = document.getElementById('vDocPayment').files[0];
+  const order = {
+    id: orderId,
+    name: document.getElementById('vName').value,
+    father: document.getElementById('vFather').value,
+    phone: document.getElementById('vPhone').value,
+    dob: document.getElementById('vDob').value,
+    address: document.getElementById('vAddress').value,
+    nid: document.getElementById('vNid').value,
+    passport: document.getElementById('vPassport').value,
+    passIssue: document.getElementById('vPassIssue').value,
+    passExpiry: document.getElementById('vPassExpiry').value,
+    package: currentVisaCountry.country + ' — ' + currentVisaCountry.type + ' ভিসা',
+    price: currentVisaCountry.fee,
+    payment: 'Visa Payment',
+    screenshot: file ? file.name : 'N/A',
+    note: 'Visa Application',
+    status: 'পেমেন্ট যাচাই চলছে',
+    progress: 30,
+    date: new Date().toLocaleString('bn-BD'),
+    type: 'visa',
+    customer: currentUser ? currentUser.phone : null
+  };
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(ev) {
+      uploadedFiles[orderId] = { fileName: file.name, fileType: file.type, data: ev.target.result };
+      localStorage.setItem('flyUploadedFiles', JSON.stringify(uploadedFiles));
+      orders[orderId] = order;
+      saveAll();
+      sendToWhatsApp(order, uploadedFiles[orderId]);
+      alert(`✅ ভিসা আবেদন সফল!\n\nঅর্ডার আইডি: ${orderId}`);
+      closeVisaApplication();
+      document.getElementById('visaApplicationForm').reset();
+      document.getElementById('trackId').value = orderId;
+      document.getElementById('tracker').scrollIntoView({ behavior: 'smooth' });
+    };
+    reader.readAsDataURL(file);
+  } else {
+    orders[orderId] = order;
+    saveAll();
+    sendToWhatsApp(order, null);
+    alert(`✅ ভিসা আবেদন সফল!\n\nঅর্ডার আইডি: ${orderId}`);
+    closeVisaApplication();
+    document.getElementById('visaApplicationForm').reset();
+  }
+}
+
+/* ============ BOOKING MODAL ============ */
+function openBookingModal(pkgName, pkgPrice) {
+  console.log('Opening booking modal:', pkgName, pkgPrice);
+  document.getElementById('selectedPkgName').value = pkgName;
+  document.getElementById('selectedPkgPrice').value = pkgPrice;
+  document.getElementById('bookingPkgName').innerHTML = `<b>${pkgName}</b> — ${convertPrice(pkgPrice)}`;
+  document.getElementById('bookingModal').classList.add('show');
+  document.getElementById('bookingForm').reset();
+  document.getElementById('selectedPkgName').value = pkgName;
+  document.getElementById('selectedPkgPrice').value = pkgPrice;
+  document.getElementById('bookingFileUpload').classList.remove('has-file');
+  document.getElementById('bookingFilePreview').innerHTML = `
+    <div class="file-upload-icon">📎</div>
+    <div class="file-upload-text">ছবি / PDF আপলোড করতে ক্লিক করুন</div>
+    <div class="file-upload-text" style="font-size:11px; color:#aaa; margin-top:4px;">JPG, PNG, PDF (সর্বোচ্চ 5MB)</div>
+  `;
+}
+function closeBookingModal() { document.getElementById('bookingModal').classList.remove('show'); }
+
+function handleBookingFile(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const wrap = document.getElementById('bookingFilePreview');
+  document.getElementById('bookingFileUpload').classList.add('has-file');
+  if (file.type.startsWith('image/')) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      wrap.innerHTML = `<img src="${e.target.result}" class="file-preview-img"><div class="file-name">✅ ${file.name}</div>`;
+    };
+    reader.readAsDataURL(file);
+  } else {
+    wrap.innerHTML = `<div class="file-upload-icon">📄</div><div class="file-name">✅ ${file.name}</div>`;
+  }
+}
+
+function submitBooking(e) {
+  e.preventDefault();
+  const orderId = 'FLY-' + Date.now().toString().slice(-8);
+  const file = document.getElementById('paymentSS').files[0];
+  const order = {
+    id: orderId,
+    name: document.getElementById('fullName').value,
+    phone: document.getElementById('phone').value,
+    email: document.getElementById('email').value,
+    nid: document.getElementById('nid').value,
+    passport: document.getElementById('passport').value,
+    package: document.getElementById('selectedPkgName').value,
+    price: document.getElementById('selectedPkgPrice').value,
+    persons: document.getElementById('persons').value,
+    payment: document.getElementById('paymentMethod').value,
+    screenshot: file ? file.name : 'N/A',
+    note: document.getElementById('note').value,
+    status: 'পেমেন্ট যাচাই চলছে',
+    progress: 30,
+    date: new Date().toLocaleString('bn-BD'),
+    type: 'booking',
+    customer: currentUser ? currentUser.phone : null
+  };
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(ev) {
+      uploadedFiles[orderId] = { fileName: file.name, fileType: file.type, data: ev.target.result };
+      localStorage.setItem('flyUploadedFiles', JSON.stringify(uploadedFiles));
+      orders[orderId] = order;
+      saveAll();
+      sendToWhatsApp(order, uploadedFiles[orderId]);
+      finalizeBooking(orderId);
+    };
+    reader.readAsDataURL(file);
+  } else {
+    orders[orderId] = order;
+    saveAll();
+    sendToWhatsApp(order, null);
+    finalizeBooking(orderId);
+  }
+       }
+       function finalizeBooking(orderId) {
+  alert(`✅ বুকিং সফল!\n\nআপনার অর্ডার আইডি: ${orderId}\n\nএই আইডি সংরক্ষণ করুন।\nশীঘ্রই আমাদের টিম যোগাযোগ করবে।`);
+  closeBookingModal();
+  document.getElementById('bookingForm').reset();
+  document.getElementById('trackId').value = orderId;
+  document.getElementById('tracker').scrollIntoView({ behavior: 'smooth' });
+}
+
+/* ============ WHATSAPP ============ */
+function sendToWhatsApp(order, fileData) {
+  if (settings.waNotify === 'off') return;
+  const adminWA = settings.adminWhatsApp || settings.whatsapp || '8801623744440';
+  let message = `🔔 *নতুন ${order.type === 'visa' ? 'ভিসা আবেদন' : 'বুকিং'}*\n\n`;
+  message += `📋 *অর্ডার:* ${order.id}\n`;
+  message += `👤 *নাম:* ${order.name}\n`;
+  if (order.father) message += `👨 *পিতা:* ${order.father}\n`;
+  message += `📱 *মোবাইল:* ${order.phone}\n`;
+  if (order.email) message += `✉️ *ইমেইল:* ${order.email}\n`;
+  if (order.address) message += `🏠 *ঠিকানা:* ${order.address}\n`;
+  message += `🎫 *প্যাকেজ:* ${order.package}\n`;
+  message += `💰 *মূল্য:* ৳${order.price}\n`;
+  if (order.payment) message += `💳 *পেমেন্ট:* ${order.payment}\n`;
+  if (order.persons) message += `👥 *যাত্রী:* ${order.persons} জন\n`;
+  message += `📎 *ফাইল:* ${order.screenshot}\n`;
+  if (order.note) message += `📝 *নোট:* ${order.note}\n`;
+  message += `\n🆔 *NID:* ${order.nid}\n`;
+  message += `🛂 *পাসপোর্ট:* ${order.passport}\n`;
+  message += `\n📅 ${order.date}`;
+  const waURL = `https://wa.me/${adminWA}?text=${encodeURIComponent(message)}`;
+  window.open(waURL, '_blank');
+}
+
+function sendOrderToWhatsApp(orderId) {
+  const o = orders[orderId];
+  if (!o) return;
+  const adminWA = settings.adminWhatsApp || settings.whatsapp;
+  const msg = `📋 *অর্ডার:* ${o.id}\n👤 ${o.name}\n📱 ${o.phone}\n📦 ${o.package}\n💰 ৳${o.price}\n📍 ${o.status}`;
+  window.open(`https://wa.me/${adminWA}?text=${encodeURIComponent(msg)}`, '_blank');
+}
+
+function callCustomer(phone) {
+  let clean = phone.replace(/[^0-9]/g, '');
+  if (clean.startsWith('0')) clean = '88' + clean;
+  window.location.href = 'tel:+' + clean;
+}
+
+/* ============ TRACK ============ */
+function trackOrder() {
+  const id = document.getElementById('trackId').value.trim().toUpperCase();
+  const res = document.getElementById('trackerResult');
+  const order = orders[id];
+  if (!order) { res.style.display = 'none'; alert('❌ অর্ডার আইডি পাওয়া যায়নি'); return; }
+  document.getElementById('resId').textContent = order.id;
+  document.getElementById('resName').textContent = order.name;
+  document.getElementById('resPkg').textContent = order.package;
+  document.getElementById('resStatus').textContent = order.status;
+  document.getElementById('resProgress').style.width = (order.progress || 30) + '%';
+  document.getElementById('resDate').textContent = order.date;
+  res.style.display = 'block';
+}
+
+/* ============ NEWSLETTER / CHAT / COOKIE ============ */
+function subscribeNewsletter(e) { e.preventDefault(); alert('✅ ধন্যবাদ! সাবস্ক্রাইব সফল।'); e.target.reset(); }
+function openLiveChat() {
+  const wa = settings.adminWhatsApp || settings.whatsapp;
+  window.open(`https://wa.me/${wa}?text=${encodeURIComponent('আসসালামু আলাইকুম, আমি FlyMuna সম্পর্কে জানতে চাই।')}`, '_blank');
+}
+function acceptCookies() { localStorage.setItem('flyCookieConsent', 'all'); document.getElementById('cookieBanner').style.display = 'none'; }
+function declineCookies() { localStorage.setItem('flyCookieConsent', 'essential'); document.getElementById('cookieBanner').style.display = 'none'; }
+
+function changeLang(lang) { settings.lang = lang; saveAll(); alert('🌐 Language: ' + lang.toUpperCase()); }
+function changeCurrency(cur) { settings.currency = cur; saveAll(); renderPublicPackages(); alert('💱 Currency: ' + cur); }
+
+/* ============ SEARCH ============ */
+function doSearch() {
+  const q = document.getElementById('searchDestination').value.trim().toLowerCase();
+  const type = document.getElementById('searchType').value;
+  const allPkgs = [
+    ...hajjPkgs.map(p => ({...p, type:'hajj', section:'panel-hajj'})),
+    ...umrahPkgs.map(p => ({...p, type:'umrah', section:'panel-umrah'})),
+    ...tourPkgs.map(p => ({...p, type:'tour', section:'panel-tour'})),
+    ...bdTourPkgs.map(p => ({...p, type:'bdTour', section:'panel-bd-tour'})),
+    ...airPkgs.map(p => ({...p, type:'air', section:'panel-air'})),
+    ...hotelPkgs.map(p => ({...p, type:'hotel', section:'panel-hotel'})),
+    ...hotelBdPkgs.map(p => ({...p, type:'hotel', section:'panel-hotel'}))
+  ];
+  let results = allPkgs;
+  if (q) results = results.filter(p => p.name.toLowerCase().includes(q) || (p.desc || '').toLowerCase().includes(q));
+  if (type) results = results.filter(p => p.type === type);
+  if (results.length === 0) { alert('❌ কোন প্যাকেজ পাওয়া যায়নি'); return; }
+  const first = results[0];
+  document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
+  setTimeout(() => {
+    const card = document.querySelector(`[data-target="${first.section}"]`);
+    if (card) toggleService(card);
+  }, 500);
+}
+
+/* ============ CUSTOMER AUTH ============ */
+function openCustomerLogin(e) {
+  if (e) e.preventDefault();
+  if (currentUser) { openCustomerPanel(); return; }
+  document.getElementById('customerLoginModal').classList.add('show');
+}
+function closeCustomerLogin() { document.getElementById('customerLoginModal')?.classList.remove('show'); }
+function switchToRegister(e) {
+  if (e) e.preventDefault();
+  closeCustomerLogin();
+  document.getElementById('customerRegisterModal').classList.add('show');
+}
+function closeCustomerRegister() { document.getElementById('customerRegisterModal')?.classList.remove('show'); }
+
+function customerLogin() {
+  const phone = document.getElementById('custLoginPhone').value.trim();
+  const pass = document.getElementById('custLoginPass').value;
+  const user = customers.find(c => c.phone === phone && c.password === pass);
+  if (user) {
+    currentUser = user;
+    safeStorageSet(sessionStorage, 'flyCurrentUser', user);
+    closeCustomerLogin();
+    openCustomerPanel();
+  } else {
+    document.getElementById('custLoginError').style.display = 'block';
+    setTimeout(() => document.getElementById('custLoginError').style.display = 'none', 3000);
+  }
+       }
+       function customerRegister() {
+  const name = document.getElementById('custRegName').value.trim();
+  const phone = document.getElementById('custRegPhone').value.trim();
+  const email = document.getElementById('custRegEmail').value.trim();
+  const pass = document.getElementById('custRegPass').value;
+  const errBox = document.getElementById('custRegError');
+  if (!name || !phone || !pass || pass.length < 6) {
+    errBox.textContent = '❌ সব ঘর পূরণ করুন (পাসওয়ার্ড ৬+ অক্ষর)';
+    errBox.style.display = 'block'; return;
+  }
+  if (customers.find(c => c.phone === phone)) {
+    errBox.textContent = '❌ এই মোবাইল আগে রেজিস্টার করা';
+    errBox.style.display = 'block'; return;
+  }
+  const user = { name, phone, email, password: pass, date: new Date().toLocaleString('bn-BD') };
+  customers.push(user);
+  currentUser = user;
+  safeStorageSet(sessionStorage, 'flyCurrentUser', user);
+  saveAll();
+  closeCustomerRegister();
+  alert('✅ রেজিস্ট্রেশন সফল!');
+  openCustomerPanel();
+}
+
+function openCustomerPanel() {
+  if (!currentUser) { openCustomerLogin(); return; }
+  const myOrders = Object.values(orders).filter(o => o.customer === currentUser.phone || o.phone === currentUser.phone);
+  let html = `<h3 style="color:var(--brand-dark);margin-bottom:8px;">👤 স্বাগতম, ${currentUser.name}</h3>`;
+  html += `<p style="color:#666; margin-bottom:20px;">📱 ${currentUser.phone}</p>`;
+  html += `<h4 style="color:var(--brand-dark); margin-bottom:10px;">📦 আমার বুকিং (${myOrders.length})</h4>`;
+  if (myOrders.length === 0) {
+    html += `<p style="color:#888;">এখনো কোন বুকিং নেই</p>`;
+  } else {
+    myOrders.forEach(o => {
+      html += `<div style="background:#fff;padding:15px;border-radius:10px;margin-bottom:10px;border-left:4px solid var(--brand-blue);">
+        <b>${o.id}</b> — ${o.package}<br>
+        <span style="color:var(--brand-orange);font-weight:700;">${convertPrice(o.price)}</span> |
+        <span style="font-size:12px;color:#666;">${o.status}</span>
+      </div>`;
+    });
+  }
+  const panel = document.getElementById('customerPanel');
+  panel.innerHTML = `
+    <div class="admin-header">
+      <h2>👤 আমার অ্যাকাউন্ট</h2>
+      <div>
+        <button class="logout-btn" onclick="customerLogout()">লগআউট</button>
+        <button class="logout-btn" onclick="closeCustomerPanel()" style="background:#666; margin-left:8px;">বন্ধ</button>
+      </div>
+    </div>
+    <div class="admin-body">${html}</div>
+  `;
+  panel.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+function closeCustomerPanel() {
+  document.getElementById('customerPanel').classList.remove('show');
+  document.body.style.overflow = 'auto';
+}
+function customerLogout() {
+  currentUser = null;
+  safeSessionRemove('flyCurrentUser');
+  closeCustomerPanel();
+}
+
+/* ============ ADMIN AUTH ============ */
+function openAdminLogin(e) {
+  if (e) e.preventDefault();
+  console.log('Opening admin login...');
+  if (safeSessionText('adminLoggedIn') === 'true') { openAdminPanel(); return; }
+  if (!safeShowModal('adminLoginModal')) return;
+  const au = document.getElementById('adminUser'); if (au) au.value = '';
+  const ap = document.getElementById('adminPass'); if (ap) ap.value = '';
+  const le = document.getElementById('loginError'); if (le) le.style.display = 'none';
+}
+function closeAdminLogin() { document.getElementById('adminLoginModal')?.classList.remove('show'); }
+
+function adminLogin() {
+  const user = document.getElementById('adminUser').value.trim();
+  const pass = document.getElementById('adminPass').value;
+  if (user === ADMIN_CREDENTIALS.username && pass === ADMIN_CREDENTIALS.password) {
+    safeSessionSet('adminLoggedIn', 'true');
+    safeSessionSet('adminName', user);
+    closeAdminLogin();
+    openAdminPanel();
+  } else {
+    document.getElementById('loginError').style.display = 'block';
+    setTimeout(() => document.getElementById('loginError').style.display = 'none', 3000);
+  }
+}
+function adminLogout() {
+  safeSessionRemove('adminLoggedIn');
+  document.getElementById('adminPanel').classList.remove('show');
+  document.body.style.overflow = 'auto';
+}
+function openAdminPanel() {
+  document.getElementById('adminPanel').classList.add('show');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('adminName').textContent = safeSessionText('adminName') || 'Admin';
+  switchAdminTab('bookings', document.querySelector('.admin-tabs > .tab-btn'));
+  renderBarChart();
+}
+
+function renderBarChart() {
+  const days = ['শনি','রবি','সোম','মঙ্গল','বুধ','বৃহঃ','শুক্র'];
+  const values = [3, 5, 2, 7, 4, 6, 3];
+  const max = Math.max(...values);
+  const el = document.getElementById('barChart');
+  if (!el) return;
+  el.innerHTML = days.map((d, i) => `
+    <div class="bar-item">
+      <div class="bar-fill" style="height:${(values[i]/max)*100}%"></div>
+      <div class="bar-label">${d}<br><b>${values[i]}</b></div>
+    </div>
+  `).join('');
+}
+
+function switchAdminTab(tab, btn) {
+  document.querySelectorAll('.admin-tabs > .tab-btn').forEach(t => t.classList.remove('active'));
+  if (btn && btn.parentElement.classList.contains('admin-tabs')) btn.classList.add('active');
+  document.querySelectorAll('.admin-tab-content').forEach(c => c.style.display = 'none');
+  const tabEl = document.getElementById('tab-' + tab);
+  if (tabEl) tabEl.style.display = 'block';
+  if (tab === 'bookings') { renderBookings('all'); updateStats(); }
+  if (tab === 'customers') renderCustomers();
+  if (tab === 'hajj') renderPackageList('hajj');
+  if (tab === 'umrah') renderPackageList('umrah');
+  if (tab === 'tour') renderPackageList('tour');
+  if (tab === 'bdTour') renderPackageList('bdTour');
+  if (tab === 'visa') renderVisaList();
+  if (tab === 'other') { renderPackageList('air'); renderPackageList('hotel'); }
+  if (tab === 'hotelBd') renderPackageList('hotelBd');
+  if (tab === 'settings') loadSettingsForm();
+}
+
+/* ============ BOOKINGS ============ */
+let currentFilter = 'all';
+function updateStats() {
+  const all = Object.values(orders);
+  document.getElementById('statTotal').textContent = all.length;
+  document.getElementById('statPending').textContent = all.filter(o => o.status === 'পেমেন্ট যাচাই চলছে').length;
+  document.getElementById('statConfirmed').textContent = all.filter(o => o.status === 'কনফার্মড').length;
+  const rev = all.reduce((s, o) => s + Number(o.price || 0), 0);
+  document.getElementById('statRevenue').textContent = convertPrice(rev);
+}
+function filterBookings(filter, btn) {
+  currentFilter = filter;
+  document.querySelectorAll('#tab-bookings .tab-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  renderBookings(filter);
+}
+function renderBookings(filter) {
+  const container = document.getElementById('bookingsContainer');
+  let list = Object.values(orders);
+  if (filter !== 'all') list = list.filter(o => o.status === filter);
+  list.sort((a, b) => b.id.localeCompare(a.id));
+  if (list.length === 0) { container.innerHTML = '<div class="empty-msg">📭 কোন বুকিং নেই</div>'; updateStats(); return; }
+  let html = `<div style="overflow-x:auto;"><table class="admin-table"><thead><tr>
+    <th>ID</th><th>নাম</th><th>মোবাইল</th><th>প্যাকেজ</th><th>মূল্য</th><th>পেমেন্ট</th><th>স্ট্যাটাস</th><th>অ্যাকশন</th>
+  </tr></thead><tbody>`;
+  list.forEach(o => {
+    const opts = ['পেমেন্ট যাচাই চলছে','কনফার্মড','ভিসা প্রসেসিং','সম্পন্ন','বাতিল'];
+    let sel = `<select class="status-select" onchange="changeStatus('${o.id}', this.value)">`;
+    opts.forEach(s => { sel += `<option value="${s}" ${s === o.status ? 'selected' : ''}>${s}</option>`; });
+    sel += `</select>`;
+    html += `<tr>
+      <td><b>${o.id}</b></td><td>${o.name}</td><td>${o.phone}</td>
+      <td>${o.package}</td><td>${convertPrice(o.price)}</td><td>${o.payment}</td>
+      <td>${sel}</td>
+      <td>
+        <button class="action-btn btn-view" onclick="viewBooking('${o.id}')">দেখুন</button>
+        <button class="action-btn btn-del" onclick="deleteBooking('${o.id}')">ডিলিট</button>
+      </td>
+    </tr>`;
+  });
+  html += '</tbody></table></div>';
+  container.innerHTML = html;
+  updateStats();
+}
+function changeStatus(orderId, newStatus) {
+  if (!orders[orderId]) return;
+  orders[orderId].status = newStatus;
+  const pm = { 'পেমেন্ট যাচাই চলছে':30, 'কনফার্মড':55, 'ভিসা প্রসেসিং':75, 'সম্পন্ন':100, 'বাতিল':0 };
+  orders[orderId].progress = pm[newStatus] || 30;
+  orders[orderId].date = new Date().toLocaleString('bn-BD');
+  saveAll();
+  renderBookings(currentFilter);
+}
+function deleteBooking(id) {
+  if (!confirm('ডিলিট করবেন?')) return;
+  delete orders[id];
+  delete uploadedFiles[id];
+  localStorage.setItem('flyUploadedFiles', JSON.stringify(uploadedFiles));
+  saveAll();
+  renderBookings(currentFilter);
+}
+function viewBooking(id) {
+  const o = orders[id];
+  if (!o) return;
+  let docHtml = '<p style="color:#888;">📎 কোন ডকুমেন্ট নেই</p>';
+  const f = uploadedFiles[id];
+  if (f) {
+    if (f.fileType && f.fileType.startsWith('image/')) {
+      docHtml = `<img src="${f.data}" class="doc-preview"><br><p style="font-size:12px;color:#666;margin-top:6px;">📎 ${f.fileName}</p>`;
+    } else {
+      docHtml = `<a href="${f.data}" download="${f.fileName}" class="btn" style="margin-top:10px;">📄 ${f.fileName} ডাউনলোড</a>`;
+    }
+  }
+  const html = `
+    <div class="detail-row"><strong>অর্ডার:</strong><span>${o.id}</span></div>
+    <div class="detail-row"><strong>নাম:</strong><span>${o.name}</span></div>
+    ${o.father ? `<div class="detail-row"><strong>পিতা:</strong><span>${o.father}</span></div>` : ''}
+    <div class="detail-row"><strong>মোবাইল:</strong><span>${o.phone}</span></div>
+    <div class="detail-row"><strong>ইমেইল:</strong><span>${o.email || 'N/A'}</span></div>
+    <div class="detail-row"><strong>NID:</strong><span>${o.nid}</span></div>
+    <div class="detail-row"><strong>পাসপোর্ট:</strong><span>${o.passport}</span></div>
+    <div class="detail-row"><strong>প্যাকেজ:</strong><span>${o.package}</span></div>
+    <div class="detail-row"><strong>মূল্য:</strong><span>${convertPrice(o.price)}</span></div>
+    <div class="detail-row"><strong>পেমেন্ট:</strong><span>${o.payment}</span></div>
+    <div class="detail-row"><strong>স্ট্যাটাস:</strong><span>${o.status}</span></div>
+    <div class="detail-row"><strong>তারিখ:</strong><span>${o.date}</span></div>
+    <div style="margin-top:20px; display:flex; gap:10px; flex-wrap:wrap;">
+      <button class="btn" onclick="sendOrderToWhatsApp('${o.id}')" style="flex:1; background:linear-gradient(135deg,#25D366,#128C7E);">💬 WhatsApp</button>
+      <button class="btn" onclick="callCustomer('${o.phone}')" style="flex:1;">📞 কল</button>
+    </div>
+    <h4 style="margin-top:20px; color:var(--brand-dark);">📎 আপলোড ডকুমেন্ট:</h4>
+    ${docHtml}
+  `;
+  document.getElementById('detailContent').innerHTML = html;
+  document.getElementById('detailModal').classList.add('show');
+}
+function closeDetail() { document.getElementById('detailModal').classList.remove('show'); }
+       function renderCustomers() {
+  const container = document.getElementById('customersContainer');
+  if (customers.length === 0) { container.innerHTML = '<div class="empty-msg">📭 কোন গ্রাহক নেই</div>'; return; }
+  let html = `<div style="overflow-x:auto;"><table class="admin-table"><thead><tr>
+    <th>নাম</th><th>মোবাইল</th><th>ইমেইল</th><th>রেজি. তারিখ</th><th>বুকিং</th>
+  </tr></thead><tbody>`;
+  customers.forEach(c => {
+    const cnt = Object.values(orders).filter(o => o.phone === c.phone).length;
+    html += `<tr><td><b>${c.name}</b></td><td>${c.phone}</td><td>${c.email || 'N/A'}</td><td>${c.date}</td><td>${cnt}</td></tr>`;
+  });
+  html += '</tbody></table></div>';
+  container.innerHTML = html;
+}
+
+/* ============ PACKAGE HELPERS ============ */
+function getPkgArray(type) {
+  if (type === 'hajj') return hajjPkgs;
+  if (type === 'umrah') return umrahPkgs;
+  if (type === 'tour') return tourPkgs;
+  if (type === 'bdTour') return bdTourPkgs;
+  if (type === 'air') return airPkgs;
+  if (type === 'hotel') return hotelPkgs;
+  if (type === 'hotelBd') return hotelBdPkgs;
+  return [];
+}
+function setPkgArray(type, arr) {
+  if (type === 'hajj') hajjPkgs = arr;
+  if (type === 'umrah') umrahPkgs = arr;
+  if (type === 'tour') tourPkgs = arr;
+  if (type === 'bdTour') bdTourPkgs = arr;
+  if (type === 'air') airPkgs = arr;
+  if (type === 'hotel') hotelPkgs = arr;
+  if (type === 'hotelBd') hotelBdPkgs = arr;
+}
+
+function renderPackageList(type) {
+  const container = document.getElementById(type + 'ListContainer');
+  if (!container) return;
+  const list = getPkgArray(type);
+  if (list.length === 0) { container.innerHTML = '<div class="empty-msg">📭 কোন প্যাকেজ নেই</div>'; return; }
+  let html = '<div class="admin-pkg-grid">';
+  list.forEach(p => {
+    const featuresHtml = (p.features || []).map(f => `<li>✅ ${f}</li>`).join('');
+    const badgeHtml = p.badge ? `<span class="pkg-badge">${p.badge}</span>` : '';
+    const visualHtml = p.image
+      ? `<img src="${p.image}" class="pkg-icon-img" alt="${p.name}">`
+      : `<span class="pkg-icon">${p.icon || '🌍'}</span>`;
+    html += `<div class="admin-pkg-card">
+      ${badgeHtml}${visualHtml}
+      <h4>${p.name}</h4>
+      <div class="desc">${p.desc || ''}</div>
+      <div class="price-tag">${convertPrice(p.price)}</div>
+      <ul>${featuresHtml}</ul>
+      <div class="actions">
+        <button class="btn-edit-pkg" onclick="editPackage('${type}', '${p.id}')">✏️ এডিট</button>
+        <button class="btn-del-pkg" onclick="deletePackage('${type}', '${p.id}')">🗑️ ডিলিট</button>
+      </div>
+    </div>`;
+  });
+  html += '</div>';
+  container.innerHTML = html;
+}
+
+function openPackageForm(type, editId = null) {
+  document.getElementById('packageModal').classList.add('show');
+  document.getElementById('pkgType').value = type;
+  document.getElementById('pkgEditId').value = editId || '';
+  document.getElementById('pkgImageData').value = '';
+  document.getElementById('pkgImage').value = '';
+  document.getElementById('pkgImageUpload').classList.remove('has-image');
+  document.getElementById('pkgImagePreviewWrap').innerHTML = `
+    <div class="upload-icon">🖼️</div>
+    <div class="upload-text">ছবি আপলোড করতে ক্লিক করুন</div>
+    <div class="upload-hint">JPG, PNG (সর্বোচ্চ 5MB)</div>
+  `;
+  const titles = {
+    hajj:'হজ প্যাকেজ', umrah:'ওমরাহ প্যাকেজ', tour:'ইন্টারন্যাশনাল ট্যুর',
+    air:'এয়ার প্যাকেজ', hotel:'ইন্টারন্যাশনাল হোটেল',
+    bdTour:'বাংলাদেশ ট্যুর প্যাকেজ', hotelBd:'বাংলাদেশ হোটেল প্যাকেজ'
+  };
+  if (editId) {
+    const p = getPkgArray(type).find(x => x.id === editId);
+    if (!p) return;
+    document.getElementById('packageModalTitle').textContent = '✏️ এডিট: ' + p.name;
+    document.getElementById('pkgName').value = p.name;
+    document.getElementById('pkgIcon').value = p.icon || '🌍';
+    document.getElementById('pkgDesc').value = p.desc || '';
+    document.getElementById('pkgPrice').value = p.price;
+    document.getElementById('pkgFeatures').value = (p.features || []).join('\n');
+    document.getElementById('pkgBadge').value = p.badge || '';
+    if (p.image) {
+      document.getElementById('pkgImageData').value = p.image;
+      document.getElementById('pkgImageUpload').classList.add('has-image');
+      document.getElementById('pkgImagePreviewWrap').innerHTML = `<img src="${p.image}" class="pkg-image-preview">`;
+    }
+  } else {
+    document.getElementById('packageModalTitle').textContent = '➕ নতুন ' + titles[type];
+    document.getElementById('pkgName').value = '';
+    document.getElementById('pkgIcon').value =
+      type === 'hajj' ? '🕋' : type === 'umrah' ? '🕌' :
+      type === 'tour' ? '🌍' : type === 'air' ? '✈️' :
+      type === 'bdTour' ? '🇧🇩' : '🏨';
+    document.getElementById('pkgDesc').value = '';
+    document.getElementById('pkgPrice').value = '';
+    document.getElementById('pkgFeatures').value = '';
+    document.getElementById('pkgBadge').value = '';
+  }
+}
+function closePackageModal() { document.getElementById('packageModal')?.classList.remove('show'); }
+
+function handlePkgImage(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  if (file.size > 5 * 1024 * 1024) { alert('❌ ছবির সাইজ 5MB এর বেশি!'); event.target.value = ''; return; }
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    document.getElementById('pkgImageData').value = e.target.result;
+    document.getElementById('pkgImageUpload').classList.add('has-image');
+    document.getElementById('pkgImagePreviewWrap').innerHTML = `<img src="${e.target.result}" class="pkg-image-preview">`;
+  };
+  reader.readAsDataURL(file);
+}
+function removePkgImage(event) {
+  event.stopPropagation();
+  event.preventDefault();
+  document.getElementById('pkgImageData').value = '';
+  document.getElementById('pkgImage').value = '';
+  document.getElementById('pkgImageUpload').classList.remove('has-image');
+  document.getElementById('pkgImagePreviewWrap').innerHTML = `
+    <div class="upload-icon">🖼️</div>
+    <div class="upload-text">ছবি আপলোড করতে ক্লিক করুন</div>
+    <div class="upload-hint">JPG, PNG (সর্বোচ্চ 5MB)</div>
+  `;
+       }
+      function savePackage() {
+  const type = document.getElementById('pkgType').value;
+  const editId = document.getElementById('pkgEditId').value;
+  const name = document.getElementById('pkgName').value.trim();
+  const icon = document.getElementById('pkgIcon').value.trim() || '🌍';
+  const desc = document.getElementById('pkgDesc').value.trim();
+  const price = document.getElementById('pkgPrice').value.trim();
+  const featuresRaw = document.getElementById('pkgFeatures').value.trim();
+  const badge = document.getElementById('pkgBadge').value.trim();
+  const image = document.getElementById('pkgImageData').value;
+  if (!name || !price) { alert('❌ নাম ও মূল্য দিন!'); return; }
+  const features = featuresRaw ? featuresRaw.split('\n').map(f => f.trim()).filter(f => f) : [];
+  const list = getPkgArray(type);
+  if (editId) {
+    const idx = list.findIndex(x => x.id === editId);
+    if (idx > -1) list[idx] = { ...list[idx], name, icon, desc, price:Number(price), features, badge, image };
+    alert('✅ আপডেট হয়েছে!');
+  } else {
+    list.push({ id: type.charAt(0) + Date.now(), name, icon, desc, price:Number(price), features, badge, image });
+    alert('✅ যোগ হয়েছে!');
+  }
+  setPkgArray(type, list);
+  saveAll();
+  closePackageModal();
+  renderPackageList(type);
+  renderPublicPackages();
+}
+function editPackage(type, id) { openPackageForm(type, id); }
+function deletePackage(type, id) {
+  if (!confirm('ডিলিট করবেন?')) return;
+  setPkgArray(type, getPkgArray(type).filter(x => x.id !== id));
+  saveAll();
+  renderPackageList(type);
+  renderPublicPackages();
+}
+
+/* ============ VISA ADMIN ============ */
+function renderVisaList() {
+  const container = document.getElementById('visaListContainer');
+  if (visaList.length === 0) { container.innerHTML = '<div class="empty-msg">📭 নেই</div>'; return; }
+  let html = `<div style="overflow-x:auto;"><table class="admin-table"><thead><tr>
+    <th>লোগো</th><th>দেশ</th><th>ধরন</th><th>সময়</th><th>ফি</th><th>ডকুমেন্ট</th><th>অ্যাকশন</th>
+  </tr></thead><tbody>`;
+  visaList.forEach(v => {
+    html += `<tr>
+      <td>${v.image ? `<img src="${v.image}" style="width:36px;height:36px;border-radius:50%;object-fit:cover;">` : `<span style="font-size:22px;">${v.flag}</span>`}</td>
+      <td><b>${v.country}</b></td><td>${v.type}</td><td>${v.time}</td>
+      <td>${convertPrice(v.fee)}</td>
+      <td><span style="font-size:11px;background:#e8f4ff;padding:3px 8px;border-radius:10px;">${(v.documents || []).length}টি</span></td>
+      <td>
+        <button class="action-btn btn-view" onclick="editVisa('${v.id}')">✏️</button>
+        <button class="action-btn btn-del" onclick="deleteVisa('${v.id}')">🗑️</button>
+      </td>
+    </tr>`;
+  });
+  html += '</tbody></table></div>';
+  container.innerHTML = html;
+}
+function openVisaForm(editId = null) {
+  document.getElementById('visaModal').classList.add('show');
+  document.getElementById('visaEditId').value = editId || '';
+  if (editId) {
+    const v = visaList.find(x => x.id === editId);
+    if (!v) return;
+    document.getElementById('visaModalTitle').textContent = '✏️ এডিট: ' + v.country;
+    document.getElementById('visaCountry').value = v.country;
+    document.getElementById('visaFlag').value = v.flag;
+    document.getElementById('visaType').value = v.type;
+    document.getElementById('visaTime').value = v.time;
+    document.getElementById('visaFee').value = v.fee;
+    document.getElementById('visaDocs').value = (v.documents || []).join('\n');
+  } else {
+    document.getElementById('visaModalTitle').textContent = '➕ নতুন ভিসা';
+    document.getElementById('visaCountry').value = '';
+    document.getElementById('visaFlag').value = '🌍';
+    document.getElementById('visaType').value = 'ট্যুরিস্ট';
+    document.getElementById('visaTime').value = '';
+    document.getElementById('visaFee').value = '';
+    document.getElementById('visaDocs').value = '';
+  }
+}
+function closeVisaModal() { document.getElementById('visaModal')?.classList.remove('show'); }
+function saveVisa() {
+  const editId = document.getElementById('visaEditId').value;
+  const country = document.getElementById('visaCountry').value.trim();
+  const flag = document.getElementById('visaFlag').value.trim() || '🌍';
+  const type = document.getElementById('visaType').value.trim();
+  const time = document.getElementById('visaTime').value.trim();
+  const fee = document.getElementById('visaFee').value.trim();
+  const docsRaw = document.getElementById('visaDocs').value.trim();
+  const documents = docsRaw ? docsRaw.split('\n').map(d => d.trim()).filter(d => d) : [];
+  if (!country || !type || !time || !fee) { alert('❌ সব ঘর পূরণ করুন!'); return; }
+  if (editId) {
+    const idx = visaList.findIndex(x => x.id === editId);
+    if (idx > -1) visaList[idx] = { ...visaList[idx], country, flag, type, time, fee:Number(fee), documents };
+    alert('✅ আপডেট হয়েছে!');
+  } else {
+    visaList.push({ id:'v' + Date.now(), country, flag, type, time, fee:Number(fee), documents, image:'' });
+    alert('✅ নতুন যোগ হয়েছে!');
+  }
+  saveAll();
+  closeVisaModal();
+  renderVisaList();
+  renderPublicPackages();
+}
+function editVisa(id) { openVisaForm(id); }
+function deleteVisa(id) {
+  if (!confirm('ডিলিট?')) return;
+  visaList = visaList.filter(x => x.id !== id);
+  saveAll();
+  renderVisaList();
+  renderPublicPackages();
+}
+
+/* ============ SETTINGS ============ */
+function loadSettingsForm() {
+  const setVal = (id, val) => { const el = document.getElementById(id); if (el) el.value = val; };
+  setVal('setSiteName', settings.siteName);
+  setVal('setPhone', settings.phone);
+  setVal('setEmail', settings.email);
+  setVal('setAddress', settings.address);
+  setVal('setBkash', settings.bkash);
+  setVal('setNagad', settings.nagad);
+  setVal('setRocket', settings.rocket);
+  setVal('setWhatsapp', settings.whatsapp);
+  setVal('setAdminWhatsApp', settings.adminWhatsApp || settings.whatsapp);
+  setVal('setWaNotify', settings.waNotify || 'on');
+}
+function saveSettings() {
+  const g = (id) => { const el = document.getElementById(id); return el ? el.value.trim() : ''; };
+  settings.siteName = g('setSiteName') || settings.siteName;
+  settings.phone = g('setPhone') || settings.phone;
+  settings.email = g('setEmail') || settings.email;
+  settings.address = g('setAddress') || settings.address;
+  settings.bkash = g('setBkash') || settings.bkash;
+  settings.nagad = g('setNagad') || settings.nagad;
+  settings.rocket = g('setRocket') || settings.rocket;
+  settings.whatsapp = g('setWhatsapp') || settings.whatsapp;
+  settings.adminWhatsApp = g('setAdminWhatsApp') || settings.whatsapp;
+  settings.waNotify = document.getElementById('setWaNotify')?.value || 'on';
+  saveAll();
+  applySettings();
+  alert('✅ সেটিংস সেভ হয়েছে!');
+}
+
+
+/* ============ UI RELIABILITY FIXES ============ */
+function safeShowModal(id) {
+  const el = document.getElementById(id);
+  if (!el) { console.error('Missing modal:', id); return false; }
+  el.classList.add('show');
+  return true;
+}
+function safeHideModal(id) {
+  const el = document.getElementById(id);
+  if (el) el.classList.remove('show');
+}
+
+// Close a modal only when its dark backdrop itself is clicked.
+document.addEventListener('click', (e) => {
+  const overlay = e.target.closest?.('.modal-overlay');
+  if (overlay && e.target === overlay) overlay.classList.remove('show');
+});
+
+// Placeholder links should not jump the page or look broken.
+document.addEventListener('click', (e) => {
+  const a = e.target.closest?.('a[href="#"]');
+  if (!a) return;
+  if (!a.getAttribute('onclick')) e.preventDefault();
+});
+
+// Ensure all date fields cannot select an accidental invalid old value when empty.
+document.addEventListener('DOMContentLoaded', () => {
+  const today = new Date().toISOString().split('T')[0];
+  document.querySelectorAll('input[type="date"]').forEach(el => {
+    if (!el.min) el.min = today;
+  });
+});
+
+/* ============ ESCAPE KEY ============ */
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeAdminLogin(); closeDetail(); closePackageModal();
+    closeVisaModal(); closeBookingModal(); closeVisaApplication();
+    closeCustomerLogin(); closeCustomerRegister();
+  }
+});
+
+/* ============ INITIALIZE ON LOAD ============ */
+window.addEventListener('load', function() {
+  console.log('✅ Page loaded, initializing...');
+  let hasCookieConsent = false; try { hasCookieConsent = !!localStorage.getItem('flyCookieConsent'); } catch (e) {}
+  if (!hasCookieConsent) {
+    const cb = document.getElementById('cookieBanner');
+    if (cb) cb.style.display = 'flex';
+  }
+  applySettings();
+  renderPublicPackages();
+  console.log('✅ Initialization complete!');
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const pf = document.getElementById('adminPass');
+  if (pf) pf.addEventListener('keypress', (e) => { if (e.key === 'Enter') adminLogin(); });
+});
+
+console.log('✅ FlyMuna JS Loaded Successfully!');
+</script>
+</body>
+</html> 
